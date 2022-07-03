@@ -55,12 +55,10 @@ useEffect(()=>{
       <BackgroundImageWrapper/>
       <BrowserRouter>
       <Routes>
-      <Route path='dylex_app/' >
-        <Route path='home' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme}/>
+      <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme}/>
           }>
           <Route path='resume' element={<Resume/>} /> 
           <Route path='project' element={<MyWorks/>} />
-          </Route>
           </Route>
         </Routes>
       </BrowserRouter> 
