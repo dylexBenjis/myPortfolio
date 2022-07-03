@@ -7,8 +7,8 @@ import styled from 'styled-components'
 
 const SideNav = () => {
 
-  const path1= '/dylex_app';
-  const path2 = '/dylex_app/project'
+  const path1= '/';
+  const path2 = '/project'
   const location = useLocation('');
   console.log(location.pathname);
   const className1 = path1===location.pathname ? 'active':'';
@@ -25,7 +25,7 @@ const SideNav = () => {
         <SideNavWrapper>
           <A>        
             <Icon>
-              <IconsWrapper to='' href='/dylex_app' className={className1}>
+              <IconsWrapper to='' href='/' className={className1}>
                 <GoHome style={Iconstyle}/>
               </IconsWrapper>
             </Icon>

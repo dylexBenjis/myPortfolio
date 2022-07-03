@@ -18,7 +18,7 @@ const Side_bar = ({IsOpen, scrollNav, toggle, ChangeTheme, changeBtnIcon}) => {
 
             <SidebarWrapper>
                 <SidebarMenu>
-                        <SidebarLink to='/dylex_app' onClick={toggle}>Home</SidebarLink>
+                        <SidebarLink to='/' onClick={toggle}>Home</SidebarLink>
     
 
                         <SidebarLink to='project' onClick={toggle}>Projects</SidebarLink>

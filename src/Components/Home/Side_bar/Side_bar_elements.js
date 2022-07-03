@@ -34,11 +34,11 @@ export const SidebarMenu= styled.div`
     grid-template-columns: auto;
     grid-template-rows: repeat(6, 30px);
     text-align: center;
-    row-gap:15px ;
+    row-gap:20px ;
 `
 export const SidebarLink= styled(LinkScroll)`
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     font-size: 0.9rem; font-family: monospace ;
     text-decoration: none;
