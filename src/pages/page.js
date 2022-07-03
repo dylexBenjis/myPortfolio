@@ -12,7 +12,7 @@ const Page = ({toggle, scrollNav, ChangeToggle, ChangeTheme, theme}) => {
   const location = useLocation();
   console.log(location.pathname);
   useEffect(()=>{  
-    if(location.pathname==='/dylex_app/home'){
+    if(location.pathname==='/'){
     setPath(true);}
     else{setPath(false)
 
