@@ -13,7 +13,7 @@ export const Nav = styled.div`
     transition: ${({scrollNav})=>( scrollNav ? '0.3s all linear': ' ')};
   
     @media screen and (max-width:1300px){
-        height: ${({scrollNav})=>(scrollNav ? '60px' : '100px')} ;
+        height: 60px
 
         }
 `
