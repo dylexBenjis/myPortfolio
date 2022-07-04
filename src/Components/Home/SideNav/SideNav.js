@@ -30,6 +30,7 @@ export const SideNavWrapper = styled.div`
 `
 export const FooterWrapper = styled.div`
     display: flex ;
+    flex-direction: row ;
     position: absolute ;
     height:auto ;
     width:auto ;
@@ -38,15 +39,13 @@ export const FooterWrapper = styled.div`
     align-items: center ;
     justify-content:center ; 
     @media screen and (max-width:1300px){
-            transform: rotate(90deg) ;
-            right: 100vw ;
-            left: 34px;
+            transform: rotate(90deg) ; 
+            flex-direction: column ;
+            left: calc(100px - 100vw); 
             bottom: 50px ;
         }
-        @media screen and (max-width:1300px){
-            transform: rotate(90deg) ;
-            right: 100vw ;
-            left: 27px;
+        @media screen and (max-width:600px){
+            left: calc(80px - 100vw); 
             bottom: 50px ;
         }
 `
@@ -76,9 +75,11 @@ export const SocialWrapper = styled.div`
     }        
     @media screen and (max-width:1300px){
             right: 10px;
+            width: 32px ;
         }
         @media screen and (max-width:600px){
-            right: 3px;
+            right: 5px;
+            width: 20px ;
         }
 
 `

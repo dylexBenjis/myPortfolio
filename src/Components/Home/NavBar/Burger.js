@@ -30,7 +30,7 @@ const A = styled.div`
         background-color:  ${({IsOpen}) => (IsOpen ? 'red' : 'var(--text-primary)')};
         transition: all 0.3s ease-in-out ;
         
-        transform: ${({IsOpen}) => (IsOpen ? 'rotate(-45deg) translate(-20%, 170% )' : '')};
+        transform: ${({IsOpen}) => (IsOpen ? 'rotate(-45deg) translate(-25%, 190% )' : '')};
 `
 const B = styled.div`
         display:flex ;
@@ -49,5 +49,5 @@ const C = styled.div`
         position:relative ;
         background-color:  ${({IsOpen}) => (IsOpen ? 'red' : 'var(--text-primary)')};
         transition: all 0.3s ease-in-out ;
-        transform: ${({IsOpen}) => (IsOpen ? 'rotate(45deg) translate(-20%, -170%)' : '')}
+        transform: ${({IsOpen}) => (IsOpen ? 'rotate(45deg) translate(-20%, -155%)' : '')}
 `

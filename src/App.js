@@ -11,7 +11,7 @@ import MyWorks from './Components/Home/MySkills-Works';
 
 function App() {
 
-
+//scroll state variable
   const [scrollNav, setScrollNav]= useState(false);
 
   const ChangeNav =() => {
@@ -26,7 +26,8 @@ function App() {
   useEffect(()=>{
   window.addEventListener('scroll', ChangeNav)
   },[scrollNav] )
-  console.log(scrollNav); console.log(window.scrollY)
+  console.log(scrollNav); 
+  
 
 //theme variable
 var defaultDark  = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -86,15 +87,5 @@ export const BackgroundImageWrapper= styled.div`
     background: var(--background);
     transition:  all 0.2s ease-in;
 `
-const Img= styled.img`
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: var(--background) ;
-`
+
 

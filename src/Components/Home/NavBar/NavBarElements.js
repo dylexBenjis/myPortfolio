@@ -13,8 +13,7 @@ export const Nav = styled.div`
     transition: ${({scrollNav})=>( scrollNav ? '0.3s all linear': ' ')};
   
     @media screen and (max-width:1300px){
-     
-        height: 60px; 
+        height: ${({scrollNav})=>(scrollNav ? '60px' : '100px')} ;
 
         }
 `
@@ -57,8 +56,8 @@ export const Logo1=styled.img`
     margin-left: -3px;
     transition: 0.2s all ease-in-out ;   
     @media screen and (max-width:1300px){
-      width:90px;
-      height: 30px ;
+    width: ${({scrollNav})=>(scrollNav? '90px' : '105px')};
+    height: ${({scrollNav})=>(scrollNav? '30px' : '40px')};
     }
 `
 export const MobileIcon= styled.div`

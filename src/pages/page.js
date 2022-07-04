@@ -8,6 +8,8 @@ import Side_bar from '../Components/Home/Side_bar';
 import { Container } from '../GlobalLayout';
 
 const Page = ({toggle, scrollNav, ChangeToggle, ChangeTheme, theme}) => {
+
+  //path variable to keep track of react outlet
   const [path, setPath] = useState();
   const location = useLocation();
   console.log(location.pathname);
@@ -19,7 +21,7 @@ const Page = ({toggle, scrollNav, ChangeToggle, ChangeTheme, theme}) => {
   }}, [location.pathname, path])
   console.log(path)
 
-
+//mobile menu IsOpen variable
   const [IsOpen, setIsOpen] = useState(false)
 
   const togggle = () => {

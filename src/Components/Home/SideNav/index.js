@@ -44,7 +44,10 @@ const SideNav = () => {
           </SocialWrapper>
         <FooterWrapper>
         <TextFooter>
-              built by dylexBenji
+              built by 
+        </TextFooter>
+        <TextFooter>
+            dylexBenji
         </TextFooter>
         </FooterWrapper>
       </Container>
@@ -57,15 +60,12 @@ export default SideNav
 const TextFooter= styled.div`
     font-size: 16px; font-family: monospace ;
     color: var(--text-primary-light);
-    margin-top  : 20px ;
     display: flex;
     @media screen and (max-width:1300px){
             font-size: 14px ;
-            margin-top:20px ;
         }
     @media screen and (max-width:600px){
             font-size: 10px ;
-            margin-top:25px ;
         }
     
 `
