@@ -48,6 +48,10 @@ useEffect(()=>{
   window.addEventListener('toggle', ChangeTheme)
 }, )
 
+// document.body.style.backgroundColor = 
+
+  // var h = document.body.style.backgroundColor;
+  // console.log(h)
   return (
  <div className="App" data-theme={theme} > 
        
