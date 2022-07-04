@@ -56,8 +56,8 @@ export const Logo1=styled.img`
     margin-left: -3px;
     transition: 0.2s all ease-in-out ;   
     @media screen and (max-width:1300px){
-    width: ${({scrollNav})=>(scrollNav? '90px' : '105px')};
-    height: ${({scrollNav})=>(scrollNav? '30px' : '40px')};
+    width: ${({scrollNav})=>(scrollNav? '90px' : '100px')};
+    height: ${({scrollNav})=>(scrollNav? '30px' : '38px')};
     }
 `
 export const MobileIcon= styled.div`
