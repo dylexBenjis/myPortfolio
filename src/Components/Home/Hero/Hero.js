@@ -146,7 +146,7 @@ const H2 = styled.div`
     display:flex ;
     justify-content:center ;
     text-align:center ;
-    font-size: 40px ;
+    font-size: 36px ;
     font-family: monospace ;
     font-weight:bold ;
     color: rgb(200,200,200) ;

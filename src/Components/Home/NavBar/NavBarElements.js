@@ -53,10 +53,9 @@ export const Logo1=styled.img`
     cursor: pointer;
     width: ${({scrollNav})=>(scrollNav? '150px' : '220px')};
     height: ${({scrollNav})=>(scrollNav? '40px' : '58px')};
-    margin-left: -3px;
     transition: 0.2s all ease-in-out ;   
     @media screen and (max-width:1300px){
-    width: ${({scrollNav})=>(scrollNav? '90px' : '100px')};
+    width: ${({scrollNav})=>(scrollNav? '80px' : '95px')};
     height: ${({scrollNav})=>(scrollNav? '30px' : '38px')};
     }
 `
@@ -69,24 +68,24 @@ display: none;
 `
 
 export const ButtonWrapper= styled.div`
-    height: 45px;
+    height: 100%;
     width: 200px;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    @media screen and (max-width:1300px){
-        height: 25px;
+    align-items: center;
+     @media screen and (max-width:1300px){
+        height: 100%;
         width: 100px ;
     }
-    @media screen and (max-width:768px){
-     display: none ;
-    }
+
     
 `
 export const ThemeIcon = styled.div`
     font-size: 2rem ;
     border-radius: 70px;
-    align-content: center ;    
+    align-content: center ;
+    justify-content: center;
+    align-items: center;    
     @media screen and (max-width:768px){
      font-size: 0.9rem;
     }
@@ -94,8 +93,8 @@ export const ThemeIcon = styled.div`
 `       
 
 export const Resume= styled(Link)`
-    width: 120% ;
-    height: 80% ;
+    width: 110% ;
+    height: 100% ;
     display:flex ;
     align-items: center ;
     font-size: 16px;
@@ -113,8 +112,8 @@ export const Resume= styled(Link)`
     }
     @media screen and (max-width:1300px){
       font-size: 16px ;
-      height:120% ;
-      width:150% ;
+      height:90% ;
+      width:130% ;
     }
 `
 
@@ -122,10 +121,10 @@ export const A= styled.div`
     display: grid; 
     height: 100%;
     grid-template-columns: 90px 40px ;
-    column-gap: 50px ;
+    column-gap: 50px ; 
     align-items: center ;
     @media screen and (max-width:1300px){
-        grid-template-columns: 55px 20px ;
+        grid-template-columns: 55px 25px ;
         column-gap: 35px;
     }
 `

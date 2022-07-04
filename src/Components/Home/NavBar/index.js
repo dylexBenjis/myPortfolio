@@ -12,8 +12,8 @@ import Burger from './Burger';
 
 const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
 
-    const path1= '/dylex_app';
-    const path2 = '/dylex_app/project'
+    const path1= '/';
+    const path2 = '/project'
     const location = useLocation('');
     console.log(location.pathname);
     const className1 = path1===location.pathname ? 'active':'';
@@ -31,6 +31,8 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
                 <MobileIcon onClick={toggle}>
                     <Burger IsOpen={IsOpen}/>
                 </MobileIcon>
+
+                <B>
                 <LinkWrapper>
                     <Button to='' href='/dylex_app' className={className1}>
                         Home
@@ -47,6 +49,7 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
                     <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} scrollNav={scrollNav}/>
                     </A>
                 </ButtonWrapper>
+                </B>
             </NavBarWrapper>
         </Containerr>
     </Nav>
@@ -55,12 +58,24 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
 
 export default NavBar
 
+const B= styled.div`
+    display:flex ;
+    gap:70px ;
+    align-items: center ;
+    align-content: center ;
+    flex-direction:row ;
+    @media screen and (max-width:768px){
+     display: none ;
+    }
+`
+
 const LinkWrapper = styled.div`
     display: flex ;
     flex-direction: row ;
+    align-items: center ;
+    align-content: center ;
+    justify-content:center ;
     gap: 25px ;
-    position: relative;
-    left: 150px ;  
 
     @media screen and (min-width:1300px){
         display:none ;
