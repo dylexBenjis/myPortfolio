@@ -37,10 +37,10 @@ const SideNav = () => {
           </A>
         </SideNavWrapper>
           <SocialWrapper>
-            <Iccon><FaGithub/></Iccon>
-            <Iccon3><FaFacebook/></Iccon3>
-            <Iccon1><FaTwitter/></Iccon1>
-            <Iccon2><FaYoutube/></Iccon2>
+            <Iccon href='https://github.com/dylexBenjis'><FaGithub/></Iccon>
+            <Iccon3 href='https://facebook.com/benji.tentacion'><FaFacebook/></Iccon3>
+            <Iccon1 href='https://twitter.com/benjichukwudile'><FaTwitter/></Iccon1>
+            <Iccon2 href='https://www.youtube.com/channel/UCnWtQg6qkHjREjELCelAfzA'><FaYoutube/></Iccon2>
           </SocialWrapper>
         <FooterWrapper>
         <TextFooter>
@@ -70,7 +70,7 @@ const TextFooter= styled.div`
     
 `
 
-const Iccon = styled.div`
+const Iccon = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--text-primary-light);
@@ -88,7 +88,7 @@ const Iccon = styled.div`
             margin-bottom: 10px ;
         }
 `
-const Iccon1 = styled.div`
+const Iccon1 = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--text-primary-light);
@@ -106,7 +106,7 @@ const Iccon1 = styled.div`
             margin-bottom: 10px ;
         }
 `
-const Iccon3 = styled.div`
+const Iccon3 = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--text-primary-light);
@@ -124,7 +124,7 @@ const Iccon3 = styled.div`
             margin-bottom: 10px ;
         }
 `
-const Iccon2 = styled.div`
+const Iccon2 = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--text-primary-light);
