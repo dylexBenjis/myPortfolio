@@ -91,7 +91,7 @@ const AboutUs = ({changeBtnIcon}) => {
                         I will love to hear from you. Whether it's a project, job
                         opportunity or just a chat. Feel free to contact me.
                     </Text4>
-                    <Button data-aos='fade-up' data-aos-delay='500' data-aos-once='true' href='mailto : benjichukwudile@gmail.com' target='_blank'>
+                    <Button data-aos='fade-up' data-aos-delay='500' data-aos-once='true' href='mailto: benjichukwudile@gmail.com' target='_blank'>
                         Contact me
                     </Button>
                     </Wrap><ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
