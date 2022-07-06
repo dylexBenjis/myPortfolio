@@ -37,10 +37,10 @@ const SideNav = () => {
           </A>
         </SideNavWrapper>
           <SocialWrapper>
-            <Iccon href='https://github.com/dylexBenjis'><FaGithub/></Iccon>
-            <Iccon3 href='https://facebook.com/benji.tentacion'><FaFacebook/></Iccon3>
-            <Iccon1 href='https://twitter.com/benjichukwudile'><FaTwitter/></Iccon1>
-            <Iccon2 href='https://www.youtube.com/channel/UCnWtQg6qkHjREjELCelAfzA'><FaYoutube/></Iccon2>
+            <Iccon href='https://github.com/dylexBenjis' target='_blank'><FaGithub/></Iccon>
+            <Iccon3 href='https://facebook.com/benji.tentacion' target='_blank'><FaFacebook/></Iccon3>
+            <Iccon1 href='https://twitter.com/benjichukwudile' target='_blank'><FaTwitter/></Iccon1>
+            <Iccon2 href='https://www.youtube.com/channel/UCnWtQg6qkHjREjELCelAfzA' target='_blank'><FaYoutube/></Iccon2>
           </SocialWrapper>
         <FooterWrapper>
         <TextFooter>
