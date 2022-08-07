@@ -22,6 +22,8 @@ const Side_bar = ({IsOpen, scrollNav, toggle, ChangeTheme, changeBtnIcon}) => {
     
 
                         <SidebarLink to='project' onClick={toggle}>Projects</SidebarLink>
+
+                        {/* <SidebarLink to='project' onClick={toggle}>Blog posts</SidebarLink> */}
     
 
                         <SidebarLinks  onClick={ChangeTheme} > Change Theme &nbsp; <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} /></SidebarLinks>

@@ -92,7 +92,7 @@ export const ThemeIcon = styled.div`
     
 `       
 
-export const Resume= styled(Link)`
+export const ResumeCon= styled(Link)`
     width: 110% ;
     height: 100% ;
     display:flex ;
@@ -114,6 +114,10 @@ export const Resume= styled(Link)`
       font-size: 16px ;
       height:90% ;
       width:130% ;
+    }
+    @media screen and (max-width:768px){
+     height: 2rem ;
+     width: 6rem;
     }
 `
 

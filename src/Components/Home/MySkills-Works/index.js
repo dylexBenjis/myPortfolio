@@ -15,7 +15,7 @@ const properHeight = height - 120;
 
 console.log(properHeight)
 
-const MyWorks = ({toggle,}) => {
+const MyWorks = ({toggle, imageOpen}) => {
     Aos.init({
         easing:'ease-in-out',
         duration:1000,
@@ -26,13 +26,13 @@ const MyWorks = ({toggle,}) => {
               <MyWorksWrapper>
                   <TextWrapper data-aos='fade-right'>
                   <Text>some featured projects</Text> 
-                  </TextWrapper>
-                   <A data-aos='zoom-in' >
-                   <WebApp />
-                   </A>
-              </MyWorksWrapper>
+                  </TextWrapper> 
+                  </MyWorksWrapper>
 
-          </Container>
+</Container>
+
+                   <WebApp  imageOpen={imageOpen} toggle={toggle} />
+
       </MyWorksContainer>
   )
 };
@@ -44,9 +44,9 @@ const MyWorksContainer= styled.div`
     margin-bottom: 20px ; 
 
 `
-const MyWorksWrapper= styled.div` 
+export const MyWorksWrapper= styled.div` 
     height: 100%;
-    width: 100%;
+    width: 100%; 
     display: flex;
     flex-direction: column;
     
@@ -60,7 +60,7 @@ const TextWrapper= styled.div`
     font-size: 30px;
     font-weight: var(--para-weight);
     color: var(--text-primary);
-    margin-bottom: 45px;
+    margin-bottom: 5px;
     display: flex ;z-index:5;
     flex-direction: row ;
     gap:5px ;    cursor: pointer;
@@ -77,5 +77,5 @@ const Text= styled.div`
  
 `
 const A = styled.div`
-    z-index:5 ;
+    z-index:5 ; 
 `

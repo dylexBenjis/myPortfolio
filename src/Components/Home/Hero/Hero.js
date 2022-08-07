@@ -4,6 +4,7 @@ import { Container } from '../../../GlobalLayout';
 import src1 from '../../../Images/img4.jpg'
 import src2 from '../../../Images/img1.jpg'
 import './anim.css'
+import Resume from '../NavBar/resume';
 
 const data= [
     { id:1,src: src1,
@@ -50,9 +51,9 @@ console.log(curent)
          {index === current && (<>
     <Bd>
         <Ad>
-            <H1>I MAKE THINGS</H1>
-            <H2>NOT ONLY for the WEB</H2>
-            <B>FRONT-END DEVELOPMENT,...</B>
+            <H1>I BUILD THINGS</H1>
+            <H2>NOT ONLY for THE WEB</H2>
+            <B><Resume/></B>
         </Ad>
     </Bd></>)} </Slide>)  })}
     </Container>
@@ -115,10 +116,10 @@ const Bd=styled.div`
 
 `
 const Ad=styled.div`
-    display: grid ;
+    display: flex ;
+    flex-direction:column ;
     width: 100% ;
-    grid-template-columns: repeat(1, 1fr) ;
-    grid-template-rows: repeat(2, 1fr) ;
+    row-gap:10px ;
     z-index:3 ;
     position: relative ;
 
@@ -129,9 +130,8 @@ const H1= styled.div`
     text-align:center ;
     font-size: 50px ;
     font-family: monospace ;
-    font-weight:bold ;
+    font-weight:bolder ;
     color: #fff ;
-    padding: 10px 0px 0px 0px ;
     @media screen and (max-width: 800px){
         font-size: 40px ;
     }
@@ -150,7 +150,6 @@ const H2 = styled.div`
     font-family: monospace ;
     font-weight:bold ;
     color: rgb(200,200,200) ;
-    padding: 5px 0px 10px 0px ;
     @media screen and (max-width: 800px){
         font-size: 32px ;
     }
@@ -161,24 +160,10 @@ const H2 = styled.div`
 
 `
 const B= styled.div`
-    display:flex ;
-    justify-content:center ;
-    font-size: 25px ;
-    font-family: monospace ; 
-    font-weight:bold ;
-    color: #fff ;
-    margin:14px 0px ;
-    @media screen and (max-width: 800px){
-        font-size: 20px ;
+    display: none ;
+    justify-content:center ; 
+    @media screen and (max-width: 768px){
+        display: flex ;
     }
-    @media screen and (max-width: 500px){
-        font-size: 14px ;    
-        margin:5px 0px ;
-    }
-    @media screen and (max-width: 400px){
-        font-size: 12.5px ;
-    }
-    @media screen and (max-width: 350px){
-        font-size: 10px ;
-    }
+
 `

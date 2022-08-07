@@ -8,7 +8,7 @@ export const SidebarCointainer = styled.aside`
     position: fixed;
     z-index: 9;
     width: 100%;
-    height: calc(100vh/4.5);
+    height: auto;
     background: var(--background);
     display: flex;
     margin-top: 60px ;
@@ -18,7 +18,7 @@ export const SidebarCointainer = styled.aside`
 
     @media screen and (min-width:700px){
         
-    height: calc(100vh/5.5);
+    height: auto;
     }
 
 `
@@ -28,12 +28,13 @@ export const SidebarCointainer = styled.aside`
 
 export const SidebarWrapper= styled.div`
     color: #fff;
+    margin: 5px 0px 15px 0px;
 `
 export const SidebarMenu= styled.div`
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(6, 30px);
-    text-align: center;
+    grid-template-columns: 60%;
+    grid-template-rows: repeat(4, 30px);
+    justify-content: center;
     row-gap:20px ;
 `
 export const SidebarLink= styled(LinkScroll)`
@@ -41,7 +42,7 @@ export const SidebarLink= styled(LinkScroll)`
     align-items: center; 
     justify-content: center;
     font-size: 0.9rem; font-family: monospace ;
-    text-decoration: none;
+    text-decoration: none; 
     list-style: none;
     transition: 0.2s ease-in-out;
     color: var(--text-primary);

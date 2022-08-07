@@ -1,13 +1,14 @@
 import React , {useState} from 'react'
 import dylex from '../../../Images/dylexBenji.png'
 import { Nav, NavBarWrapper, MobileIcon, ThemeIcon,
-    Logo,Logo1, LogoWrapper,Icon, Resume, A,
+    Logo,Logo1, LogoWrapper,Icon, A,
     ButtonWrapper, Containerr } from './NavBarElements';
 import {FaBars} from 'react-icons/fa'
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import DarkModeComp from './DarkModeComp';
 import Burger from './Burger';
+import Resume from './resume';
 
 
 const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
@@ -43,9 +44,7 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
                 </LinkWrapper>
                 <ButtonWrapper>
                     <A>
-                    <Resume to='/resume'>
-                       Resume
-                    </Resume>
+                    <Resume/>
                     <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} scrollNav={scrollNav}/>
                     </A>
                 </ButtonWrapper>

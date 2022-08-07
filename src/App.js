@@ -53,6 +53,13 @@ useEffect(()=>{
 
   // var h = document.body.style.backgroundColor;
   // console.log(h)
+
+   //project image click
+   const [imageOpen, setImageOpen] = useState(false);
+   const ImageToggle = () => {
+     setImageOpen(!imageOpen)
+   }
+
   return (
  <div className="App" data-theme={theme} > 
        
@@ -60,10 +67,10 @@ useEffect(()=>{
       <BackgroundImageWrapper/>
       <BrowserRouter>
       <Routes>
-      <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme}/>
+      <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>
           }>
           <Route path='resume' element={<Resume/>} /> 
-          <Route path='project' element={<MyWorks/>} />
+          <Route path='project' element={<MyWorks imageOpen={imageOpen} toggle={ImageToggle}/>} />
           </Route>
         </Routes>
       </BrowserRouter> 

@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Container } from '../../GlobalLayout'
-import {  Apps } from './projects'
+import {  appOne, apps, appTwo } from './projects'
 import {FaGithub, FaExternalLinkAlt} from 'react-icons/fa'
 import {BiLinkExternal} from 'react-icons/bi'
-
-const github_={
-  cursor:'pointer',
-}
-
-const Ddisplay=({id,title, src,descc, desc})=> {
+import OnClickImage from './onClickImage'
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 
-  return(<Idflex><C> {title}</C><Id>  <A src={src} alt={title}></A>
+
+var appSrc = ''
+const Ddisplay=({setAppSrc,id,title, src,descc, technologies, toggle, imageOpen})=> {
+
+
+
+  return(<Idflex><C> {title}</C><Id onClick={()=>{appSrc=src}}> <A src={src} alt={title} onClick={toggle}></A>
                   <B><D>{descc}</D>
-                  <F>{desc}</F>
-                  <E><FaGithub style={github_}/> 
-                  <BiLinkExternal style={github_}/>
+                  <F>{technologies}</F>
+                  <E>
+                  {/* <a href='#/' style={{textDecoration:'none', color:'green'}}>blog post</a> */}
+                  <FaGithub style={{cursor:'pointer',}}/> 
+                  <BiLinkExternal style={{cursor:'pointer',}}/>
                   </E>
                   </B>
                </Id> </Idflex>)
@@ -24,36 +29,63 @@ const Ddisplay=({id,title, src,descc, desc})=> {
         
   }  
 
-const WebApp= () => {
+const WebApp= ({toggle, imageOpen}) => {
+
+  Aos.init({
+    easing:'ease-in-out',
+    duration:1000,
+});
+
+console.log(appSrc)
+
 
   return (
-    <WebAppCon>
+
+  < >
+    <Container>
+      <MyWorksWrapper>
+              <WebAppCon data-aos='zoom-in'>
           <WrapperGrid>
                     
-                    { 
-                    Apps.map((q) => {
-                      return(  <Ddisplay key={q.id} {...q} />) })
-                    }
-          
-          </WrapperGrid>
+          {apps.map((q) => {
+          return (<Ddisplay key={q.id} {...q} imageOpen={imageOpen} toggle={toggle} />)
+          })}
+          </WrapperGrid>        
+          </WebAppCon>
+          </MyWorksWrapper>
+    </Container>
+      {toggle? <OnClickImage src={appSrc} imageOpen={imageOpen} toggle={toggle} />:false} 
+          </>
 
-  </WebAppCon>
 )
 }
 
 export default WebApp;
 
+const MyWorksWrapper= styled.div` 
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 20px ;
+    @media screen and (max-width: 400px){
+        margin-bottom: 50px ;
+    } 
+
+`
 const WebAppCon = styled.div`
-  display: flex ;  z-index:5 ;
+  display: flex ;  z-index:15 ;
+  
 
 
 `
 const WrapperGrid= styled.div`
 display: grid ; 
 align-items: flex-start ;
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: 50% 50%;
 grid-template-rows: repeat(1, 1fr) ;
-column-gap: 15px ;
+column-gap: 10px ;
 row-gap: 30px ; 
 width: 100% ;
 @media screen and (max-width:1300px){
@@ -88,9 +120,9 @@ transition: 0.2s transform ease;
 const A = styled.img`
 display: flex ;
 position:relative ;
-left:10px ;
-height: 60% ;
-width:50% ;
+left: 10px ;
+height: 60% ;background-color:rgba(150,150,150,0.3);
+width:30% ;
 margin: 10px 0px ;
 object-fit: cover ;
 filter: invert(15%) sepia(55%) saturate(476%) hue-rotate(85deg) brightness(70%) contrast(150%) ;
@@ -100,18 +132,25 @@ transition: 0.5s all ease-in-out ;
         filter:none ;
         z-index:999 ;
     }
+
+    @media screen and (max-width:920px){
+ left:0px ;
+}
 `
 const B = styled.div`
 display: flex ;
 flex-direction:column;
 position: relative ;
 right: 30px ;
-width:50% ;
+width:70% ;
 color: var(--text-primary) ;
 grid-template-columns: repeat(1, 1fr);
-gap: 10px ;
+gap: 5px ;
 grid-template-rows: auto auto;
 cursor: normal ;
+@media screen and (max-width:920px){
+ right:10px ;
+}
 `
 const C = styled.div`
 display: flex ;
@@ -124,6 +163,9 @@ text-align: right ;
 
 @media screen and (max-width: 768px){
   font-size: 18px ;
+}
+@media screen and (max-width:920px){
+ right:10px ;
 }
 `
 const D = styled.div`
