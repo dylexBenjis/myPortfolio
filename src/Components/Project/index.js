@@ -11,7 +11,7 @@ import 'aos/dist/aos.css'
 
 
 var appSrc = ''
-const Ddisplay=({setAppSrc,id,title, src,descc, technologies, toggle, imageOpen})=> {
+const Ddisplay=({setAppSrc,id,title, src,descc, technologies, toggle, imageOpen, webLink})=> {
 
 
 
@@ -20,8 +20,8 @@ const Ddisplay=({setAppSrc,id,title, src,descc, technologies, toggle, imageOpen}
                   <F>{technologies}</F>
                   <E>
                   {/* <a href='#/' style={{textDecoration:'none', color:'green'}}>blog post</a> */}
-                  <FaGithub style={{cursor:'pointer',}}/> 
-                  <BiLinkExternal style={{cursor:'pointer',}}/>
+                  <FaGithub style={{cursor:'pointer',}} /> 
+                  <Linkk href={webLink} target='_blank'><BiLinkExternal style={{cursor:'pointer',}} /></Linkk>
                   </E>
                   </B>
                </Id> </Idflex>)
@@ -75,7 +75,7 @@ const MyWorksWrapper= styled.div`
 
 `
 const WebAppCon = styled.div`
-  display: flex ;  z-index:15 ;
+  display: flex ;  z-index:5 ;
   
 
 
@@ -202,6 +202,10 @@ text-align: right ;
 @media screen and (max-width: 768px){
   font-size: 10px ;
 }
+`
+const Linkk = styled.a`
+  text-decoration: none ;
+  color: var(--text-primary-light);
 `
 
 

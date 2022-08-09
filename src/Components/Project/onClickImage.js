@@ -29,7 +29,7 @@ const OnClickImageCon = styled.div`
 `
 export const ImageCon = styled.img`
     display:flex;
-    height:calc(100vh/1.5) ;
+    height:calc(100vh/1.6) ;
     width:calc(100vw/2) ;
     @media screen and (max-width:920px){
         height:calc(100vh/4) ;
@@ -38,7 +38,7 @@ export const ImageCon = styled.img`
         height: calc(100vh/2.5)
     }
     @media  (max-height:768px){
-        height: calc(100vh/3)
+        height: calc(100vh/3.1)
     }
     }
 

@@ -44,7 +44,7 @@ const SideNav = () => {
           </SocialWrapper>
         <FooterWrapper>
         <TextFooter>
-              built by 
+              built by&nbsp; 
         </TextFooter>
         <TextFooter>
             dylexBenji
@@ -95,7 +95,7 @@ const Iccon1 = styled.a`
     margin-bottom: 20px;
     display: flex; cursor: pointer;
     :hover{
-      color: skyblue ;
+      color: #005ba9 ;
     }  
     @media screen and (max-width:1300px){
             font-size: 16px ;
@@ -113,7 +113,7 @@ const Iccon3 = styled.a`
     margin-bottom: 20px;
     display: flex; cursor: pointer;
     :hover{
-      color: blue ;
+      color: #005ba9 ;
     }  
     @media screen and (max-width:1300px){
             font-size: 16px ;

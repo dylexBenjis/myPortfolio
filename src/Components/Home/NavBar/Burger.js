@@ -28,7 +28,7 @@ const A = styled.div`
         height: 0.1rem;
         position:relative ;
         background-color:  ${({IsOpen}) => (IsOpen ? 'red' : 'var(--text-primary)')};
-        transition: all 0.3s ease-in-out ;
+        transition: all 0.6s ease-in-out ;
         
         transform: ${({IsOpen}) => (IsOpen ? 'rotate(-45deg) translate(-25%, 190% )' : '')};
 `
@@ -38,7 +38,7 @@ const B = styled.div`
         height: 0.1rem;
         position:relative ;
         background-color: var(--text-primary) ;
-        transition: all 0.1s ease-in-out ;
+        transition: ${({IsOpen}) => (IsOpen ? 'all 0.3s ease-in-out' : 'all 1.5s ease-in-out')}  ; ;
         transform: translateX(-5px) ;
         opacity: ${({IsOpen}) => (IsOpen ? '0' : '1')}
 `
@@ -48,6 +48,6 @@ const C = styled.div`
         height: 0.1rem;
         position:relative ;
         background-color:  ${({IsOpen}) => (IsOpen ? 'red' : 'var(--text-primary)')};
-        transition: all 0.3s ease-in-out ;
+        transition: all 0.6s ease-in-out ;
         transform: ${({IsOpen}) => (IsOpen ? 'rotate(45deg) translate(-20%, -155%)' : '')}
 `

@@ -273,7 +273,7 @@ const Img = styled.div`
     height: 200px ;
     filter:grayscale(90%) ;
     width: 200px ;   
-
+    transition: 0.6s all ease-in-out;
     :hover{
             filter:none ;
         }

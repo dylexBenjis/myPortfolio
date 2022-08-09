@@ -7,7 +7,7 @@ import './anim.css'
 import Resume from '../NavBar/resume';
 
 const data= [
-    { id:1,src: src1,
+    { id:0,src: src1,
      },
      { id:1,src: src2,
      },
@@ -39,16 +39,16 @@ console.log(curent)
 
   return (
     <HeroCon>
-            {data.map((data, index)=>{ 
-      return (<Slide key={index}>
-         {index === current && (<> <ImgBackground curent={curent}>
+            {data.map((data)=>{ 
+      return (<Slide key={data.id}>
+         {data.id === current && (<> <ImgBackground curent={curent}>
         <Img src={data.src}/>
     </ImgBackground></>)} </Slide>)  })}
     
     <Container>
-    {data.map((data, index)=>{ 
-      return (<Slide key={index}>
-         {index === current && (<>
+    {data.map((data)=>{ 
+      return (<Slide key={data.id}>
+         {data.id === current && (<>
     <Bd>
         <Ad>
             <H1>I BUILD THINGS</H1>
