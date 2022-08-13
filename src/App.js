@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from 'styled-components';
 import React, { useState , useEffect} from 'react';
 import Page from './pages/page';
-import Resume from './Components/Resume';
 import MyWorks from './Components/Home/MySkills-Works';
 
 
@@ -69,7 +68,6 @@ useEffect(()=>{
       <Routes>
       <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>
           }>
-          <Route path='resume' element={<Resume/>} /> 
           <Route path='project' element={<MyWorks imageOpen={imageOpen} toggle={ImageToggle}/>} />
           </Route>
         </Routes>

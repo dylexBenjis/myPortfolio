@@ -17,15 +17,15 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
     const path2 = '/project'
     const location = useLocation('');
     console.log(location.pathname);
-    const className1 = path1===location.pathname ? 'active':'';
-    const className2 = path2===location.pathname ? 'active':'';
+    // const className1 = ;
+    // const className2 = path2===location.pathname ? 'active':'';
 
  
   return (
     <Nav scrollNav={scrollNav} IsOpen={IsOpen}>
         <Containerr>
             <NavBarWrapper>
-                <LogoWrapper>
+                <LogoWrapper to='' >
                    <Logo1 src={dylex} scrollNav={scrollNav} />
                 </LogoWrapper>
                 
@@ -35,10 +35,10 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
 
                 <B>
                 <LinkWrapper>
-                    <Button to='' href='/dylex_app' className={className1}>
+                    <Button to=''  className={path1===location.pathname ? 'active':''}>
                         Home
                     </Button>
-                    <Button  to='project' className={className2}>
+                    <Button  to='project' className={path2===location.pathname ? 'active':''}>
                         Projects
                     </Button>
                 </LinkWrapper>

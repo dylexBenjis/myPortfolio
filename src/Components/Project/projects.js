@@ -3,10 +3,7 @@ import slider from  '../../Images/Screenshot 71528.png'
 
 export const apps =  [
     {id:1,title:'forecastApp', src: slider1,
-    descc:'This is a single webpage weather forecast application. It uses the Visual Crossing forecast api.This is a single webpage weather forecast application. It uses the Visual Crossing forecast api.This is a single webpage weather forecast application. It uses the Visual Crossing forecast api.', 
+    descc:'This is a single page, weather forecast, web application. It uses the Visual Crossing forecast api and ipgeolocation api. The application provides data for, the current weather condition(temperature, wind speed, humidity, etc), and forecast for 1 day with hourly weather conditions. ', 
     technologies:'API, react.js, day.js, styled-components, cloudflare pages',
-    webLink: 'https://forecast.pages.dev'},
-    {id:2,title:'forecastApp', src: slider,
-    descc:'This is a single webpage weather forecast application. It uses the Visual Crossing forecast api.This is a single webpage weather forecast application. It uses the Visual Crossing forecast api.', 
-    technologies:'API, react.js, day.js, styled-components, cloudflare pages'}
+    webLink: 'https://forecastapp.pages.dev'},
 ]

@@ -46,16 +46,13 @@ console.log(curent)
     </ImgBackground></>)} </Slide>)  })}
     
     <Container>
-    {data.map((data)=>{ 
-      return (<Slide key={data.id}>
-         {data.id === current && (<>
     <Bd>
         <Ad>
             <H1>I BUILD THINGS</H1>
             <H2>NOT ONLY for THE WEB</H2>
-            <B><Resume/></B>
+            <B ><Resume/></B>
         </Ad>
-    </Bd></>)} </Slide>)  })}
+    </Bd> 
     </Container>
 
     </HeroCon>
@@ -67,8 +64,7 @@ export default Hero
 const HeroCon= styled.div`
     display: flex ;
     align-items: center;
-    position: relative ;
-    height: 100vh ; z-index:-1 ;
+    height: 100vh ; z-index:1 ;
     overflow-x: hidden; background-color: var(--backgrund);
     ::before{
         content: '';
@@ -78,10 +74,11 @@ const HeroCon= styled.div`
         bottom: 0;
         left: 0;
         background-color:rgba(1,1,1,0.75);  
-        z-index: 2; 
+        z-index: 1; 
      }
 `
-const Slide = styled.div``
+const Slide = styled.div`
+`
 
 const ImgBackground= styled.div`
     display: flex ;
@@ -93,7 +90,7 @@ const ImgBackground= styled.div`
     height:100% ; 
     
     transition:  all ease ;
-    animation:${({curent})=>(curent ? 'opacity 0.3s ease' : 'opacity 0.3s ease')}; 
+    animation:${({curent})=>(curent ? 'opacity 0.1s ease' : 'opacity 0.1s ease')}; 
 
 `
 const Img= styled.img`
@@ -105,10 +102,9 @@ const Img= styled.img`
 const Bd=styled.div`
     display: flex ;
     height:auto ;
-    width: 100% ; 
-    z-index:3 ;
+    width: 100% ;
+    z-index:2 ;
     margin-top:  '-50px'  ;
-    position: relative ;
     justify-content: center ;
     @media screen and (max-width: 750px){
         margin-top: ${({curent})=>(curent ? '-60px' :'2px')} ;
@@ -118,10 +114,9 @@ const Bd=styled.div`
 const Ad=styled.div`
     display: flex ;
     flex-direction:column ;
-    width: 100% ;
+    width: 100% ; 
     row-gap:10px ;
-    z-index:3 ;
-    position: relative ;
+    z-index:2 ;
 
 `
 const H1= styled.div`
@@ -149,7 +144,7 @@ const H2 = styled.div`
     font-size: 36px ;
     font-family: monospace ;
     font-weight:bold ;
-    color: rgb(200,200,200) ;
+    color: rgb(200,200,200) ; cursor: pointer;
     @media screen and (max-width: 800px){
         font-size: 32px ;
     }
@@ -160,10 +155,12 @@ const H2 = styled.div`
 
 `
 const B= styled.div`
-    display: none ;
+    display:flex  ;
     justify-content:center ; 
-    @media screen and (max-width: 768px){
-        display: flex ;
+    cursor: pointer;
+    z-index:20000;
+    @media screen and (min-width: 768px){
+        display: none ;
     }
 
 `

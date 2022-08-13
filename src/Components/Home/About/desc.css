@@ -1,0 +1,42 @@
+@keyframes desc{
+
+
+    0% {
+        opacity: 0;
+        transition: opacity 200ms ease;
+      }
+      50% {
+        opacity: 0.5;
+        transition: opacity 200ms ease;
+      }
+     100% {
+        opacity: 1;
+        transition: opacity 200ms ease;
+      }
+      /* Fade down
+      40% {
+        opacity: 0.01;
+        transform: translateY(-20px);
+        transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+      }
+      /* Fade */
+      /* 80% {
+        opacity: 0;
+      }
+      85% {
+        opacity: 1;
+        transition: opacity 300ms var(--easing);
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transition: opacity 300ms var(--easing);
+      } */ 
+}

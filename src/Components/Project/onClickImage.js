@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import './zoom.css'
 
-const OnClickImage = ({src,imageOpen, toggle}) => {
+
+const OnClickImage = ({src,imageOpen, toggle, animate, setAnimate}) => {
+
+
 
 
   return (
+    <div onClick={setAnimate}>
     <OnClickImageCon imageOpen={imageOpen} onClick={toggle}>
-        <ImageCon src={src}/>
+        <ImageCon src={src} animate={animate}/>
     </OnClickImageCon>
+
+    </div>
+
   )
 }
 
@@ -31,14 +39,28 @@ export const ImageCon = styled.img`
     display:flex;
     height:calc(100vh/1.6) ;
     width:calc(100vw/2) ;
+    animation: ${({animate})=>(animate?'zoom 0.5s ease':'')};
     @media screen and (max-width:920px){
         height:calc(100vh/4) ;
         width:100vw;
     @media  (max-height:1400px){
         height: calc(100vh/2.5)
     }
-    @media  (max-height:768px){
-        height: calc(100vh/3.1)
+    @media  (max-height:920px){
+        height: calc(100vh/2)
+    }
+    }
+    @media screen and (max-width:500px){
+        height:calc(100vh/4) ;
+        width:100vw;
+    @media  (max-height:1400px){
+        height: calc(100vh/2.5)
+    }
+    @media  (max-height:920px){
+        height: calc(100vh/3.5)
+    }
+    @media  (max-height:650px){
+        height: calc(100vh/3)
     }
     }
 

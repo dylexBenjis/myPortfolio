@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { Container } from '../../../GlobalLayout/index';
 import {FaReact, FaGithub, FaJava } from 'react-icons/fa'
 import Imag from '../../../Images/head.jpg'
 import Aos from 'aos';
 import {SiAndroidstudio, SiJavascript} from 'react-icons/si'
 import Hero from '../Hero/Hero';
+import { CSSTransition } from 'react-transition-group';
+import './desc.css';
 
 const Line = 'Welcome to my space';
 const Linee= '.';
@@ -17,10 +19,26 @@ const properHeight = height - 120;
 
 console.log(properHeight)
 
+const data = [
+    {id:1, companyName:'dylexBenji', role:'personal projects', duration:'',
+    companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.'},]},
+]
+
+
+
+
+
 const AboutUs = ({changeBtnIcon}) => {
 
 
-
+    // const ListOfWork=({companyName, description})=>{
+    //     return (
+    
+    //     <Ul>
+    //         <List  onClick={()=>{setDesc(description);}} descOneTrue={descOneTrue}> {companyName} </List>
+    //     </Ul>
+    //     )
+    // }
     const [animated, setAnime]=useState(!false)
     useEffect(()=>{setTimeout(()=>{
             setAnime(!animated)                
@@ -61,9 +79,27 @@ const AboutUs = ({changeBtnIcon}) => {
     const react={
         color:'#0096ff'
     }
-    const js={
-        color:'#dde000'
+
+    const [descRole, setDescRole] = useState(data[0].role);
+    const [descCompany, setDescCompany] = useState(data[0].companyName);
+    const [descCompanyLink, setDescCompanyLink] = useState(data[0].companyLink);
+    const [descDuration, setDescDuration] = useState(data[0].duration);
+    const [descBody, setDescBody] = useState(data[0].description);
+    const [descId, setDescId] = useState(1);
+    const [animate, setAnimate] = useState(false)
+    const descFunction =()=>{
+        
     }
+
+    useEffect(()=>{
+
+        setTimeout(()=>{
+                   if (animate===true){
+            setAnimate(false)
+        } 
+        }, 300)
+
+    },[animate])
 
   return (
       <AboutUsContainer id='home'>
@@ -97,7 +133,7 @@ const AboutUs = ({changeBtnIcon}) => {
                     </Button>
                     </Wrap><ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
                     </FirstWrapper>
-                    <SecondWrapper>
+                    <SecondWrapper >
                         <Wrapp>
                         <Wrap data-aos='fade-up' data-aos-delay='1000' data-aos-once='true'>
                             <Text1 > Skills </Text1>
@@ -125,13 +161,36 @@ const AboutUs = ({changeBtnIcon}) => {
                             </Text4>
                         </Wrap>
                         </Wrapp>
-                        <Wrap data-aos='fade-up' data-aos-delay='1200' data-aos-once='true'>
+                        <Wrap style={{zIndex:'50'}} data-aos='fade-up' data-aos-delay='1200' data-aos-once='true'>
                         <Text1 > Companies</Text1>
-                            <Text4>
-                                <Ul>
-                                    <Li> dylexBenji </Li>
-                                </Ul>
+                        <JobWrapper>
+                            <Text4 >
+                            {data.map((data)=>{
+                            return (
+                            <Ul key={data.id}>
+                                <ListOne active={(data.id===descId?'active':'')}  onClick={()=>{setDescRole(data.role);
+                                    setDescDuration(data.duration);setDescCompany(data.companyName);setDescCompanyLink(data.companyLink);setDescBody(data.description);setAnimate(!animate); setDescId(data.id)}} > {data.companyName} </ListOne>
+                            </Ul>
+                            )})}
                             </Text4>
+                            <Text4   >
+                                <Desc animation={animate}>
+                                
+                                    <div>{descRole} @ <a href={descCompanyLink} style={{textDecoration:'none',}}>{descCompany}</a></div><br/>
+                                    <div>{descDuration}</div>
+                                    {descBody.map(element=>{
+                                    return (
+                                    <ul key={element.id} style={{marginLeft:'20px'}}>
+                                    <li>{element.desc}</li>
+                                    </ul>
+                                    )
+                                    })}
+                                    
+                                </Desc>
+                            </Text4> 
+                                                
+                        </JobWrapper>
+
                         </Wrap>
                     </SecondWrapper>
                 
@@ -182,6 +241,7 @@ const Wrap= styled.div`
     display:flex ;
     flex-direction: column ;
     height:100% ; 
+    width:100% ;
     aLign-items: left ;   
     justify-content: center ;
 
@@ -244,7 +304,7 @@ const Text3= styled.div`
 `
 const Text4= styled.div`
 font-size: 18px;
-color: var(--text-primary);     cursor: pointer;
+color: var(--text-primary);    
 
 /* ::after{
     content:'_' ;
@@ -259,7 +319,7 @@ const ImageWrapper=styled.div`
     height: 200px ;
     width: 200px ;
     border: 5px soLid gray;
-    border-radius: 10px ; z-index:5;
+    border-radius: 10px ; z-index:2;
     @media screen and (max-width: 1300px){
         display: none ;
     }
@@ -284,13 +344,14 @@ const A= styled.div`
 `
 const Ul=styled.ul``
 const Li=styled.li`
+    cursor: pointer;
     margin-left:16px ;
     padding: 5px 0px 0px 10px ;
 `
 const Button = styled.a`
     width:100px ;
     text-decoration:none ;
-    height:40px ;z-index:5 ;
+    height:40px ;z-index:2 ;
     margin-top:12px ;
     background-color: var(--resume) ;
     color:var(--text-primary);
@@ -300,5 +361,53 @@ const Button = styled.a`
     cursor:pointer;
     @media screen and (max-width: 600px){
         font-size: 12px ;
+    }
+`
+const Desc = styled.div`
+    background-color: transparent; 
+    display:block ;
+    height:calc(auto+20px);
+    width:calc(100vw/5.5);
+    padding:5px 0px 5px 5px; cursor:default ;
+    animation: ${({animation})=>(animation?'desc 200ms':'')} ;
+    @media screen and (max-width:920px){
+        width:calc(100vw/1.7) ;
+    }
+`
+const ListOne = styled.div`    
+    display:flex ;
+    height: 50px ;
+    width: 40%;
+    padding:0px 10px;
+    align-items:center ;
+    z-index:2; cursor: pointer;
+    border-left: 3px solid var(--jobNotHighlighted) ;
+    transition: background-color 0.3s ease, border-left 1s ease ;
+    :hover{
+        color: orangered
+    }
+
+    ${props => props.active && css`
+    border-left:3px solid var(--jobHighlited) ;
+    color: orangered;
+  `}
+  @media screen and (max-width:920px){
+        height:40px;
+    }
+    @media screen and (max-width:600px){
+        height:35px;
+    }
+`
+
+const JobWrapper =styled.div`
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    gap:5px;
+    @media screen and (max-width:920px){
+        gap: 15px;
+    }
+    @media screen and (max-width:600px){
+        gap: 0px;
     }
 `

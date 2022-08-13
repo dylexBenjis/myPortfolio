@@ -11,11 +11,11 @@ import 'aos/dist/aos.css'
 
 
 var appSrc = ''
-const Ddisplay=({setAppSrc,id,title, src,descc, technologies, toggle, imageOpen, webLink})=> {
+const Ddisplay=({setAppSrc,id,title, src,descc, technologies, setAnimatee, toggle, imageOpen, webLink})=> {
 
 
 
-  return(<Idflex><C> {title}</C><Id onClick={()=>{appSrc=src}}> <A src={src} alt={title} onClick={toggle}></A>
+  return(<Idflex><C> {title}</C><div onClick={setAnimatee}><Id onClick={()=>{appSrc=src; }}> <A src={src} alt={title} onClick={toggle}></A>
                   <B><D>{descc}</D>
                   <F>{technologies}</F>
                   <E>
@@ -24,7 +24,7 @@ const Ddisplay=({setAppSrc,id,title, src,descc, technologies, toggle, imageOpen,
                   <Linkk href={webLink} target='_blank'><BiLinkExternal style={{cursor:'pointer',}} /></Linkk>
                   </E>
                   </B>
-               </Id> </Idflex>)
+               </Id></div> </Idflex>)
 
         
   }  
@@ -38,7 +38,16 @@ const WebApp= ({toggle, imageOpen}) => {
 
 console.log(appSrc)
 
+const [animate, setAnimate] = useState(false)
 
+const setAnimatee=()=>{
+  setAnimate(true)
+}
+const setAnime=()=>{
+  setAnimate(false)
+}
+
+console.log(animate)
   return (
 
   < >
@@ -48,13 +57,13 @@ console.log(appSrc)
           <WrapperGrid>
                     
           {apps.map((q) => {
-          return (<Ddisplay key={q.id} {...q} imageOpen={imageOpen} toggle={toggle} />)
+          return (<Ddisplay key={q.id} {...q} imageOpen={imageOpen} toggle={toggle} setAnimatee={setAnimatee}/>)
           })}
           </WrapperGrid>        
           </WebAppCon>
           </MyWorksWrapper>
     </Container>
-      {toggle? <OnClickImage src={appSrc} imageOpen={imageOpen} toggle={toggle} />:false} 
+      {toggle? <OnClickImage src={appSrc} imageOpen={imageOpen} toggle={toggle} animate={animate} setAnimate={setAnime} />:false} 
           </>
 
 )

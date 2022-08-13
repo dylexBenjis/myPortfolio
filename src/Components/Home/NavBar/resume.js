@@ -1,9 +1,10 @@
 import React from 'react'
 import { ResumeCon } from './NavBarElements';
+import docx from '../../../Images/cv.docx'
 
 const Resume = () => {
   return (
-    <ResumeCon to='/resume'>
+                  <ResumeCon href={docx} download>
                        Resume
                     </ResumeCon>
   )

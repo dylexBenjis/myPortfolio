@@ -41,7 +41,7 @@ export const NavBarWrapper=styled.div`
     padding:16px 0px 24px 0px;
 `
  
-export const LogoWrapper= styled.div` 
+export const LogoWrapper= styled(Link)` 
     height: 100%;
     width: auto;
     display: flex;
@@ -92,7 +92,7 @@ export const ThemeIcon = styled.div`
     
 `       
 
-export const ResumeCon= styled(Link)`
+export const ResumeCon= styled.a`
     width: 110% ;
     height: 100% ;
     display:flex ;

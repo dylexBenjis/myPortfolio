@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    -webkit-tap-highlight-color: transparent ;
 }
 :root {
     --background: rgb(224, 224, 224);
@@ -20,6 +21,8 @@
     --font-para: 32px;
     --para-weight: 500;
     --mobile:1450px;
+    --jobHighlited:rgb(82, 82, 82,1);
+    --jobNotHighlighted: rgba(83, 83, 83, 0.2);
     --IconBackground:  linear-gradient(180deg, var(--background)50%,transparent 100%);
   }
   [data-theme='dark'] {
@@ -34,6 +37,8 @@
     --navBarLin: rgb(46, 46, 46);
     --accent: darkred;
     --resume: rgba(136, 136, 136, 0.445);
+    --jobHighlited:rgba(200,200,200,1);
+    --jobNotHighlighted:rgba(200,200,200,0.2);
     --IconBackground:  linear-gradient(180deg, var(--background)50%,transparent 100%);
   }
 
