@@ -3,6 +3,7 @@
     0%{
         background-color: black;
         opacity:  0.1;
+        transition: all ease;
          }
     10%{
       opacity:  0.2;

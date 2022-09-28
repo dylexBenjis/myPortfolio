@@ -183,8 +183,8 @@ const CircleCanvas = ({ toggle}) => {
   
       const handleClick = (event) => {
         // fill in the mouse coordinates when we receive a click so we know the center of the circle
-        circleCenterCoordinates.x = event.detail.x;
-        circleCenterCoordinates.y = event.detail.y;
+        circleCenterCoordinates.x = event.x;
+        circleCenterCoordinates.y = event.y;
 
       };
           console.log(circleCenterCoordinates.x, circleCenterCoordinates.y);
@@ -194,11 +194,12 @@ const CircleCanvas = ({ toggle}) => {
         stateMachineRunner();
       };
   
-      window.addEventListener("darkModeComp", handleClick);
+      window.addEventListener("click", handleClick);
       window.addEventListener("resize", throttle(debounce(handleResize)), false);
+      
       return () => {
         isStateMachinePowered = false;
-        window.removeEventListener("darkModeComp", handleClick);
+        window.removeEventListener("click", handleClick);
         window.removeEventListener("resize", throttle(debounce(handleResize)), false);
       };
     }, [toggle]);
@@ -211,3 +212,10 @@ const CircleCanvas = ({ toggle}) => {
 
 
 export default CircleCanvas
+
+const size = styled.div`
+  width:100vw ;
+  height:100vh ;
+  position:fixed;
+  z-index:-1;
+`

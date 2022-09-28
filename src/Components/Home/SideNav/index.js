@@ -4,6 +4,7 @@ import { FaProjectDiagram, FaGithub, FaFacebook,FaTwitter, FaYoutube } from 'rea
 import { GoHome } from 'react-icons/go'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
+import Aos from 'aos'
 
 const SideNav = () => {
 
@@ -19,34 +20,40 @@ const SideNav = () => {
     width : '50%',
   }
   console.log(path1)
+
+  Aos.init({
+    easing:'ease-in-sine',
+    duration:700,
+})
+
   return (
     <SideNavv>
       <Container>
         <SideNavWrapper>
           <A>        
-            <Icon>
+            <Icon  data-aos='fade-right'>
               <IconsWrapper to='' href='/' className={className1}>
                 <GoHome style={Iconstyle}/>
               </IconsWrapper>
             </Icon>
-            <Icon>
+            <Icon  data-aos='fade-right' data-aos-delay='250'>
               <IconsWrapper to='project' className={className2}>
                 <FaProjectDiagram style={Iconstyle} />
               </IconsWrapper>
             </Icon>
           </A>
         </SideNavWrapper>
-          <SocialWrapper>
-            <Iccon href='https://github.com/dylexBenjis' target='_blank'><FaGithub/></Iccon>
-            <Iccon3 href='https://facebook.com/benji.tentacion' target='_blank'><FaFacebook/></Iccon3>
-            <Iccon1 href='https://twitter.com/benjichukwudile' target='_blank'><FaTwitter/></Iccon1>
-            <Iccon2 href='https://www.youtube.com/channel/UCnWtQg6qkHjREjELCelAfzA' target='_blank'><FaYoutube/></Iccon2>
+          <SocialWrapper data-aos='fade-in' data-aos-once='true'>
+            <Iccon href='https://github.com/dylexBenjis' target='_blank' data-aos='fade-left' data-aos-delay='200' data-aos-once='true'><FaGithub/></Iccon>
+            <Iccon3 href='https://facebook.com/benji.tentacion' target='_blank' data-aos='fade-left' data-aos-delay='300' data-aos-once='true'><FaFacebook/></Iccon3>
+            <Iccon1 href='https://twitter.com/benjichukwudile' target='_blank' data-aos='fade-left' data-aos-delay='400' data-aos-once='true'><FaTwitter/></Iccon1>
+            <Iccon2 href='https://www.youtube.com/channel/UCnWtQg6qkHjREjELCelAfzA' target='_blank' data-aos='fade-left' data-aos-delay='500' data-aos-once='true'><FaYoutube/></Iccon2>
           </SocialWrapper>
-        <FooterWrapper>
-        <TextFooter>
+        <FooterWrapper >
+        <TextFooter data-aos='fade-up' data-aos-delay='150' data-aos-offset='-200' data-aos-once='true'>
               built by&nbsp; 
         </TextFooter>
-        <TextFooter>
+        <TextFooter data-aos='fade-up' data-aos-delay='300' data-aos-offset='-200' data-aos-once='true'>
             dylexBenji
         </TextFooter>
         </FooterWrapper>

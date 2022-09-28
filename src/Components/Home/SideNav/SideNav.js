@@ -74,7 +74,7 @@ export const SocialWrapper = styled.div`
         }
     }        
     @media screen and (max-width:1300px){
-            right: 10px;
+            right: 20px;
             width: 32px ;
         }
         @media screen and (max-width:600px){

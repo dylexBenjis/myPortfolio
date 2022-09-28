@@ -5,6 +5,7 @@ import src1 from '../../../Images/img4.jpg'
 import src2 from '../../../Images/img1.jpg'
 import './anim.css'
 import Resume from '../NavBar/resume';
+import Aos from 'aos';
 
 const data= [
     { id:0,src: src1,
@@ -37,12 +38,17 @@ console.log(curent)
      }}
     }, [current,curent,length]) ;
 
+    Aos.init({
+        easing:'ease-in-sine',
+        duration:700,
+    })
+
   return (
     <HeroCon>
             {data.map((data)=>{ 
       return (<Slide key={data.id}>
          {data.id === current && (<> <ImgBackground curent={curent}>
-        <Img src={data.src}/>
+        <Img src={data.src} data-aos='fade-in'/>
     </ImgBackground></>)} </Slide>)  })}
     
     <Container>
@@ -65,7 +71,7 @@ const HeroCon= styled.div`
     display: flex ;
     align-items: center;
     height: 100vh ; z-index:1 ;
-    overflow-x: hidden; background-color: var(--backgrund);
+    overflow-x: hidden; background-color: rgba(1,1,1,1);
     ::before{
         content: '';
         position: absolute;
@@ -87,16 +93,14 @@ const ImgBackground= styled.div`
     left:0 ;
     right:0;
     top:0 ;
-    height:100% ; 
-    
-    transition:  all ease ;
-    animation:${({curent})=>(curent ? 'opacity 0.1s ease' : 'opacity 0.1s ease')}; 
+    height:100% ;    
 
 `
 const Img= styled.img`
     height: 100% ;
     width: 100% ;
     object-fit: cover ;
+    animation
 
 `
 const Bd=styled.div`
@@ -159,8 +163,5 @@ const B= styled.div`
     justify-content:center ; 
     cursor: pointer;
     z-index:20000;
-    @media screen and (min-width: 768px){
-        display: none ;
-    }
 
 `

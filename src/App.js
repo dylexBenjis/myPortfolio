@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import React, { useState , useEffect} from 'react';
 import Page from './pages/page';
 import MyWorks from './Components/Home/MySkills-Works';
+import LoadingLayout from './LoadingLayout';
 
 
 
@@ -59,20 +60,23 @@ useEffect(()=>{
      setImageOpen(!imageOpen)
    }
 
+   const[i,setI]=useState(true);
+  setTimeout(()=>{setI(false)},5500);
+
   return (
  <div className="App" data-theme={theme} > 
-       
-      {/* <CircleCanvas theme={theme} toggle={toggle}/> */}
-      <BackgroundImageWrapper/>
-      <BrowserRouter>
-      <Routes>
-      <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>
-          }>
-          <Route path='project' element={<MyWorks imageOpen={imageOpen} toggle={ImageToggle}/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter> 
-
+                 {/* {i ? (<LoadingLayout/>) : (*/}<>  
+                          <BackgroundImageWrapper/>
+                          <BrowserRouter>
+                            <Routes>
+                              <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>
+                                }>
+                                <Route path='project' element={<MyWorks imageOpen={imageOpen} toggle={ImageToggle}/>} />
+                              </Route>
+                            </Routes>
+                          </BrowserRouter>
+                           </> {/*)
+                } */}
     </div>
   );
 }

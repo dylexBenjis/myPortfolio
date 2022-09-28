@@ -85,7 +85,10 @@ export const ThemeIcon = styled.div`
     border-radius: 70px;
     align-content: center ;
     justify-content: center;
-    align-items: center;    
+    align-items: center;       
+    @media screen and (max-width:1300px){
+        font-size: 1.5rem;
+    }
     @media screen and (max-width:768px){
      font-size: 0.9rem;
     }
@@ -93,11 +96,11 @@ export const ThemeIcon = styled.div`
 `       
 
 export const ResumeCon= styled.a`
-    width: 110% ;
-    height: 100% ;
+    width: 10.5% ;
+    height: 155% ;
     display:flex ;
     align-items: center ;
-    font-size: 16px;
+    font-size: 20px;
     justify-content:center ;
     cursor: pointer;
     background-color:var(--resume); 
@@ -108,12 +111,12 @@ export const ResumeCon= styled.a`
     :hover{
         transform: scale(1.083);
         transition: 0.1s all ease-in-out ;
-        color: red;
+        color: orangered;
     }
     @media screen and (max-width:1300px){
       font-size: 16px ;
-      height:90% ;
-      width:130% ;
+      height:2rem ;
+      width:6rem ;
     }
     @media screen and (max-width:768px){
      height: 2rem ;
@@ -122,13 +125,10 @@ export const ResumeCon= styled.a`
 `
 
 export const A= styled.div`
-    display: grid; 
+    display: flex; 
     height: 100%;
-    grid-template-columns: 90px 40px ;
-    column-gap: 50px ; 
+    width: 40px ; 
     align-items: center ;
-    @media screen and (max-width:1300px){
-        grid-template-columns: 55px 25px ;
-        column-gap: 35px;
-    }
+    justify-content:center;
+
 `

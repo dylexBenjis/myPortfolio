@@ -9,6 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 import DarkModeComp from './DarkModeComp';
 import Burger from './Burger';
 import Resume from './resume';
+import Aos from 'aos';
 
 
 const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
@@ -20,32 +21,35 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
     // const className1 = ;
     // const className2 = path2===location.pathname ? 'active':'';
 
- 
+    Aos.init({
+        easing:'ease-in-sine',
+        duration:700,
+    })
+
   return (
     <Nav scrollNav={scrollNav} IsOpen={IsOpen}>
         <Containerr>
             <NavBarWrapper>
-                <LogoWrapper to='' >
+                <LogoWrapper to='' data-aos='fade-in' data-aos-delay='250'>
                    <Logo1 src={dylex} scrollNav={scrollNav} />
                 </LogoWrapper>
                 
-                <MobileIcon onClick={toggle}>
-                    <Burger IsOpen={IsOpen}/>
+                <MobileIcon onClick={toggle} data-aos='fade-in' data-aos-delay='400'>
+                    <Burger IsOpen={IsOpen} scrollNav={scrollNav}/>
                 </MobileIcon>
 
-                <B>
-                <LinkWrapper>
-                    <Button to=''  className={path1===location.pathname ? 'active':''}>
+                <B data-aos='fade-in' data-aos-delay='400'>
+                <LinkWrapper >
+                    <Button to='' scrollnav={scrollNav}  className={path1===location.pathname ? 'active':''} >
                         Home
                     </Button>
-                    <Button  to='project' className={path2===location.pathname ? 'active':''}>
+                    <Button  to='project' scrollnav={scrollNav} className={path2===location.pathname ? 'active':''} >
                         Projects
                     </Button>
                 </LinkWrapper>
                 <ButtonWrapper>
                     <A>
-                    <Resume/>
-                    <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} scrollNav={scrollNav}/>
+                    <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} scrollNav={scrollNav} data-aos='fade-in'/>
                     </A>
                 </ButtonWrapper>
                 </B>
@@ -59,9 +63,11 @@ export default NavBar
 
 const B= styled.div`
     display:flex ;
-    gap:70px ;
+    height:100% ;
+    width:100% ;
+    column-gap:70px ;
     align-items: center ;
-    align-content: center ;
+    justify-content: right ;
     flex-direction:row ;
     @media screen and (max-width:768px){
      display: none ;
@@ -72,7 +78,6 @@ const LinkWrapper = styled.div`
     display: flex ;
     flex-direction: row ;
     align-items: center ;
-    align-content: center ;
     justify-content:center ;
     gap: 25px ;
 
@@ -86,7 +91,8 @@ const LinkWrapper = styled.div`
 
 const Button=styled(Link)`
     font-size: 16px ;
-    text-decoration: none ;  color: var(--text-primary) ;
+    text-decoration: none ;  
+    color: var(--text-primary) ;
     &.active{
         color: orangered ;
         transform: scalex(1.083) ;
