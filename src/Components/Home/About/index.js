@@ -22,6 +22,11 @@ console.log(properHeight)
 const data = [
     {id:1, companyName:'dylexBenji', role:'personal projects', duration:'',
     companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.'},]},
+    {id:2, companyName:'Google', role:'personal projects', duration:'',
+    companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.developed a forecast web application.developed a forecast web application.'},
+    {id:2, desc:'developed a forecast web application.developed a forecast web application.developed a forecast web application.'}]},
+    {id:3, companyName:'Microsoft', role:'personal projects', duration:'',
+    companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.'},]},
 ]
 
 
@@ -161,7 +166,7 @@ const AboutUs = ({changeBtnIcon}) => {
                             </Text4>
                         </Wrap>
                         </Wrapp>
-                        <Wrap style={{zIndex:'50'}} data-aos='fade-up' data-aos-delay='1200' data-aos-once='true'>
+                        <Wrapcom style={{zIndex:'50'}} data-aos='fade-up' data-aos-delay='1200' data-aos-once='true'>
                         <Text1 > Companies</Text1>
                         <JobWrapper>
                             <Text4 >
@@ -174,6 +179,7 @@ const AboutUs = ({changeBtnIcon}) => {
                             )})}
                             </Text4>
                             <Text4   >
+                                <div style={{display:'flex',backgroundColor:'var(--navBarLin)', padding:'0px 15px 5px 5px', height:'100%', width:'100%'}}>
                                 <Desc animation={animate}>
                                 
                                     <div>{descRole} @ <a href={descCompanyLink} style={{textDecoration:'none',}}>{descCompany}</a></div><br/>
@@ -187,11 +193,12 @@ const AboutUs = ({changeBtnIcon}) => {
                                     })}
                                     
                                 </Desc>
+                                </div>
                             </Text4> 
                                                 
                         </JobWrapper>
 
-                        </Wrap>
+                        </Wrapcom>
                     </SecondWrapper>
                 
               </AboutUsWrapper>
@@ -225,10 +232,10 @@ const FirstWrapper= styled.div`
 `
 const SecondWrapper= styled.div`
     height: auto;
+    width:100% ;
     display: flex;
     flex-direction: row;
     column-gap:150px ;
-
     margin-top:50px ;
     @media screen and (max-width: 1300px){
         flex-direction: column ;
@@ -247,10 +254,19 @@ const Wrap= styled.div`
 
 
 `
+const Wrapcom= styled.div`
+    display:flex ;
+    flex-direction: column ;
+    height:100% ; 
+    width:100% ;
+    aLign-items: left ;   
+    justify-content: center ; 
+
+`
 const Wrapp= styled.div`
     display:flex ;
     flex-direction: row ;
-    height:100% ; 
+    height:100% ;
     column-gap:150px ;
     @media screen and (max-width: 600px){
         column-gap:30px;
@@ -364,21 +380,17 @@ const Button = styled.a`
     }
 `
 const Desc = styled.div`
-    background-color: transparent; 
-    display:block ;
-    height:calc(auto+20px);
-    width:calc(100vw/5.5);
-    padding:5px 0px 5px 5px; cursor:default ;
+    display:block;
+    height:auto;
+    width: 100%;
+    padding: 10px 0px 15px 10px; cursor:default ;
     animation: ${({animation})=>(animation?'desc 200ms':'')} ;
-    @media screen and (max-width:920px){
-        width:calc(100vw/1.7) ;
-    }
 `
 const ListOne = styled.div`    
     display:flex ;
     height: 50px ;
-    width: 40%;
-    padding:0px 10px;
+    width: 100%;
+    padding:0px 30px 0px 10px;
     align-items:center ;
     z-index:2; cursor: pointer;
     border-left: 3px solid var(--jobNotHighlighted) ;
@@ -390,6 +402,7 @@ const ListOne = styled.div`
     ${props => props.active && css`
     border-left:3px solid var(--jobHighlited) ;
     color: orangered;
+    background-color: var(--navBarLin) ;
   `}
   @media screen and (max-width:920px){
         height:40px;
@@ -401,9 +414,8 @@ const ListOne = styled.div`
 
 const JobWrapper =styled.div`
     display:flex;
-    flex-direction:row;
+    flex-direction:row ;
     width:100%;
-    gap:5px;
     @media screen and (max-width:920px){
         gap: 15px;
     }
