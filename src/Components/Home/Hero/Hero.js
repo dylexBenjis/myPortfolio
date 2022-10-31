@@ -27,7 +27,7 @@ console.log(curent)
     useEffect(()=>{
         const nextSlide =()=>{
             setCurent(!curent)
-            setCurrent(current===length-1?0: current+1)
+            setCurrent(current===length-1 ? 0 : current+1)
             
          };
         timeout.current = setTimeout(nextSlide,20000);
@@ -39,7 +39,7 @@ console.log(curent)
     }, [current,curent,length]) ;
 
     Aos.init({
-        easing:'ease-in-sine',
+        easing:'ease-in',
         duration:700,
     })
 
@@ -54,8 +54,8 @@ console.log(curent)
     <Container>
     <Bd>
         <Ad>
-            <H1>I BUILD THINGS</H1>
-            <H2>NOT ONLY for THE WEB</H2>
+            {/* <H1>I BUILD THINGS</H1>
+            <H2>NOT ONLY for THE WEB</H2> */}
             <B ><Resume/></B>
         </Ad>
     </Bd> 

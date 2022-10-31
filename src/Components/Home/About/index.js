@@ -22,11 +22,7 @@ console.log(properHeight)
 const data = [
     {id:1, companyName:'dylexBenji', role:'personal projects', duration:'',
     companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.'},]},
-    {id:2, companyName:'Google', role:'personal projects', duration:'',
-    companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.developed a forecast web application.developed a forecast web application.'},
-    {id:2, desc:'developed a forecast web application.developed a forecast web application.developed a forecast web application.'}]},
-    {id:3, companyName:'Microsoft', role:'personal projects', duration:'',
-    companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.'},]},
+    
 ]
 
 

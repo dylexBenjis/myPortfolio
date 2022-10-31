@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useEffect, useState} from 'react'
 import dylex from '../../../Images/dylexBenji.png'
 import { Nav, NavBarWrapper, MobileIcon, ThemeIcon,
     Logo,Logo1, LogoWrapper,Icon, A,
@@ -17,7 +17,7 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
     const path1= '/';
     const path2 = '/project'
     const location = useLocation('');
-    console.log(location.pathname);
+    console.log(location.pathname, changeBtnIcon);
     // const className1 = ;
     // const className2 = path2===location.pathname ? 'active':'';
 
@@ -26,6 +26,13 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
         duration:700,
     })
 
+    const[path, setPath] = useState(false);
+    useEffect(()=>{
+        if(location.pathname===path2){
+            setPath(true)
+        }
+        else(setPath(false))
+    },[path2, location.pathname])
   return (
     <Nav scrollNav={scrollNav} IsOpen={IsOpen}>
         <Containerr>
@@ -34,8 +41,8 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
                    <Logo1 src={dylex} scrollNav={scrollNav} />
                 </LogoWrapper>
                 
-                <MobileIcon onClick={toggle} data-aos='fade-in' data-aos-delay='400'>
-                    <Burger IsOpen={IsOpen} scrollNav={scrollNav}/>
+                <MobileIcon onClick={toggle} data-aos='fade-in' data-aos-delay='400' >
+                    <Burger IsOpen={IsOpen} scrollNav={scrollNav} path={path} b={changeBtnIcon}/>
                 </MobileIcon>
 
                 <B data-aos='fade-in' data-aos-delay='400'>

@@ -71,7 +71,7 @@ useEffect(()=>{
                             <Routes>
                               <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>
                                 }>
-                                <Route path='project' element={<MyWorks imageOpen={imageOpen} toggle={ImageToggle}/>} />
+                                <Route path='project' element={<MyWorks imageOpen={imageOpen} toggle={ImageToggle} />} />
                               </Route>
                             </Routes>
                           </BrowserRouter>
