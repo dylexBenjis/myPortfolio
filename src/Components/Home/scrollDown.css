@@ -1,0 +1,39 @@
+@keyframes arrow{
+    0% {opacity:0}
+    40%{opacity:1}
+    80%{opacity:0}
+    100%{opacity:0}
+}
+
+.arrows{
+    height: 75px;
+    width: 60px;
+    left: 50%;
+    position:absolute;
+    margin-left: -30px;
+    bottom: 40px;
+
+}
+
+
+.arrows path{
+    fill: transparent;
+    stroke-width: 2px;
+    animation: arrow 1.5s infinite;
+}
+
+.arrows path.a1{
+    stroke: rgb(119, 119, 119);
+    animation-delay: -1s;
+    
+}
+.arrows path.a2{
+    stroke: rgb(119, 119, 119);
+    animation-delay: -0.5s;
+
+}
+.arrows path.a3{
+    stroke: rgb(119, 119, 119);
+    animation-delay: 0s;
+}
+

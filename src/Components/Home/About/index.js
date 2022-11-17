@@ -5,9 +5,10 @@ import {FaReact, FaGithub, FaJava } from 'react-icons/fa'
 import Imag from '../../../Images/head.jpg'
 import Aos from 'aos';
 import {SiAndroidstudio, SiJavascript} from 'react-icons/si'
-import Hero from '../Hero/Hero';
+import Hero, { Bs } from '../Hero/Hero';
 import { CSSTransition } from 'react-transition-group';
 import './desc.css';
+import ScrollDown from '../scrollDown';
 
 const Line = 'Welcome to my space';
 const Linee= '.';
@@ -103,13 +104,13 @@ const AboutUs = ({changeBtnIcon}) => {
     },[animate])
 
   return (
-      <AboutUsContainer id='home'>
+      <AboutUsContainer >
         <Hero changeBtnIcon={changeBtnIcon}/>
 
           <Container  >
               
               <AboutUsWrapper>
-                  <FirstWrapper>
+                  <FirstWrapper id='about'>
                   <Wrap><Text1 data-aos='fade-right' data-aos-once='true'>
                         Hi, I am
                     </Text1>
@@ -133,8 +134,17 @@ const AboutUs = ({changeBtnIcon}) => {
                         Contact me
                     </Button>
                     </Wrap><ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
+                    <Bs to='experience' 
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        hashSpy={true}
+                        delay={200}
+                        isDynamic={true}
+                        ignoreCancelEvents={false}
+                        spyThrottle={500}><ScrollDown/></Bs> 
                     </FirstWrapper>
-                    <SecondWrapper >
+                    <SecondWrapper id='experience'>
                         <Wrapp>
                         <Wrap data-aos='fade-up' data-aos-delay='1000' data-aos-once='true'>
                             <Text1 > Skills </Text1>
@@ -196,7 +206,7 @@ const AboutUs = ({changeBtnIcon}) => {
 
                         </Wrapcom>
                     </SecondWrapper>
-                
+
               </AboutUsWrapper>
          </Container>
       </AboutUsContainer>
@@ -218,21 +228,22 @@ const AboutUsWrapper= styled.div`
     flex-direction: column;
 `
 const FirstWrapper= styled.div`
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     gap:20px ;
-    @media screen and (max-width: 1300px){
-        flex-direction: column ;
-    }
+    align-items:center ;
+    position:relative ;
+
 `
 const SecondWrapper= styled.div`
-    height: auto;
+    height: 100vh;
     width:100% ;
     display: flex;
     flex-direction: row;
     column-gap:150px ;
-    margin-top:50px ;
+    align-items:center ;
+    justify-content:center ;
     @media screen and (max-width: 1300px){
         flex-direction: column ;
         row-gap: 30px ;
@@ -243,26 +254,24 @@ const SecondWrapper= styled.div`
 const Wrap= styled.div`
     display:flex ;
     flex-direction: column ;
-    height:100% ; 
+    height:auto ; 
     width:100% ;
-    aLign-items: left ;   
-    justify-content: center ;
-
+    align-items: left ;   
 
 `
 const Wrapcom= styled.div`
     display:flex ;
     flex-direction: column ;
-    height:100% ; 
+    height:auto ; 
     width:100% ;
-    aLign-items: left ;   
-    justify-content: center ; 
+    align-items: left ;   
 
 `
 const Wrapp= styled.div`
     display:flex ;
     flex-direction: row ;
-    height:100% ;
+    height:auto ;
+    width:100%;
     column-gap:150px ;
     @media screen and (max-width: 600px){
         column-gap:30px;

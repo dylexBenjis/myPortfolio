@@ -6,6 +6,8 @@ import src2 from '../../../Images/img1.jpg'
 import './anim.css'
 import Resume from '../NavBar/resume';
 import Aos from 'aos';
+import ScrollDown from '../scrollDown';
+import { Link } from 'react-scroll';
 
 const data= [
     { id:0,src: src1,
@@ -59,8 +61,17 @@ console.log(curent)
             <B ><Resume/></B>
         </Ad>
     </Bd> 
-    </Container>
 
+    </Container>
+    <Bs to='about' 
+        spy={true}
+        smooth={true}
+        offset={0}
+        hashSpy={true}
+        delay={200}
+        isDynamic={true}
+        ignoreCancelEvents={false}
+        spyThrottle={500}><ScrollDown/></Bs>
     </HeroCon>
   )
 }
@@ -69,7 +80,9 @@ export default Hero
 
 const HeroCon= styled.div`
     display: flex ;
+    flex-direction: column ;
     align-items: center;
+    justify-content:center ;
     height: 100vh ; z-index:1 ;
     overflow-x: hidden; background-color: rgba(1,1,1,1);
     ::before{
@@ -118,7 +131,7 @@ const Bd=styled.div`
 const Ad=styled.div`
     display: flex ;
     flex-direction:column ;
-    width: 100% ; 
+    width: auto ; 
     row-gap:10px ;
     z-index:2 ;
 
@@ -158,10 +171,18 @@ const H2 = styled.div`
     }
 
 `
-const B= styled.div`
+export const B= styled.div`
     display:flex  ;
     justify-content:center ; 
     cursor: pointer;
-    z-index:20000;
+    z-index:2;
+
+`
+export const Bs= styled(Link)`
+    display:flex  ;
+    justify-content:center ; 
+    cursor: pointer;
+    z-index:2;
+    background-color: red ;
 
 `

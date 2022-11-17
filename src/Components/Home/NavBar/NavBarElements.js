@@ -96,7 +96,7 @@ export const ThemeIcon = styled.div`
 `       
 
 export const ResumeCon= styled.a`
-    width: 10.5% ;
+    width: 6rem ;
     height: 155% ;
     display:flex ;
     align-items: center ;
