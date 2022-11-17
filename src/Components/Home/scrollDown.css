@@ -19,7 +19,7 @@
 .arrows path{
     fill: transparent;
     stroke-width: 2px;
-    animation: arrow 1.5s infinite;
+    animation: arrow 2s infinite;
 }
 
 .arrows path.a1{
