@@ -217,13 +217,10 @@ export default AboutUs;
 
 const AboutUsContainer= styled.div `
 
-    margin-bottom:20px ; 
-    @media screen and (max-width: 600px){
-        margin-top: 0 ;
-    }
+
 `
 const AboutUsWrapper= styled.div`
-    height: 100%; margin: 50px 0px 150px 0px ;
+    height: 100%;
     display: flex; 
     flex-direction: column;
 `
