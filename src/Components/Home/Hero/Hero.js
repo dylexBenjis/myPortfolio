@@ -82,6 +82,7 @@ export default Hero
 const HeroCon= styled.div`
     display: flex ;
     flex-direction: column ;
+    position:relative;
     align-items: center;
     justify-content:center ;
     height: 100vh ; z-index:1 ;
