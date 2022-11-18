@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import {SideNavv,Container ,SideNavWrapper, A, Icon, IconsWrapper, FooterWrapper, FooterWrapper1, SocialWrapper} from './SideNav'
-import { FaProjectDiagram, FaGithub, FaFacebook,FaTwitter, FaYoutube } from 'react-icons/fa'
+import {SideNavv,Container ,SideNavWrapper, A, Icon, IconsWrapper, FooterWrapper, FooterWrapper1, SocialWrapper, GoUp} from './SideNav'
+import { FaProjectDiagram, FaGithub, FaFacebook,FaTwitter, FaYoutube, FaArrowUp } from 'react-icons/fa'
 import { GoHome } from 'react-icons/go'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
@@ -8,10 +8,22 @@ import Aos from 'aos'
 
 const SideNav = () => {
 
+  const [scroll, setScroll] = useState();
+  const X = () => {
+    if(window.scrollY >= 50){
+      setScroll(true);
+    }
+    else{setScroll(false)}
+  }
+  useEffect(()=>{
+    window.addEventListener('scroll',X)
+  },[X])
+
   const path1= '/';
   const path2 = '/project'
   const location = useLocation('');
-  console.log(location.pathname);
+  console.log(location.pathname, scroll);
+  console.log(scroll)
   const className1 = path1===location.pathname ? 'active':'';
   const className2 = path2===location.pathname ? 'active':'';
 
@@ -58,6 +70,15 @@ const SideNav = () => {
         </TextFooter>
         </FooterWrapper>
       </Container>
+      <GoUp scroll={scroll} to=' ' 
+        spy={true}
+        smooth={true}
+        offset={0}
+        hashSpy={true}
+        delay={200}
+        isDynamic={true}
+        ignoreCancelEvents={false}
+        spyThrottle={500}><FaArrowUp/></GoUp>
     </SideNavv>
   )
 }
@@ -66,7 +87,7 @@ export default SideNav
 
 const TextFooter= styled.div`
     font-size: 16px; font-family: monospace ;
-    color: var(--text-primary-light);
+    color: green;
     display: flex;
     @media screen and (max-width:1300px){
             font-size: 14px ;

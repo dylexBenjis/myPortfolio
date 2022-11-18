@@ -8,7 +8,7 @@ import Side_bar from '../Components/Home/Side_bar';
 import OnClickImage from '../Components/Project/onClickImage';
 import { Container } from '../GlobalLayout';
 
-const Page = ({toggle, scrollNav, ChangeToggle, ChangeTheme, theme, ImageToggle, imageOpen}) => {
+const Page = ({ toggle, scrollNav, ChangeToggle, ChangeTheme, theme, ImageToggle, imageOpen}) => {
 
   //path variable to keep track of react outlet
   const [path, setPath] = useState();
@@ -35,7 +35,7 @@ const Page = ({toggle, scrollNav, ChangeToggle, ChangeTheme, theme, ImageToggle,
     <div >
 
     <NavBar IsOpen={IsOpen} toggle={togggle} changeBtnIcon={toggle} scrollNav={scrollNav} ChangeToggle={ChangeToggle} ChangeTheme={ChangeTheme} theme={theme}/>
-    <Side_bar IsOpen={IsOpen} scrollNav={scrollNav} toggle={togggle} ChangeTheme={ChangeTheme} changeBtnIcon={toggle} ChangeToggle={ChangeToggle}/>
+    <Side_bar  IsOpen={IsOpen} scrollNav={scrollNav} toggle={togggle} ChangeTheme={ChangeTheme} changeBtnIcon={toggle} ChangeToggle={ChangeToggle}/>
  
     {/* <A>
       <Container> */}

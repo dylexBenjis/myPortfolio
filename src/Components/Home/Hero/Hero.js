@@ -46,7 +46,8 @@ console.log(curent)
     })
 
   return (
-    <HeroCon>
+    <HeroCon  id=' '>
+        
             {data.map((data)=>{ 
       return (<Slide key={data.id}>
          {data.id === current && (<> <ImgBackground curent={curent}>
@@ -62,7 +63,7 @@ console.log(curent)
         </Ad>
     </Bd> 
 
-    </Container>
+    </Container >
     <Bs to='about' 
         spy={true}
         smooth={true}

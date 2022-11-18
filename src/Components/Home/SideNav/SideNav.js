@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link as LinkS } from 'react-router-dom'
+import { Link } from 'react-scroll';
 
 export const SideNavv= styled.div`
 
@@ -125,4 +126,34 @@ export const IconsWrapper = styled(LinkS)`
     }
 
                
+`
+export const GoUp = styled(Link)`
+    display: flex ;
+    flex-direction: column ;
+    position: fixed ;
+    background-color:rgba(39,200,72,0.2) ;
+    color: var(--text-primary) ;
+    height:40px ;
+    width:60px ; 
+    right:${({scroll})=>(scroll?'100px':'-60px')};
+    bottom: 70px ;
+    font-size:25px ;
+    border-radius:20px ;
+    align-items: center ;
+    justify-content:center ;
+    z-index:10 ;
+    transition: 0.5s all ease-in-out ;
+    cursor: pointer;
+    @media screen and (max-width:1300px){
+            right: 40px;
+            width: 32px ;
+        }
+        @media screen and (max-width:600px){
+            right: ${({scroll})=>(scroll?'30px':'-35px')};
+            bottom:50px;
+            width: 35px ;
+            height: 25px ;
+            font-size:16px ;
+        }
+
 `

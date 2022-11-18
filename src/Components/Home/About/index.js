@@ -172,7 +172,7 @@ const AboutUs = ({changeBtnIcon}) => {
                             </Text4>
                         </Wrap>
                         </Wrapp>
-                        <Wrapcom style={{zIndex:'50'}} data-aos='fade-up' data-aos-delay='1200' data-aos-once='true'>
+                        <Wrapcom  data-aos='fade-up' data-aos-delay='1200' data-aos-once='true'>
                         <Text1 > Companies</Text1>
                         <JobWrapper>
                             <Text4 >
@@ -184,8 +184,8 @@ const AboutUs = ({changeBtnIcon}) => {
                             </Ul>
                             )})}
                             </Text4>
-                            <Text4   >
-                                <div style={{display:'flex',backgroundColor:'var(--navBarLin)', padding:'0px 15px 5px 5px', height:'100%', width:'100%'}}>
+                            <div style={{display:'flex',backgroundColor:'var(--navBarLin)', padding:'0px 15px 5px 5px', height:'100%', width:'100%'}}>
+                            <Text4>
                                 <Desc animation={animate}>
                                 
                                     <div>{descRole} @ <a href={descCompanyLink} style={{textDecoration:'none',}}>{descCompany}</a></div><br/>
@@ -199,9 +199,9 @@ const AboutUs = ({changeBtnIcon}) => {
                                     })}
                                     
                                 </Desc>
-                                </div>
-                            </Text4> 
-                                                
+                            
+                            </Text4>     
+                            </div>                                                
                         </JobWrapper>
 
                         </Wrapcom>
@@ -230,7 +230,12 @@ const FirstWrapper= styled.div`
     flex-direction: row;
     gap:20px ;
     align-items:center ;
+    justify-content:center ;
     position:relative ;
+    @media screen and (max-width: 1300px){
+        flex-direction: column ;
+        row-gap: 30px ;
+    }  
 
 `
 const SecondWrapper= styled.div`
@@ -262,6 +267,7 @@ const Wrapcom= styled.div`
     height:auto ; 
     width:100% ;
     align-items: left ;   
+    z-index:2 ;
 
 `
 const Wrapp= styled.div`
@@ -338,8 +344,11 @@ const ImageWrapper=styled.div`
     width: 200px ;
     border: 5px soLid gray;
     border-radius: 10px ; z-index:2;
+    :hover{
+            border: none ;
+        }
     @media screen and (max-width: 1300px){
-        display: none ;
+        /* display: none ; */
     }
 `
 const Img = styled.div`
@@ -354,6 +363,8 @@ const Img = styled.div`
     transition: 0.6s all ease-in-out;
     :hover{
             filter:none ;
+            bottom:0px;
+            right:0px ;
         }
 `
 
@@ -418,6 +429,7 @@ const JobWrapper =styled.div`
     display:flex;
     flex-direction:row ;
     width:100%;
+    background-color:red ;
     @media screen and (max-width:920px){
         gap: 15px;
     }

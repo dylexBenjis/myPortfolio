@@ -29,6 +29,7 @@ function App() {
   console.log(scrollNav); 
   
 
+
 //theme variable
 var defaultDark  = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
