@@ -84,8 +84,9 @@ const HeroCon= styled.div`
     flex-direction: column ;
     align-items: center;
     justify-content:center ;
-    height: 100vh ;
-    overflow-x: hidden;
+    position:relative;
+    height:100vh;
+    overflow: hidden; background-color: rgba(1,1,1,1);
     ::before{
         content: '';
         position: absolute;
@@ -122,6 +123,7 @@ const Bd=styled.div`
     width: 100% ;
     z-index:2 ;
     margin-top:  '-50px'  ;
+    align-items:center ;
     justify-content: center ;
     @media screen and (max-width: 750px){
         margin-top: ${({curent})=>(curent ? '-60px' :'2px')} ;
