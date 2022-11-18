@@ -217,7 +217,6 @@ export default AboutUs;
 
 const AboutUsContainer= styled.div `
 
-
 `
 const AboutUsWrapper= styled.div`
     height: 100%;

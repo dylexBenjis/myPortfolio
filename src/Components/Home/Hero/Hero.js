@@ -82,11 +82,10 @@ export default Hero
 const HeroCon= styled.div`
     display: flex ;
     flex-direction: column ;
-    position:relative;
     align-items: center;
     justify-content:center ;
-    height: 100vh ; z-index:1 ;
-    overflow-x: hidden; background-color: rgba(1,1,1,1);
+    height: 100vh ;
+    overflow-x: hidden;
     ::before{
         content: '';
         position: absolute;
