@@ -184,8 +184,8 @@ const AboutUs = ({changeBtnIcon}) => {
                             </Ul>
                             )})}
                             </Text4>
-                            <Text4   >
-                                <div style={{display:'flex',backgroundColor:'var(--navBarLin)', padding:'0px 15px 5px 5px', height:'100%', width:'100%'}}>
+                            <div style={{display:'flex',backgroundColor:'var(--navBarLin)', padding:'0px 15px 5px 5px', height:'100%', width:'100%'}}>
+                            <Text4>
                                 <Desc animation={animate}>
                                 
                                     <div>{descRole} @ <a href={descCompanyLink} style={{textDecoration:'none',}}>{descCompany}</a></div><br/>
@@ -199,9 +199,9 @@ const AboutUs = ({changeBtnIcon}) => {
                                     })}
                                     
                                 </Desc>
-                                </div>
-                            </Text4> 
-                                                
+                            
+                            </Text4>     
+                            </div>                                                
                         </JobWrapper>
 
                         </Wrapcom>
@@ -429,6 +429,7 @@ const JobWrapper =styled.div`
     display:flex;
     flex-direction:row ;
     width:100%;
+    background-color:red ;
     @media screen and (max-width:920px){
         gap: 15px;
     }
