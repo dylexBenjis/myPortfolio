@@ -18,6 +18,10 @@
     --accent: purple;
     --resume: rgb(196, 196, 196);
     --theme-icon: rgb(82, 82, 82);
+    --blue: rgb(0, 12, 177);
+    --twitter: royalblue;
+    --github:black;
+    --youtube: red;
     --font-para: 32px;
     --para-weight: 500;
     --mobile:1450px;
@@ -31,6 +35,10 @@
     --text-primary-light: rgb(122, 122, 122);                                                                                                                     
     --theme-icon: rgb(244,244,244);                                                                                                                                                                                       
     --text-secondary: grey;
+    --blue: grey;
+    --twitter: grey;
+    --github:grey;
+    --youtube: grey;
     --navLine: rgba(252, 42, 7, 0.507);
     --navBarLine: rgba(56, 56, 56, 0.603);
     --shadow: rgba(219, 219, 219, 0.8);

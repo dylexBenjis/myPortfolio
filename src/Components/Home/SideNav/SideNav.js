@@ -133,27 +133,28 @@ export const GoUp = styled(Link)`
     position: fixed ;
     background-color:rgba(39,200,72,0.2) ;
     color: var(--text-primary) ;
-    height:40px ;
-    width:60px ; 
+    height:3rem ;
+    width: 3rem ; 
     right:${({scroll})=>(scroll?'100px':'-60px')};
     bottom: 70px ;
-    font-size:25px ;
-    border-radius:20px ;
+    font-size: 1rem ;
+    border-radius:10px ;
     align-items: center ;
     justify-content:center ;
     z-index:10 ;
-    transition: 0.5s all ease-in-out ;
+    transition: 0.1s all ease-in-out ;
     cursor: pointer;
     @media screen and (max-width:1300px){
-            right: 40px;
-            width: 32px ;
+            right: ${({scroll})=>(scroll?'3rem':'-3rem')};
+            font-size: 0.7rem ;
         }
         @media screen and (max-width:600px){
-            right: ${({scroll})=>(scroll?'30px':'-35px')};
+            right: ${({scroll})=>(scroll?'1.7rem':'-3rem')};
             bottom:50px;
-            width: 35px ;
-            height: 25px ;
-            font-size:16px ;
+        }
+        :hover{
+            transform: scale(1.1) ;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
         }
 
 `

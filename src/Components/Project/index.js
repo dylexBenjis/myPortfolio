@@ -119,7 +119,9 @@ height:100% ;
 width: 100% ;
 flex-direction: row ; 
 transition: 0.2s transform ease;
-
+@media screen and (max-width:700px){
+  flex-direction:column ;
+}
 
 `
 
@@ -140,11 +142,16 @@ transition: 0.5s all ease-in-out ;
 :hover{
         filter:none ;
         z-index:999 ;
+        background-color: rgb(150,150,150);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
-    @media screen and (max-width:920px){
- left:0px ;
-}
+    @media screen and (max-width:700px){
+      height:40% ;
+      width:100% ;
+      margin:0 ;
+      left:0 ;
+    }
 `
 const B = styled.div`
 display: flex ;
@@ -157,9 +164,11 @@ grid-template-columns: repeat(1, 1fr);
 gap: 5px ;
 grid-template-rows: auto auto;
 cursor: normal ;
-@media screen and (max-width:920px){
- right:10px ;
-}
+@media screen and (max-width:700px){
+      height:60% ;
+      width:100% ;
+      right:0 ;
+    }
 `
 const C = styled.div`
 display: flex ;
@@ -171,7 +180,7 @@ margin-bottom:10px ;
 text-align: right ;
 
 @media screen and (max-width: 768px){
-  font-size: 18px ;
+  font-size: 22px ;
 }
 @media screen and (max-width:920px){
  right:10px ;
@@ -187,9 +196,10 @@ color: var(--text-primary);
  background-color:var(--navBarLin) ;
 align-content: center ;
  justify-content: center ;
-
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  @media screen and (max-width: 768px){
-  font-size: 14px ;
+  font-size: 16px ;
+  box-shadow: none ;
 }
 `
 const E = styled.div`
@@ -198,7 +208,7 @@ gap:1rem ; color: var(--text-primary-light);
 justify-content: right ;
 
 @media screen and (max-width: 768px){
-  font-size: 12px ;
+  font-size: 16px ;
 }
 `
 const F = styled.div`
@@ -209,7 +219,7 @@ justify-content: right ;
 text-align: right ;
 
 @media screen and (max-width: 768px){
-  font-size: 10px ;
+  font-size: 16px ;
 }
 `
 const Linkk = styled.a`

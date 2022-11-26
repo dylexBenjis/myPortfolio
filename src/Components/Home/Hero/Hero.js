@@ -67,7 +67,7 @@ console.log(curent)
     <Bs to='about' 
         spy={true}
         smooth={true}
-        offset={20}
+        offset={-20}
         hashSpy={true}
         delay={200}
         isDynamic={true}

@@ -101,7 +101,7 @@ const TextFooter= styled.div`
 const Iccon = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
-    color: var(--text-primary-light);
+    color: var(--github);
     margin-bottom: 20px;
     display: flex; cursor: pointer;
     :hover{
@@ -119,11 +119,11 @@ const Iccon = styled.a`
 const Iccon1 = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
-    color: var(--text-primary-light);
+    color: var(--twitter);
     margin-bottom: 20px;
     display: flex; cursor: pointer;
     :hover{
-      color: #005ba9 ;
+      color: var(--twitter);
     }  
     @media screen and (max-width:1300px){
             font-size: 16px ;
@@ -137,7 +137,7 @@ const Iccon1 = styled.a`
 const Iccon3 = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
-    color: var(--text-primary-light);
+    color: var(--blue);
     margin-bottom: 20px;
     display: flex; cursor: pointer;
     :hover{
@@ -155,7 +155,7 @@ const Iccon3 = styled.a`
 const Iccon2 = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
-    color: var(--text-primary-light);
+    color: var(--youtube);
     margin-bottom: 20px;
     display: flex; cursor: pointer;
     :hover{

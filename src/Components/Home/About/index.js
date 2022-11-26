@@ -21,8 +21,13 @@ const properHeight = height - 120;
 console.log(properHeight)
 
 const data = [
-    {id:1, companyName:'dylexBenji', role:'personal projects', duration:'',
-    companyLink:'https://benji.pages.dev',description:[{id:1, desc:'developed a forecast web application.'},]},
+    {
+        id:1, companyName:'dylexBenji', role:'personal projects', duration:'',
+        companyLink:'https://benji.pages.dev',
+        description:[{id:1, desc:'developed a forecast web application.'},
+                     {id:2, desc:'developed a solar energy estimator web application.'},
+                    ]
+    },
     
 ]
 
@@ -117,9 +122,7 @@ const AboutUs = ({changeBtnIcon}) => {
                     <Text2 data-aos='fade-up'  data-aos-delay='200' data-aos-once='true'>
                         Benji Chukwudile.
                     </Text2>
-                    <Text3 data-aos='fade-up' data-aos-delay='300' data-aos-once='true'>
-                        I build things not only for the web.
-                    </Text3>
+
                     <Text4 data-aos='fade-up' data-aos-delay='400' data-aos-once='true'>
                         I'm a software engineer, specializing in building 
                         (and occasionally designing) exceptional digital
@@ -134,7 +137,7 @@ const AboutUs = ({changeBtnIcon}) => {
                         Contact me
                     </Button>
                     </Wrap><ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
-                    <Bs to='experience' 
+                    <S><Bs to='experience' 
                         spy={true}
                         smooth={true}
                         offset={0}
@@ -142,7 +145,7 @@ const AboutUs = ({changeBtnIcon}) => {
                         delay={200}
                         isDynamic={true}
                         ignoreCancelEvents={false}
-                        spyThrottle={500}><ScrollDown/></Bs> 
+                        spyThrottle={500}><ScrollDown/></Bs> </S>
                     </FirstWrapper>
                     <SecondWrapper id='experience'>
                         <Wrapp>
@@ -220,7 +223,7 @@ const AboutUsContainer= styled.div `
 
 `
 const AboutUsWrapper= styled.div`
-    height: 100%;
+    height: auto;
     display: flex; 
     flex-direction: column;
 `
@@ -310,6 +313,9 @@ const Text2= styled.div`
     @media screen and (max-width: 600px){
         font-size: 35px ;
     }
+    @media screen and (max-height: 700px){
+        font-size: 25px ;
+    }
 `
 const Text3= styled.div`
     font-size: 30px;
@@ -350,6 +356,7 @@ const ImageWrapper=styled.div`
     @media screen and (max-width: 1300px){
         /* display: none ; */
     }
+
 `
 const Img = styled.div`
     display:flex ;
@@ -357,15 +364,16 @@ const Img = styled.div`
     bottom: 25px ;background-image:url(${Imag});
     background-size: cover ;
     right: 25px ;       border-radius: 10px ;
-    height: 200px ;
+    height: 100% ;
     filter:grayscale(90%) ;
-    width: 200px ;   
+    width: 100% ;   
     transition: 0.6s all ease-in-out;
     :hover{
             filter:none ;
             bottom:0px;
             right:0px ;
         }
+
 `
 
 const A= styled.div`
@@ -434,5 +442,10 @@ const JobWrapper =styled.div`
     }
     @media screen and (max-width:600px){
         gap: 0px;
+    }
+`
+const S = styled.div`
+        @media screen and (max-height: 700px){
+        display:none ;
     }
 `
