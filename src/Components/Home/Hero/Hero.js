@@ -67,7 +67,7 @@ console.log(curent)
     <Bs to='about' 
         spy={true}
         smooth={true}
-        offset={-20}
+        offset={0}
         hashSpy={true}
         delay={200}
         isDynamic={true}
@@ -185,6 +185,5 @@ export const Bs= styled(Link)`
     justify-content:center ; 
     cursor: pointer;
     z-index:2;
-    background-color: red ;
 
 `

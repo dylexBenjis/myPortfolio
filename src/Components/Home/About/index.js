@@ -5,10 +5,11 @@ import {FaReact, FaGithub, FaJava } from 'react-icons/fa'
 import Imag from '../../../Images/head.jpg'
 import Aos from 'aos';
 import {SiAndroidstudio, SiJavascript} from 'react-icons/si'
-import Hero, { Bs } from '../Hero/Hero';
+import Hero from '../Hero/Hero';
 import { CSSTransition } from 'react-transition-group';
 import './desc.css';
 import ScrollDown from '../scrollDown';
+import { Link } from 'react-scroll';
 
 const Line = 'Welcome to my space';
 const Linee= '.';
@@ -137,7 +138,7 @@ const AboutUs = ({changeBtnIcon}) => {
                         Contact me
                     </Button>
                     </Wrap><ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
-                    <S><Bs to='experience' 
+                    <Bs to='experience' 
                         spy={true}
                         smooth={true}
                         offset={0}
@@ -145,7 +146,7 @@ const AboutUs = ({changeBtnIcon}) => {
                         delay={200}
                         isDynamic={true}
                         ignoreCancelEvents={false}
-                        spyThrottle={500}><ScrollDown/></Bs> </S>
+                        spyThrottle={500}><ScrollDown/></Bs> 
                     </FirstWrapper>
                     <SecondWrapper id='experience'>
                         <Wrapp>
@@ -444,7 +445,14 @@ const JobWrapper =styled.div`
         gap: 0px;
     }
 `
-const S = styled.div`
+export const Bs= styled(Link)`
+    display:flex  ;
+    justify-content:center ; 
+    cursor: pointer;
+    z-index:2;
+    @media screen and (max-width:600px){
+        margin-bottom:20px ;
+    }
         @media screen and (max-height: 700px){
         display:none ;
     }
