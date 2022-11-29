@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components';
 import { Container } from '../../../GlobalLayout';
-import src1 from '../../../Images/img4.jpg'
+// import src1 from '../../../Images/img4.jpg'
 import src2 from '../../../Images/img1.jpg'
 import './anim.css'
 import Resume from '../NavBar/resume';
@@ -9,15 +9,16 @@ import Aos from 'aos';
 import ScrollDown from '../scrollDown';
 import { Link } from 'react-scroll';
 
-const data= [
-    { id:0,src: src1,
-     },
-     { id:1,src: src2,
-     },
-     
-]
 
 const Hero = () => {
+    
+    const data= [
+        // { id:0,src: src1,
+        //  },
+        { id:1,src: src2,
+        },
+        
+    ]
 
     const length = data.length;
 
@@ -48,11 +49,13 @@ console.log(curent)
   return (
     <HeroCon  id=' '>
         
-            {data.map((data)=>{ 
+            {/* {data.map((data)=>{ 
       return (<Slide key={data.id}>
-         {data.id === current && (<> <ImgBackground curent={curent}>
-        <Img src={data.src} data-aos='fade-in'/>
-    </ImgBackground></>)} </Slide>)  })}
+         {data.id === current && (<>  */}
+         <ImgBackground curent={curent}>
+            <Img src={src2} data-aos='fade-in'/>
+         </ImgBackground>
+         {/* </>)} </Slide>)  })} */}
     
     <Container>
     <Bd>

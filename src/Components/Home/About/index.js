@@ -117,27 +117,29 @@ const AboutUs = ({changeBtnIcon}) => {
               
               <AboutUsWrapper>
                   <FirstWrapper id='about'>
-                  <Wrap><Text1 data-aos='fade-right' data-aos-once='true'>
-                        Hi, I am
-                    </Text1>
-                    <Text2 data-aos='fade-up'  data-aos-delay='200' data-aos-once='true'>
-                        Benji Chukwudile.
-                    </Text2>
+                  <Wrap>
+                        <Text1 data-aos='fade-right' data-aos-once='true'>
+                            Hi, I am
+                        </Text1>
+                        <Text2 data-aos='fade-up'  data-aos-delay='200' data-aos-once='true'>
+                            Benji Chukwudile.
+                        </Text2>
 
-                    <Text4 data-aos='fade-up' data-aos-delay='400' data-aos-once='true'>
-                        I'm a software engineer, specializing in building 
-                        (and occasionally designing) exceptional digital
-                        experiences. <br/><br/>I am highly self-motivated, always willing
-                        to improve and raise the bar. I try to keep myself up-to-date
-                        with technologies; and I <span style = {color}>love</span> coding with passion. <br/><br/>
-                        I develop web applications<span style={{color:'var(--text-primary-light)'}}>(front-end)</span>, mobile applications.<br/><br/>
-                        I will love to hear from you. Whether it's a project, job
-                        opportunity or just a chat<span style={{color:`var(--text-primary-light)`}}> (you can hit my social links at the right-side of the screen)</span>. Feel free to contact me. 
-                    </Text4>
-                    <Button data-aos='fade-up' data-aos-delay='500' data-aos-once='true' href='mailto:benjichukwudile@gmail.com' target='_blank'>
-                        Contact me
-                    </Button>
-                    </Wrap><ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
+                        <Text4 data-aos='fade-up' data-aos-delay='400' data-aos-once='true'>
+                            I'm a software engineer, specializing in building 
+                            (and occasionally designing) exceptional digital
+                            experiences. <br/><br/>I am highly self-motivated, always willing
+                            to improve and raise the bar. I try to keep myself up-to-date
+                            with technologies; and I <span style = {color}>love</span> coding with passion. <br/><br/>
+                            I develop web applications<span style={{color:'var(--text-primary-light)'}}>(front-end)</span>, mobile applications.<br/><br/>
+                            I will love to hear from you. Whether it's a project, job
+                            opportunity or just a chat<span style={{color:`var(--text-primary-light)`}}> (you can hit my social links at the right-side of the screen)</span>. Feel free to contact me. 
+                        </Text4>
+                        <Button data-aos='fade-up' data-aos-delay='500' data-aos-once='true' href='mailto:benjichukwudile@gmail.com' target='_blank'>
+                            Contact me
+                        </Button>
+                    </Wrap>
+                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
                     <Bs to='experience' 
                         spy={true}
                         smooth={true}
@@ -232,13 +234,13 @@ const FirstWrapper= styled.div`
     height: 100vh;
     display: flex;
     flex-direction: row;
-    gap:20px ;
+    gap:40px ;
     align-items:center ;
     justify-content:center ;
     position:relative ;
     @media screen and (max-width: 1300px){
         flex-direction: column ;
-        row-gap: 30px ;
+        row-gap: 35px ;
     }  
 
 `
@@ -348,7 +350,7 @@ color: var(--text-primary);
 const ImageWrapper=styled.div`
     display:flex ;
     height: 200px ;
-    width: 200px ;
+    width: 250px ;
     border: 5px soLid gray;
     border-radius: 10px ; z-index:2;
     :hover{
@@ -356,6 +358,7 @@ const ImageWrapper=styled.div`
         }
     @media screen and (max-width: 1300px){
         /* display: none ; */
+        width:200px ;
     }
 
 `
@@ -364,7 +367,8 @@ const Img = styled.div`
     position: relative; 
     bottom: 25px ;background-image:url(${Imag});
     background-size: cover ;
-    right: 25px ;       border-radius: 10px ;
+    right: 25px ;       
+    border-radius: 10px ;
     height: 100% ;
     filter:grayscale(90%) ;
     width: 100% ;   

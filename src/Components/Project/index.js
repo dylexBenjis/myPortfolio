@@ -191,7 +191,7 @@ display: flex ; font-family: monospace ;
 flex-direction: row ;
 gap: 3px ;
 font-size : 16px ;
-padding: 5px ;
+padding: 15px 20px;
 color: var(--text-primary);
  background-color:var(--navBarLin) ;
 align-content: center ;

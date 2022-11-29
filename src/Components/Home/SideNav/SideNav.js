@@ -104,6 +104,7 @@ export const IconsWrapper = styled(LinkS)`
     display: flex ;
     height: inherit ;
     width: inherit ;
+    border-radius: 5% ;
     align-items: center ;
     justify-content:center ;
     position:fixed ;
