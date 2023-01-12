@@ -27,10 +27,10 @@ const ScrollDown = () => {
   // <div class="arrow-2">
   //   <i>
     <div>
-    <svg class='arrows'>
-        <path class='a1' d={a1}></path>
-        <path class='a2' d={a2}></path>
-        <path class='a3' d={a3}></path>
+    <svg className='arrows'>
+        <path className='a1' d={a1}></path>
+        <path className='a2' d={a2}></path>
+        <path className='a3' d={a3}></path>
     </svg>
     </div>
 //     {/* </i>

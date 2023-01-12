@@ -3,14 +3,13 @@ import styled from 'styled-components'
 import './zoom.css'
 
 
-const OnClickImage = ({src,imageOpen, toggle, animate, setAnimate}) => {
-
+const OnClickImage = ({src,imageOpen, Toggle, animate, setAnimateFalse}) => {
 
 
 
   return (
-    <div onClick={setAnimate}>
-    <OnClickImageCon imageOpen={imageOpen} onClick={toggle}>
+    <div>
+    <OnClickImageCon imageOpen={imageOpen}  onClick={()=> {setAnimateFalse(); Toggle();}}>
         <ImageCon src={src} animate={animate}/>
     </OnClickImageCon>
 
@@ -32,8 +31,8 @@ const OnClickImageCon = styled.div`
     width:100vw ;
     align-items:center ;
     justify-content:center ;
-    opacity: ${(({imageOpen})=>imageOpen ? '100%':'0')};
-    z-index: ${(({imageOpen})=>imageOpen ? '100':'0')};
+    opacity: ${({imageOpen})=>(imageOpen ? '100%':'0')};
+    z-index: ${({imageOpen})=>(imageOpen ? '100':'0')};
 `
 export const ImageCon = styled.img`
     display:flex;

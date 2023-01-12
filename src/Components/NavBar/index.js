@@ -1,5 +1,5 @@
 import React , {useEffect, useState} from 'react'
-import dylex from '../../../Images/dylexBenji.png'
+import dylex from '../../Images/dylexBenji.png'
 import { Nav, NavBarWrapper, MobileIcon, ThemeIcon,
     Logo,Logo1, LogoWrapper,Icon, A,
     ButtonWrapper, Containerr } from './NavBarElements';
@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import DarkModeComp from './DarkModeComp';
 import Burger from './Burger';
-import Resume from './resume';
 import Aos from 'aos';
 
 
@@ -17,7 +16,6 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
     const path1= '/';
     const path2 = '/project'
     const location = useLocation('');
-    console.log(location.pathname, changeBtnIcon);
     // const className1 = ;
     // const className2 = path2===location.pathname ? 'active':'';
 
@@ -32,7 +30,8 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
             setPath(true)
         }
         else(setPath(false))
-    },[path2, location.pathname])
+    },[path2, location.pathname]);
+
   return (
     <Nav scrollNav={scrollNav} IsOpen={IsOpen}>
         <Containerr>
@@ -47,10 +46,13 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
 
                 <B data-aos='fade-in' data-aos-delay='400'>
                 <LinkWrapper >
-                    <Button to='' scrollnav={scrollNav}  className={path1===location.pathname ? 'active':''} >
+                    <Button to='' className={path1===location.pathname ? 'active':''} >
                         Home
                     </Button>
-                    <Button  to='project' scrollnav={scrollNav} className={path2===location.pathname ? 'active':''} >
+                    <Button  to='project' className={path2===location.pathname ? 'active':''} >
+                        Projects
+                    </Button>
+                    <Button  to='blog' className={path2===location.pathname ? 'active':''} >
                         Projects
                     </Button>
                 </LinkWrapper>

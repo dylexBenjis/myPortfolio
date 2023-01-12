@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 import { Container } from '../../../GlobalLayout/index';
 import {FaReact, FaGithub, FaJava } from 'react-icons/fa'
 import Imag from '../../../Images/head.jpg'
 import Aos from 'aos';
-import {SiAndroidstudio, SiJavascript} from 'react-icons/si'
+import {SiAndroidstudio,} from 'react-icons/si'
 import Hero from '../Hero/Hero';
-import { CSSTransition } from 'react-transition-group';
 import './desc.css';
 import ScrollDown from '../scrollDown';
 import { Link } from 'react-scroll';
 
-const Line = 'Welcome to my space';
-const Linee= '.';
+// const Line = 'Welcome to my space';
+// const Linee= '.';
 
-const height = window.innerHeight;
-console.log(height)
+// const height = window.innerHeight;
+// console.log(height)
 
-const properHeight = height - 120;
+// const properHeight = height - 120;
 
-console.log(properHeight)
+// console.log(properHeight)
 
 const data = [
     {
@@ -47,31 +46,31 @@ const AboutUs = ({changeBtnIcon}) => {
     //     </Ul>
     //     )
     // }
-    const [animated, setAnime]=useState(!false)
-    useEffect(()=>{setTimeout(()=>{
-            setAnime(!animated)                
-        },  7000)}, [animated])
+    // const [animated, setAnime]=useState(!false)
+    // useEffect(()=>{setTimeout(()=>{
+    //         setAnime(!animated)                
+    //     },  7000)}, [animated])
 
 
-        //Code below for text animation
+    //     //Code below for text animation
 
-    const [typed, setTyped]=useState('')
+    // const [typed, setTyped]=useState('')
 
-    useEffect(()=>{
-        const timeout = setTimeout(()=>{
-            setTyped(Line.slice(0, typed.length+1))                
-        },  150)
-        return ()=> clearTimeout(timeout)
-    }, [typed])
+    // useEffect(()=>{
+    //     const timeout = setTimeout(()=>{
+    //         setTyped(Line.slice(0, typed.length+1))                
+    //     },  150)
+    //     return ()=> clearTimeout(timeout)
+    // }, [typed])
 
-    const [typedd, setTypedd]=useState('')
+    // const [typedd, setTypedd]=useState('')
 
-    useEffect(()=>{
-        const timeout = setTimeout(()=>{
-            setTypedd(Linee.slice(0, typedd.length+1))                
-        },  5500)
-        return ()=> clearTimeout(timeout)
-    }, [typedd])
+    // useEffect(()=>{
+    //     const timeout = setTimeout(()=>{
+    //         setTypedd(Linee.slice(0, typedd.length+1))                
+    //     },  5500)
+    //     return ()=> clearTimeout(timeout)
+    // }, [typedd])
 
     Aos.init({
         easing:'ease-in-sine',
@@ -95,26 +94,22 @@ const AboutUs = ({changeBtnIcon}) => {
     const [descBody, setDescBody] = useState(data[0].description);
     const [descId, setDescId] = useState(1);
     const [animate, setAnimate] = useState(false)
-    const descFunction =()=>{
-        
-    }
 
-    useEffect(()=>{
 
-        setTimeout(()=>{
-                   if (animate===true){
-            setAnimate(false)
-        } 
-        }, 300)
+    // useEffect(()=>{
 
-    },[animate])
+    //     setTimeout(()=>{
+    //                if (animate===true){
+    //         setAnimate(false)
+    //     } 
+    //     }, 300)
+
+    // },[animate])
 
   return (
       <AboutUsContainer >
         <Hero changeBtnIcon={changeBtnIcon}/>
-
-          <Container  >
-              
+          <Container  >    
               <AboutUsWrapper>
                   <FirstWrapper id='about'>
                   <Wrap>
@@ -126,20 +121,20 @@ const AboutUs = ({changeBtnIcon}) => {
                         </Text2>
 
                         <Text4 data-aos='fade-up' data-aos-delay='400' data-aos-once='true'>
-                            I'm a software engineer, specializing in building 
+                            I specialize in building 
                             (and occasionally designing) exceptional digital
                             experiences. <br/><br/>I am highly self-motivated, always willing
                             to improve and raise the bar. I try to keep myself up-to-date
                             with technologies; and I <span style = {color}>love</span> coding with passion. <br/><br/>
                             I develop web applications<span style={{color:'var(--text-primary-light)'}}>(front-end)</span>, mobile applications.<br/><br/>
                             I will love to hear from you. Whether it's a project, job
-                            opportunity or just a chat<span style={{color:`var(--text-primary-light)`}}> (you can hit my social links at the right-side of the screen)</span>. Feel free to contact me. 
+                            opportunity or just a chat<span style={{color:`var(--text-primary-light)`}}> (you can hit my social links at the right-side of the screen)</span>.<br/><br/> Feel free to contact me. 
                         </Text4>
                         <Button data-aos='fade-up' data-aos-delay='500' data-aos-once='true' href='mailto:benjichukwudile@gmail.com' target='_blank'>
                             Contact me
                         </Button>
                     </Wrap>
-                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img  ></Img></ImageWrapper>
+                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img/></ImageWrapper>
                     <Bs to='experience' 
                         spy={true}
                         smooth={true}
@@ -248,7 +243,7 @@ const SecondWrapper= styled.div`
     height: 100vh;
     width:100% ;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     column-gap:150px ;
     align-items:center ;
     justify-content:center ;
@@ -288,7 +283,7 @@ const Wrapp= styled.div`
 
 `
 const Text1= styled.div`
-    font-size: 35px; font-family: monospace ;
+    font-size: 35px; font-family: Zen Dots, monospace ;
     font-weight: var(--para-weight);
     color: green ;    cursor: pointer;
     margin-bottom: 12px ; padding: 0px 0px 0px 15px;
@@ -299,6 +294,9 @@ const Text1= styled.div`
     } */
     @media screen and (max-width: 600px){
         font-size: 20px ;
+    }
+    @media screen and (max-width: 350px){
+        font-size: 18px ;
     }
 
 

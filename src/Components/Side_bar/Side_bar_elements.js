@@ -12,7 +12,7 @@ export const SidebarCointainer = styled.aside`
     background: var(--background);
     display: flex;
     margin-top: 60px ;
-    transition: ${({scrollNav})=>( scrollNav ? '0.6s all ease': ' ')};
+    transition: ${({scrollNav})=>( scrollNav ? '0.5s all ease-in-out': '0.5s all ease-in-out')};
     opacity: ${({IsOpen})=>(IsOpen ? '100%':'0')};
     top: ${({IsOpen})=>(IsOpen ? '0':'-100%')};
 

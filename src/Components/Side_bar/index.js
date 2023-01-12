@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container } from '../../../GlobalLayout/index'
-import DarkModeComp from '../NavBar/DarkModeComp'
+import { Container } from '../../GlobalLayout/index'
+import DarkModeComp from '../../Components/NavBar/DarkModeComp'
 import { 
     SidebarCointainer,
     Icon,
@@ -23,10 +23,10 @@ const Side_bar = ({IsOpen, scrollNav, toggle, ChangeTheme, changeBtnIcon}) => {
 
                         <SidebarLink to='project' onClick={toggle}>Projects</SidebarLink>
 
-                        {/* <SidebarLink to='project' onClick={toggle}>Blog posts</SidebarLink> */}
+                        <SidebarLink to='blog' onClick={toggle}>Blog</SidebarLink>
     
 
-                        <SidebarLinks  onClick={ChangeTheme} > Change Theme &nbsp; <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} /></SidebarLinks>
+                        <SidebarLinks  onClick={()=>{ChangeTheme();toggle();}} > Change Theme &nbsp; <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} /></SidebarLinks>
 
     
                 </SidebarMenu>

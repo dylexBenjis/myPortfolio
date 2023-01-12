@@ -12,7 +12,7 @@ export const Container= styled.div`
     align-items: center ;
     justify-content:center ;
     align-self: center ;
-    display: flex ; z-index:1 ;
+    display: flex ; z-index:2 ;
     position: fixed ;
     bottom: 0px ;
 
@@ -86,8 +86,9 @@ export const SocialWrapper = styled.div`
 `
 
 export const A = styled.div`
-    display: grid;
-    grid-template-rows: repeat(4, 1fr) ;
+    display: flex;
+    flex-direction:column ;
+    height:auto ;
     row-gap:0px ;
     align-items: center ;
     justify-content:center ;
@@ -95,25 +96,22 @@ export const A = styled.div`
 `
 export const Icon= styled.div`
     display: flex ;
-    height: 60px ;
-    width:60px ;
+    height: 50px ;
+    width:50px ;
     align-items: center ;
     justify-content:center ; 
 `
 export const IconsWrapper = styled(LinkS)`
     display: flex ;
-    height: inherit ;
-    width: inherit ;
+    height: 100% ;
+    width: 100% ;
     border-radius: 5% ;
     align-items: center ;
     justify-content:center ;
     position:fixed ;
     cursor: pointer;transition: 0.2s all ease-in-out ;
     color: var(--text-primary) ;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--navBarLine) 100%),
-                linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--navBarLine) 100%),
-                linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--navBarLine) 100%),
-                linear-gradient(180deg, var(--navBarLine) 0%, transparent 100%);
+    background: var(--navBarLineSolid);
     :hover {
         transform: scalex(1.083);
         
@@ -123,7 +121,8 @@ export const IconsWrapper = styled(LinkS)`
     }
     &.active{
         color: orangered ;
-        transform: scalex(1.083) ;
+        transform: scale(1.2) ;
+        background-color: var(--navBarLineSolid) ;
     }
 
                

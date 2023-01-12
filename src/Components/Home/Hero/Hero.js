@@ -4,7 +4,7 @@ import { Container } from '../../../GlobalLayout';
 // import src1 from '../../../Images/img4.jpg'
 import src2 from '../../../Images/img1.jpg'
 import './anim.css'
-import Resume from '../NavBar/resume';
+import Resume from '../../NavBar/resume';
 import Aos from 'aos';
 import ScrollDown from '../scrollDown';
 import { Link } from 'react-scroll';

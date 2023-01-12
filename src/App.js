@@ -1,19 +1,23 @@
 import './App.css';
 import useLocalStorage from 'use-local-storage'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import styled from 'styled-components';
 import React, { useState , useEffect} from 'react';
-import Page from './pages/page';
-import MyWorks from './Components/Home/MySkills-Works';
+import HomePage from './pages/page';
 import LoadingLayout from './LoadingLayout';
+import NavBar from './Components/NavBar';
+import Side_bar from './Components/Side_bar';
+import SideNav from './Components/SideNav';
+import Projects from './pages/projects';
+import Blog from './pages/blog/blog';
 
 
 
 function App() {
 
-//scroll state variable
-  const [scrollNav, setScrollNav]= useState(false);
 
+//scroll state boolean variable
+  const [scrollNav, setScrollNav]= useState(false);
   const ChangeNav =() => {
       if(window.scrollY >= 15){
           setScrollNav(true)
@@ -32,8 +36,9 @@ function App() {
 
 //theme variable
 var defaultDark  = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');//initial set theme from users preference (OS setting);
 
+//changeTheme function and save theme value; 
 var value;
 if (theme === 'light'){
   value = true;
@@ -45,39 +50,40 @@ const ChangeTheme=()=>{
   const newTheme= theme === 'light'?'dark':'light';
     setTheme(newTheme)
 }
-
 useEffect(()=>{
   window.addEventListener('toggle', ChangeTheme)
 }, )
 
-// document.body.style.backgroundColor = 
 
-  // var h = document.body.style.backgroundColor;
-  // console.log(h)
+//project image click
+const [imageOpen, setImageOpen] = useState(false);
+const ImageToggle = () => {
+  setImageOpen(!imageOpen)
+}
 
-   //project image click
-   const [imageOpen, setImageOpen] = useState(false);
-   const ImageToggle = () => {
-     setImageOpen(!imageOpen)
-   }
 
-   const[i,setI]=useState(true);
-  setTimeout(()=>{setI(false)},5500);
 
+//mobile menu IsOpen variable
+  const [IsOpen, setIsOpen] = useState(false)
+
+  const toggle = () => {
+      setIsOpen(!IsOpen)
+  }
+
+ 
   return (
- <div className="App" data-theme={theme} > 
-                 {/* {i ? (<LoadingLayout/>) : (*/}<>  
-                          <BackgroundImageWrapper/>
-                          <BrowserRouter>
-                            <Routes>
-                              <Route path='/' element={<Page toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>
-                                }>
-                                <Route path='project' element={<MyWorks imageOpen={imageOpen} toggle={ImageToggle} />} />
-                              </Route>
-                            </Routes>
-                          </BrowserRouter>
-                           </> {/*)
-                } */}
+    <div className="App" data-theme={theme} > 
+      <BackgroundImageWrapper/>
+      <BrowserRouter>      
+      <NavBar IsOpen={IsOpen} toggle={toggle} scrollNav={scrollNav} changeBtnIcon={value} ChangeTheme={ChangeTheme} theme={theme}/>
+      <Side_bar  IsOpen={IsOpen} toggle={toggle} scrollNav={scrollNav} ChangeTheme={ChangeTheme} changeBtnIcon={value} />
+      <SideNav/>
+        <Routes>
+          <Route path='/' element={<HomePage toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>} />
+          <Route path='/project' element={<Projects imageOpen={imageOpen} Toggle={ImageToggle} />} />
+          <Route path='/blog' element={<Blog/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

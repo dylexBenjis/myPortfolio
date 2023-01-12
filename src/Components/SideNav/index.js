@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {SideNavv,Container ,SideNavWrapper, A, Icon, IconsWrapper, FooterWrapper, FooterWrapper1, SocialWrapper, GoUp} from './SideNav'
-import { FaProjectDiagram, FaGithub, FaFacebook,FaTwitter, FaYoutube, FaArrowUp } from 'react-icons/fa'
+import { FaProjectDiagram, FaGithub, FaFacebook,FaTwitter, FaYoutube, FaArrowUp, FaBlog } from 'react-icons/fa'
 import { GoHome } from 'react-icons/go'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
@@ -8,24 +8,23 @@ import Aos from 'aos'
 
 const SideNav = () => {
 
-  const [scroll, setScroll] = useState();
+  const [scroll, setScroll] = useState(false);
   const X = () => {
-    if(window.scrollY >= 50){
-      setScroll(true);
-    }
-    else{setScroll(false)}
+    setScroll((window.scrollY>=50)? true : false);
   }
   useEffect(()=>{
     window.addEventListener('scroll',X)
   },[X])
 
   const path1= '/';
-  const path2 = '/project'
+  const path2 = '/project';
+  const path3 = '/blog'
   const location = useLocation('');
   console.log(location.pathname, scroll);
   console.log(scroll)
   const className1 = path1===location.pathname ? 'active':'';
   const className2 = path2===location.pathname ? 'active':'';
+  const className3 = path3 === location.pathname ? 'active':'';
 
   const Iconstyle={
     height : '50%',
@@ -51,6 +50,11 @@ const SideNav = () => {
             <Icon  data-aos='fade-right' data-aos-delay='250'>
               <IconsWrapper to='project' className={className2}>
                 <FaProjectDiagram style={Iconstyle} />
+              </IconsWrapper>
+            </Icon>
+            <Icon  data-aos='fade-right' data-aos-delay='250'>
+              <IconsWrapper to='blog' className={className3}>
+                <FaBlog style={Iconstyle} />
               </IconsWrapper>
             </Icon>
           </A>
