@@ -46,7 +46,7 @@ const Hero = () => {
     })
 
   return (
-    <HeroCon  id=' '>
+    <HeroCon  id='hero'>
         
             {/* {data.map((data)=>{ 
       return (<Slide key={data.id}>

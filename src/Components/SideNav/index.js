@@ -24,6 +24,18 @@ const SideNav = () => {
   const className2 = path2===location.pathname ? 'active':'';
   const className3 = path3 === location.pathname ? 'active':'';
 
+  //for Goup button functionality
+  const [to, setTo] = useState('');
+  const checkTo = () => {
+  switch('active'){
+    case className1 : setTo('hero');
+    break;
+    case className2: setTo('project');
+    break;
+    default: setTo('');
+  }};
+  useEffect(checkTo,[location]);
+
   const Iconstyle={
     height : '50%',
     width : '50%',
@@ -71,7 +83,8 @@ const SideNav = () => {
         </TextFooter>
         </FooterWrapper>
       </Container>
-      <GoUp scroll={scroll} to=' ' 
+      <GoUp scroll={scroll}
+        to={to}
         spy={true}
         smooth={true}
         offset={0}
