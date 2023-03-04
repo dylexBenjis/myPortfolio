@@ -21,4 +21,5 @@ const DarkModeStyle = styled.div`
   align-items:center ;
   justify-content:center ;
   transition: all 1s ease ;
+  cursor: pointer;
 `
