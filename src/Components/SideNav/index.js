@@ -20,8 +20,6 @@ const SideNav = () => {
   const path2 = '/project';
   const path3 = '/blog'
   const location = useLocation('');
-  console.log(location.pathname, scroll);
-  console.log(scroll)
   const className1 = path1===location.pathname ? 'active':'';
   const className2 = path2===location.pathname ? 'active':'';
   const className3 = path3 === location.pathname ? 'active':'';
@@ -30,7 +28,6 @@ const SideNav = () => {
     height : '50%',
     width : '50%',
   }
-  console.log(path1)
 
   Aos.init({
     easing:'ease-in-sine',

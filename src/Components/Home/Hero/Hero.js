@@ -26,7 +26,6 @@ const Hero = () => {
     const [curent, setCurent ]= useState(false);
     const timeout = useRef(null);
 
-console.log(curent)
     useEffect(()=>{
         const nextSlide =()=>{
             setCurent(!curent)

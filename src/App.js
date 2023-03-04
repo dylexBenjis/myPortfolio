@@ -29,8 +29,7 @@ function App() {
   }
   useEffect(()=>{
   window.addEventListener('scroll', ChangeNav)
-  },[scrollNav] )
-  console.log(scrollNav); 
+  },[scrollNav] );
   
 
 
