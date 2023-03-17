@@ -20,9 +20,7 @@ export const Container= styled.div`
 export const SideNavWrapper = styled.div`
     display: flex ;
     position: absolute ;
-    height:80px ;
-    width:200px ;
-    left: 10px ;
+    left: 9.5rem ; 
     align-items: center ;
     justify-content:center ;
     @media screen and (max-width:1300px){
@@ -89,14 +87,14 @@ export const A = styled.div`
     display: flex;
     flex-direction:column ;
     height:auto ;
-    row-gap:0px ;
+    row-gap:2px ;
     align-items: center ;
     justify-content:center ;
     position: fixed ;
 `
 export const Icon= styled.div`
     display: flex ;
-    height: 50px ;
+    height: 55px ;
     width:50px ;
     align-items: center ;
     justify-content:center ; 
@@ -105,24 +103,16 @@ export const IconsWrapper = styled(LinkS)`
     display: flex ;
     height: 100% ;
     width: 100% ;
-    border-radius: 5% ;
     align-items: center ;
     justify-content:center ;
     position:fixed ;
     cursor: pointer;transition: 0.2s all ease-in-out ;
     color: var(--text-primary) ;
-    background: var(--navBarLineSolid);
-    :hover {
-        transform: scalex(1.083);
-        
-    }    
-    :active {
-        transform: scale(0.85);
-    }
+    background-color: var(--navBarLineSolid);
+
     &.active{
         color: orangered ;
-        transform: scale(1.2) ;
-        background-color: var(--navBarLineSolid) ;
+        
     }
 
                

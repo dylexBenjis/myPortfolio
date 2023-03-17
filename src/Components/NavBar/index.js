@@ -53,7 +53,7 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
                         Projects
                     </Button>
                     <Button  to='blog' className={path2===location.pathname ? 'active':''} >
-                        Projects
+                        blogs
                     </Button>
                 </LinkWrapper>
                 <ButtonWrapper>
@@ -104,6 +104,5 @@ const Button=styled(Link)`
     color: var(--text-primary) ;
     &.active{
         color: orangered ;
-        transform: scalex(1.083) ;
     }
 `
