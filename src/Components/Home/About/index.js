@@ -441,7 +441,7 @@ const JobWrapper =styled.div`
     flex-direction:row ;
     width:100%;
     @media screen and (max-width:920px){
-        gap: 15px;
+        gap: 0px;
     }
     @media screen and (max-width:600px){
         gap: 0px;

@@ -5,6 +5,7 @@ import { Container } from '../../GlobalLayout'
 import { blogData } from './blogData'
 
 
+//this is component for blog. Clickable links to published articles.
 
 const Blog = () => {
   return (

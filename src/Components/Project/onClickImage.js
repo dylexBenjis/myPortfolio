@@ -36,12 +36,12 @@ const OnClickImageCon = styled.div`
 `
 export const ImageCon = styled.img`
     display:flex;
-    height:calc(100vh/1.6) ;
-    width:calc(100vw/2) ;
+    height:100vh ;
+    width: auto;
     animation: ${({animate})=>(animate?'zoom 0.5s ease':'')};
     @media screen and (max-width:920px){
         height:calc(100vh/4) ;
-        width:100vw;
+        width: auto;
     @media  (max-height:1400px){
         height: calc(100vh/2.5)
     }
@@ -51,7 +51,7 @@ export const ImageCon = styled.img`
     }
     @media screen and (max-width:500px){
         height:calc(100vh/4) ;
-        width:100vw;
+        width: auto;
     @media  (max-height:1400px){
         height: calc(100vh/2.5)
     }

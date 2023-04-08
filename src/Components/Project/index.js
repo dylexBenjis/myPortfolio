@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../../GlobalLayout';
-import WebApp from './index2';
+import WebApp from './webApp';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 
@@ -24,13 +24,11 @@ const MyWorks = ({Toggle, imageOpen}) => {
         <Container>
             <MyWorksWrapper>
                 <TextWrapper data-aos='fade-right'>
-                <Text>some featured projects</Text> 
+                    <Text>some featured projects</Text> 
                 </TextWrapper> 
-                </MyWorksWrapper>
-
+            </MyWorksWrapper>
         </Container>
         <WebApp  imageOpen={imageOpen} Toggle={Toggle} />
-
     </MyWorksContainer>
   )
 };

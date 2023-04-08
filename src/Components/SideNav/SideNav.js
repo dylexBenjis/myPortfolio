@@ -20,7 +20,7 @@ export const Container= styled.div`
 export const SideNavWrapper = styled.div`
     display: flex ;
     position: absolute ;
-    left: 9.5rem ; 
+    left: 8em ;
     align-items: center ;
     justify-content:center ;
     @media screen and (max-width:1300px){
@@ -91,31 +91,92 @@ export const A = styled.div`
     align-items: center ;
     justify-content:center ;
     position: fixed ;
+    color:green,
 `
 export const Icon= styled.div`
     display: flex ;
     height: 55px ;
-    width:50px ;
+    width: 150px ;
     align-items: center ;
-    justify-content:center ; 
+    justify-content:right ; 
 `
-export const IconsWrapper = styled(LinkS)`
+export const Home = styled(LinkS)`
     display: flex ;
     height: 100% ;
-    width: 100% ;
+    width: 50px ;
     align-items: center ;
-    justify-content:center ;
+    justify-content:space-between ;
+    text-decoration: none ;
     position:fixed ;
+    padding-left: 20px ;
+    padding-right: 5px ;
+    cursor: pointer;
+    transition: width 0.2s ease-out ;
+    color: var(--text-primary) ;
+    background-color: var(--navBarLineSolid);
+
+    //for active classname
+    &.active{
+        color: orangered ; 
+        width: 120px ;
+    }
+                
+`
+export const HomeText = styled.div`
+    opacity:${({home})=>(home?'1':'0')} ;
+    transition: ${({home})=>(home?'opacity 0.25s ease-in-out':'opacity 0.05s ease-in-out')} ;
+`
+
+export const Project = styled(LinkS)`
+    display: flex ;
+    height: 100% ;
+    width: 50px ;
+    align-items: center ;
+    text-decoration: none ;
+    justify-content:space-between ;
+    position:fixed ;
+    padding-left: 20px ;
+    padding-right: 5px ;
     cursor: pointer;transition: 0.2s all ease-in-out ;
     color: var(--text-primary) ;
     background-color: var(--navBarLineSolid);
 
+    //for active classname
     &.active{
-        color: orangered ;
-        
+        color: orangered ; 
+        width: 120px ;
     }
+                
+`
+export const ProjectText = styled.div`
+    opacity:${({project})=>(project?'1':'0')} ;
+    transition: ${({project})=>(project?'opacity 0.25s ease-in-out':'opacity 0.05s ease-in-out')} ;
+`
 
-               
+export const Blog = styled(LinkS)`
+    display: flex ;
+    height: 100% ;
+    width: 50px ;
+    text-decoration: none ;
+    align-items: center ;
+    justify-content:space-between ;
+    position:fixed ;
+    padding-left: 20px ;
+    padding-right: 5px ;
+    cursor: pointer;transition: 0.2s all ease-in-out ;
+    color: var(--text-primary) ;
+    background-color: var(--navBarLineSolid);
+
+    //for active classname
+    &.active{
+        color: orangered ; 
+        width: 120px ;
+    }
+                   
+`
+export const BlogText = styled.div`
+    opacity:${({blog})=>(blog?'1':'0')} ;
+    transition: ${({blog})=>(blog?'opacity 0.25s ease-in-out':'opacity 0.05s ease-in-out')} ;
 `
 export const GoUp = styled(Link)`
     display: flex ;

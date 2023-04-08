@@ -37,10 +37,10 @@
     --text-primary-light: rgb(122, 122, 122);                                                                                                                     
     --theme-icon: rgb(244,244,244);                                                                                                                                                                                       
     --text-secondary: grey;
-    --blue: grey;
-    --twitter: grey;
-    --github:grey;
-    --youtube: grey;
+    --blue: rgb(0, 12, 177);
+    --twitter: royalblue;
+    --github:rgb(255, 255, 255);
+    --youtube: red;
     --navLine: rgba(252, 42, 7, 0.507);
     --navBarLine: rgba(56, 56, 56, 0.603);
     --navBarLineSolid: rgb(56,56,56);

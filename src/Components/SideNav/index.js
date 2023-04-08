@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import {SideNavv,Container ,SideNavWrapper, A, Icon, IconsWrapper, FooterWrapper, FooterWrapper1, SocialWrapper, GoUp} from './SideNav'
+import {SideNavv,Container ,SideNavWrapper, A, Icon, Home, HomeText, Project, ProjectText, Blog, BlogText, FooterWrapper, FooterWrapper1, SocialWrapper, GoUp} from './SideNav'
 import { FaProjectDiagram, FaGithub, FaFacebook,FaTwitter, FaYoutube, FaArrowUp, FaBlog } from 'react-icons/fa'
 import { GoHome } from 'react-icons/go'
+import {GrProjects} from 'react-icons/gr'
+import {SiHiveBlockchain} from 'react-icons/si'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Aos from 'aos'
@@ -20,31 +22,108 @@ const SideNav = () => {
   const path2 = '/project';
   const path3 = '/blog'
   const location = useLocation('');
-  const className1 = path1===location.pathname ? 'active':'';
-  const className2 = path2===location.pathname ? 'active':'';
-  const className3 = path3 === location.pathname ? 'active':'';
+
+  //logic to set icon style
+    const [className1, setClassName1] = useState('');
+    const [home, setHome] = useState('');
+
+    const [className2, setClassName2] = useState('');
+    const [project, setProject] = useState('');
+
+    const [className3, setClassName3] = useState('')
+    const [blog, setBlog] = useState('');
+
+    //logic for home icon
+      useEffect(()=>{
+        if(path1===location.pathname){
+          setClassName1('active');
+          setHome(true);
+        }
+      })
+
+      const mouseEnterHomeIcon=()=>{
+        setClassName1('active');
+        setHome(true)
+      }
+      const mouseLeaveHomeIcon=()=>{
+        setClassName1('')
+        setHome(false)
+      }
+    //
+
+    //logic for project icon
+      useEffect(()=>{
+        if(path2===location.pathname){
+          setClassName2('active');
+          setProject(true);
+        }
+      })
+
+      const mouseEnterProjectIcon=()=>{
+        setClassName2('active');
+        setProject(true)
+      }
+      const mouseLeaveProjectIcon=()=>{
+        setClassName2('')
+        setProject(false)
+      }
+    //
+
+    //logic for blog icon
+      useEffect(()=>{
+        if(path3===location.pathname){
+          setClassName3('active');
+          setBlog(true);
+        }
+      })
+
+      const mouseEnterBlogIcon=()=>{
+        setClassName3('active');
+        setBlog(true)
+      }
+      const mouseLeaveBlogIcon=()=>{
+        setClassName3('')
+        setBlog(false)
+      }
+    //
+    //icon reset: cleaning all icon set to active to allow smooth and accurate highlight of icon
+    function iconReset(){
+      setClassName2('')
+      setProject(false)
+      setClassName1('')
+      setHome(false)        
+      setClassName3('')
+      setBlog(false)
+    }
+  //
 
   //for Goup button functionality
-  const [to, setTo] = useState('');
-  const checkTo = () => {
-  switch('active'){
-    case className1 : setTo('hero');
-    break;
-    case className2: setTo('project');
-    break;
-    default: setTo('');
-  }};
-  useEffect(checkTo,[location]);
+    const [to, setTo] = useState('');
+    const checkTo = () => {
+    switch('active'){
+      case className1 : setTo('hero');
+      break;
+      case className2: setTo('project');
+      break;
+      default: setTo('');
+    }};
+    useEffect(checkTo);
+  //
 
+  //for sideNav icon style
   const Iconstyle={
-    height : '50%',
-    width : '50%',
+    display:'flex',
+    position:'fixed',
+    right:'-6.25px',
+    height : '40%',
+    width : '40%',
   }
 
   Aos.init({
     easing:'ease-in-sine',
     duration:700,
 })
+const [expose, setExpose] = useState(false);
 
   return (
     <SideNavv>
@@ -52,27 +131,27 @@ const SideNav = () => {
         <SideNavWrapper>
           <A>        
             <Icon  data-aos='fade-right'>
-              <IconsWrapper to='' href='/' className={className1}>
-                <GoHome style={Iconstyle}/>
-              </IconsWrapper>
+              <Home to='' href='/' className={className1} onClick={iconReset} onMouseEnter={mouseEnterHomeIcon} onMouseLeave={mouseLeaveHomeIcon}>
+                <HomeText home={home}>home</HomeText><GoHome style={Iconstyle}/>
+              </Home>
             </Icon>
-            <Icon  data-aos='fade-right' data-aos-delay='250'>
-              <IconsWrapper to='project' className={className2}>
-                <FaProjectDiagram style={Iconstyle} />
-              </IconsWrapper>
+            <Icon  data-aos='fade-right' data-aos-delay='150'>
+              <Project onMouse to='project' className={className2} onClick={iconReset} onMouseEnter={mouseEnterProjectIcon} onMouseLeave={mouseLeaveProjectIcon}>
+              <ProjectText project={project}>projects</ProjectText><SiHiveBlockchain style={Iconstyle} />
+              </Project>
             </Icon>
-            <Icon  data-aos='fade-right' data-aos-delay='250'>
-              <IconsWrapper to='blog' className={className3}>
-                <FaBlog style={Iconstyle} />
-              </IconsWrapper>
+            <Icon  data-aos='fade-right' data-aos-delay='300'>
+              <Blog  to='blog' className={className3} onClick={iconReset} onMouseEnter={mouseEnterBlogIcon} onMouseLeave={mouseLeaveBlogIcon}>
+              <BlogText blog={blog}>blog</BlogText><FaBlog style={Iconstyle} />
+              </Blog>
             </Icon>
           </A>
         </SideNavWrapper>
           <SocialWrapper data-aos='fade-in' data-aos-once='true'>
-            <Iccon href='https://github.com/dylexBenjis' target='_blank' data-aos='fade-left' data-aos-delay='200' data-aos-once='true'><FaGithub/></Iccon>
-            <Iccon3 href='https://facebook.com/benji.tentacion' target='_blank' data-aos='fade-left' data-aos-delay='300' data-aos-once='true'><FaFacebook/></Iccon3>
-            <Iccon1 href='https://twitter.com/benjichukwudile' target='_blank' data-aos='fade-left' data-aos-delay='400' data-aos-once='true'><FaTwitter/></Iccon1>
-            <Iccon2 href='https://www.youtube.com/channel/UCnWtQg6qkHjREjELCelAfzA' target='_blank' data-aos='fade-left' data-aos-delay='500' data-aos-once='true'><FaYoutube/></Iccon2>
+            <Github href='https://github.com/dylexBenjis' target='_blank' data-aos='fade-left' data-aos-delay='200' data-aos-once='true'><FaGithub/></Github>
+            <Facebook href='https://facebook.com/benji.tentacion' target='_blank' data-aos='fade-left' data-aos-delay='300' data-aos-once='true'><FaFacebook/></Facebook>
+            <Twitter href='https://twitter.com/benjichukwudile' target='_blank' data-aos='fade-left' data-aos-delay='400' data-aos-once='true'><FaTwitter/></Twitter>
+            <Yt href='https://www.youtube.com/channel/UCnWtQg6qkHjREjELCelAfzA' target='_blank' data-aos='fade-left' data-aos-delay='500' data-aos-once='true'><FaYoutube/></Yt>
           </SocialWrapper>
         <FooterWrapper >
         <TextFooter data-aos='fade-up' data-aos-delay='150' data-aos-offset='-200' data-aos-once='true'>
@@ -112,7 +191,7 @@ const TextFooter= styled.div`
     
 `
 
-const Iccon = styled.a`
+const Github = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--github);
@@ -130,7 +209,7 @@ const Iccon = styled.a`
             margin-bottom: 10px ;
         }
 `
-const Iccon1 = styled.a`
+const Twitter = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--twitter);
@@ -148,7 +227,7 @@ const Iccon1 = styled.a`
             margin-bottom: 10px ;
         }
 `
-const Iccon3 = styled.a`
+const Facebook = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--blue);
@@ -166,7 +245,7 @@ const Iccon3 = styled.a`
             margin-bottom: 10px ;
         }
 `
-const Iccon2 = styled.a`
+const Yt = styled.a`
     font-size: 25px;
     font-weight: var(--para-weight);
     color: var(--youtube);
