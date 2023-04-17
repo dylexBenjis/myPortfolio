@@ -20,7 +20,7 @@ export const Container= styled.div`
 export const SideNavWrapper = styled.div`
     display: flex ;
     position: absolute ;
-    left: 8em ;
+    left: 80px ;
     align-items: center ;
     justify-content:center ;
     @media screen and (max-width:1300px){
