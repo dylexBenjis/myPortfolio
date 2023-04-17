@@ -9,6 +9,6 @@ export const apps =  [
     {id:2,title:'solarEnergy-Estimator', src: slider1,
     descc:'This is a single page, solar energy estimator, web application. It estimates the time for charge and discharge, number of solar-panels, and batteries you need for your solar electricity set-up (not taking into account geographical solar radiance). Every calculation is done on the client-side. This makes the webpage very fast and responsive. ', 
     technologies:'react.js, styled-components, cloudflare pages',
-    webLink: 'https://forecastapp.pages.dev',github:'https://github.com/dylexBenjis/weatherApp'},
+    webLink: 'https://solar-energy-estimator.pages.dev',github:'https://github.com/dylexBenjis/solar-calc'},
 
 ]
