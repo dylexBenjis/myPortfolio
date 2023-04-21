@@ -20,8 +20,8 @@ const MyWorks = ({Toggle, imageOpen}) => {
     });
 
   return (
-    <MyWorksContainer id='project'>
-        <Container>
+    <MyWorksContainer>
+        <Container id='project'>
             <MyWorksWrapper>
                 <TextWrapper data-aos='fade-right'>
                     <Text>some featured projects</Text> 

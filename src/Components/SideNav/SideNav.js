@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link as LinkS } from 'react-router-dom'
+import { NavLink as LinkS } from 'react-router-dom'
 import { Link } from 'react-scroll';
 
 export const SideNavv= styled.div`
@@ -103,7 +103,7 @@ export const Icon= styled.div`
 export const Home = styled(LinkS)`
     display: flex ;
     height: 100% ;
-    width: 50px ;
+    width: ${({home})=>(home?'120px':'50px')} ;
     align-items: center ;
     justify-content:space-between ;
     text-decoration: none ;
@@ -124,13 +124,13 @@ export const Home = styled(LinkS)`
 `
 export const HomeText = styled.div`
     opacity:${({home})=>(home?'1':'0')} ;
-    transition: ${({home})=>(home?'opacity 0.25s ease-in-out':'opacity 0.05s ease-in-out')} ;
+    transition: ${({home})=>(home?'opacity 0.35s ease-in-out':'opacity 0.05s ease-in-out')} ;
 `
 
 export const Project = styled(LinkS)`
     display: flex ;
     height: 100% ;
-    width: 50px ;
+    width:  ${({project})=>(project?'120px':'50px')};
     align-items: center ;
     text-decoration: none ;
     justify-content:space-between ;
@@ -150,13 +150,13 @@ export const Project = styled(LinkS)`
 `
 export const ProjectText = styled.div`
     opacity:${({project})=>(project?'1':'0')} ;
-    transition: ${({project})=>(project?'opacity 0.25s ease-in-out':'opacity 0.05s ease-in-out')} ;
+    transition: ${({project})=>(project?'opacity 0.35s ease-in-out':'opacity 0.05s ease-in-out')} ;
 `
 
 export const Blog = styled(LinkS)`
     display: flex ;
     height: 100% ;
-    width: 50px ;
+    width:  ${({blog})=>(blog?'120px':'50px')} ;
     text-decoration: none ;
     align-items: center ;
     justify-content:space-between ;
@@ -176,7 +176,7 @@ export const Blog = styled(LinkS)`
 `
 export const BlogText = styled.div`
     opacity:${({blog})=>(blog?'1':'0')} ;
-    transition: ${({blog})=>(blog?'opacity 0.25s ease-in-out':'opacity 0.05s ease-in-out')} ;
+    transition: ${({blog})=>(blog?'opacity 0.35s ease-in-out':'opacity 0.05s ease-in-out')} ;
 `
 export const GoUp = styled(Link)`
     display: flex ;

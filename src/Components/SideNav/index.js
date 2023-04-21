@@ -10,18 +10,23 @@ import Aos from 'aos'
 
 const SideNav = () => {
 
+
   const [scroll, setScroll] = useState(false);
+
+  //function for logic of scroll...for GoUp button
   const X = () => {
     setScroll((window.scrollY>=50)? true : false);
   }
   useEffect(()=>{
     window.addEventListener('scroll',X)
-  },[X])
+  },[])
+
 
   const path1= '/';
   const path2 = '/project';
   const path3 = '/blog'
-  const location = useLocation('');
+  var location = useLocation('');
+  // var history = useHistory();
 
   //logic to set icon style
     const [className1, setClassName1] = useState('');
@@ -33,14 +38,29 @@ const SideNav = () => {
     const [className3, setClassName3] = useState('')
     const [blog, setBlog] = useState('');
 
-    //logic for home icon
-      useEffect(()=>{
-        if(path1===location.pathname){
-          setClassName1('active');
-          setHome(true);
-        }
-      })
+    useEffect(()=>{
+      //logic for home icon
+      if(path1===location.pathname){
+        setClassName1('active');
+        setHome(true);
+      }
+      
+      //logic for project icon
+      if(path2===location.pathname){
+        setClassName2('active');
+        setProject(true);
+      }
 
+      //logic for blog icon
+      if(path3===location.pathname){
+        setClassName3('active');
+        setBlog(true);
+      }
+
+    
+    })
+
+    //logic for home icon
       const mouseEnterHomeIcon=()=>{
         setClassName1('active');
         setHome(true)
@@ -52,13 +72,6 @@ const SideNav = () => {
     //
 
     //logic for project icon
-      useEffect(()=>{
-        if(path2===location.pathname){
-          setClassName2('active');
-          setProject(true);
-        }
-      })
-
       const mouseEnterProjectIcon=()=>{
         setClassName2('active');
         setProject(true)
@@ -70,13 +83,6 @@ const SideNav = () => {
     //
 
     //logic for blog icon
-      useEffect(()=>{
-        if(path3===location.pathname){
-          setClassName3('active');
-          setBlog(true);
-        }
-      })
-
       const mouseEnterBlogIcon=()=>{
         setClassName3('active');
         setBlog(true)
@@ -96,14 +102,25 @@ const SideNav = () => {
       setBlog(false)
     }
   //
+  //help for icon functionality when user press browser backButton
+  window.onpopstate = e => {
+    setClassName2('')
+    setProject(false)
+    setClassName1('')
+    setHome(false)        
+    setClassName3('')
+    setBlog(false)
+  }
 
   //for Goup button functionality
     const [to, setTo] = useState('');
+    //set offset
+    const [offSet, setOffset ] = useState('')
     const checkTo = () => {
     switch('active'){
       case className1 : setTo('hero');
       break;
-      case className2: setTo('project');
+      case className2: setTo('project'); setOffset(-120);
       break;
       default: setTo('');
     }};
@@ -166,7 +183,7 @@ const [expose, setExpose] = useState(false);
         to={to}
         spy={true}
         smooth={true}
-        offset={0}
+        offset={offSet}
         hashSpy={true}
         delay={200}
         isDynamic={true}
