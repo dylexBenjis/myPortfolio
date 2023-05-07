@@ -112,6 +112,7 @@ const AboutUs = ({changeBtnIcon}) => {
           <Container  >    
               <AboutUsWrapper>
                   <FirstWrapper id='about'>
+                    <div style={{display:'flex', flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'10px'}}>
                   <Wrap>
                         <Text1 data-aos='fade-right' data-aos-once='true'>
                             Hi, I am
@@ -134,7 +135,7 @@ const AboutUs = ({changeBtnIcon}) => {
                             Contact me
                         </Button>
                     </Wrap>
-                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img/></ImageWrapper>
+                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img/></ImageWrapper></div>
                     <Bs to='experience' 
                         spy={true}
                         smooth={true}
@@ -228,8 +229,7 @@ const AboutUsWrapper= styled.div`
 const FirstWrapper= styled.div`
     height: 100vh;
     display: flex;
-    flex-direction: row;
-    gap:40px ;
+    flex-direction: column;
     align-items:center ;
     justify-content:center ;
     position:relative ;
@@ -449,8 +449,13 @@ const JobWrapper =styled.div`
 `
 export const Bs= styled(Link)`
     display:flex  ;
-    justify-content:center ; 
+    height:50px ;
+    weight:auto;
+    position:absolute ;
+    left: calc((1100px/2) - 15px) ;
+    bottom: 60px;
     cursor: pointer;
+    color:white;
     z-index:2;
     @media screen and (max-width:600px){
         margin-bottom:20px ;

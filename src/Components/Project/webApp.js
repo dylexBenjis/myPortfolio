@@ -11,15 +11,14 @@ import 'aos/dist/aos.css'
 
 
 var appSrc = '';
-const Ddisplay=({setAppSrc,id,title, src,descc, technologies, setAnimateTrue, Toggle, imageOpen, webLink})=> {
+const Ddisplay=({setAppSrc,id,title, src,descc, technologies, setAnimateTrue, Toggle, imageOpen, webLink, githubLink})=> {
 
 
   return(<Idflex><C> {title}</C><div onClick={setAnimateTrue}><Id onClick={()=>{appSrc=src; }}> <A src={src} alt={title} onClick={Toggle}></A>
                   <B><D>{descc}</D>
                   <F>{technologies}</F>
                   <E>
-                  {/* <a href='#/' style={{textDecoration:'none', color:'green'}}>blog post</a> */}
-                  <FaGithub style={{cursor:'pointer',}} /> 
+                  <Linkk href={githubLink} target='_blank'><FaGithub style={{cursor:'pointer',}} /> </Linkk>
                   <Linkk href={webLink} target='_blank'><BiLinkExternal style={{cursor:'pointer',}} /></Linkk>
                   </E>
                   </B>
@@ -92,13 +91,10 @@ align-items: flex-start ;
 grid-template-columns: 50% 50%;
 grid-template-rows: repeat(1, 1fr) ;
 column-gap: 10px ;
-row-gap: 30px ; 
+row-gap: 35px ; 
 width: 100% ;
-@media screen and (max-width:1300px){
-  row-gap: 25px ;
-}
+
 @media screen and (max-width:600px){
-  row-gap: 25px ;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1,1fr) ;
 }
@@ -138,7 +134,7 @@ transition: 0.5s all ease-in-out ;
 
 :hover{
         filter:none ;
-        z-index:999 ;
+        z-index:99 ;
         background-color: rgb(150,150,150);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -157,7 +153,7 @@ position: relative ;
 right: 30px ;
 width:70% ;
 color: var(--text-primary) ;
-gap: 5px ;
+gap: 10px ;
 cursor: normal ;
 @media screen and (max-width:700px){
       height:60% ;
@@ -201,15 +197,13 @@ const E = styled.div`
 display:flex ; 
 gap:1rem ; color: var(--text-primary-light);
 justify-content: right ;
-
-@media screen and (max-width: 768px){
-  font-size: 16px ;
-}
+font-size: 20px;
 `
 const F = styled.div`
 display:flex ;
+width:100% ;
 font-size: 14px ;
- color: var(--text-primary-light);
+color: var(--text-primary-light);
 justify-content: right ;
 text-align: right ;
 

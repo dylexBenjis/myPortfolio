@@ -91,7 +91,8 @@ export const A = styled.div`
     align-items: center ;
     justify-content:center ;
     position: fixed ;
-    color:green,
+    color:green;
+
 `
 export const Icon= styled.div`
     display: flex ;
@@ -107,7 +108,7 @@ export const Home = styled(LinkS)`
     align-items: center ;
     justify-content:space-between ;
     text-decoration: none ;
-    position:fixed ;
+    position:fixed ;   
     padding-left: 20px ;
     padding-right: 5px ;
     cursor: pointer;

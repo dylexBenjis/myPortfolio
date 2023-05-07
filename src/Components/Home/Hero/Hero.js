@@ -57,15 +57,14 @@ const Hero = () => {
          {/* </>)} </Slide>)  })} */}
     
     <Container>
+    <div style={{display:'flex', flexDirection:'column', height:'100vh', width:'100%',alignItems:'center',justifyContent:'center'}}>
     <Bd>
         <Ad>
-            {/* <H1>I BUILD THINGS</H1>
-            <H2>NOT ONLY for THE WEB</H2> */}
+            <H1>I BUILD THINGS</H1>
+            {/* <H2>NOT ONLY for THE WEB</H2> */}
             <B ><Resume/></B>
         </Ad>
     </Bd> 
-
-    </Container >
     <Bs to='about' 
         spy={true}
         smooth={true}
@@ -75,6 +74,9 @@ const Hero = () => {
         isDynamic={true}
         ignoreCancelEvents={false}
         spyThrottle={500}><ScrollDown/></Bs>
+        </div>
+    </Container >
+
     </HeroCon>
   )
 }
@@ -135,7 +137,7 @@ const Bd=styled.div`
 const Ad=styled.div`
     display: flex ;
     flex-direction:column ;
-    width: auto ; 
+    width: 100% ; 
     row-gap:10px ;
     z-index:2 ;
 
@@ -184,8 +186,13 @@ export const B= styled.div`
 `
 export const Bs= styled(Link)`
     display:flex  ;
-    justify-content:center ; 
+    height:50px ;
+    weight:100%;
+    position:absolute ;
+    left: calc(((100vw - 1100px)/2) + (1100px/2) - 25px) ;
+    bottom: 60px;
     cursor: pointer;
+    color:white;
     z-index:2;
 
 `

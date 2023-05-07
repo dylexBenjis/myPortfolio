@@ -9,7 +9,7 @@
 :root {
     --background: rgb(224, 224, 224);
     --text-primary: black;
-    --text-primary-light:rgb(153, 153, 153);
+    --text-primary-light:rgb(90, 90, 90);
     --text-secondary: royalblue;
     --navLine: rgb(107, 107, 107);
     --navBarLine: rgba(141, 141, 141, 0.445);
@@ -34,7 +34,7 @@
   [data-theme='dark'] {
     --background: rgb(26, 26, 26);
     --text-primary: rgb(244, 244, 244);
-    --text-primary-light: rgb(122, 122, 122);                                                                                                                     
+    --text-primary-light: rgb(177, 177, 177);                                                                                                                     
     --theme-icon: rgb(244,244,244);                                                                                                                                                                                       
     --text-secondary: grey;
     --blue: rgb(0, 12, 177);

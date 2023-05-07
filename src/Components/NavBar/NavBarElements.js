@@ -96,15 +96,15 @@ export const ThemeIcon = styled.div`
 `       
 
 export const ResumeCon= styled.a`
-    width: 6rem ;
-    height: 2rem ;
+    width: 8rem ;
+    height: 3rem ;
     display:flex ;
     align-items: center ;
     font-size: 20px;
     justify-content:center ;
     cursor: pointer;
     background-color:var(--resume); 
-    border: 0px ;
+    border: 2px solid rgb(50,50,50);
     text-decoration: none ;
     font-weight: var(--para-weight) ;
     color: var(--text-primary) ;
@@ -115,11 +115,11 @@ export const ResumeCon= styled.a`
     }
     @media screen and (max-width:1300px){
       font-size: 16px ;
-      height:2rem ;
+      height:2.5rem ;
       width:6rem ;
     }
     @media screen and (max-width:768px){
-     height: 2rem ;
+     height: 2.5rem ;
      width: 6rem;
     }
 `
