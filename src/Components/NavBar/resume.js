@@ -4,7 +4,7 @@ import docx from '../../Images/cv.docx'
 
 const Resume = () => {
   return (
-                  <ResumeCon href={docx} download>
+                  <ResumeCon href={docx} target='blank'>
                        Resume
                     </ResumeCon>
   )

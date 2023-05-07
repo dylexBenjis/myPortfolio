@@ -134,6 +134,7 @@ transition: 0.5s all ease-in-out ;
 
 :hover{
         filter:none ;
+        transform: scale(1.3) ;
         z-index:99 ;
         background-color: rgb(150,150,150);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -187,7 +188,7 @@ color: var(--text-primary);
  background-color:var(--navBarLin) ;
 align-content: center ;
  justify-content: center ;
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
  @media screen and (max-width: 768px){
   font-size: 16px ;
   box-shadow: none ;
