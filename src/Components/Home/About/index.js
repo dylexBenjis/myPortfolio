@@ -112,7 +112,7 @@ const AboutUs = ({changeBtnIcon}) => {
           <Container  >    
               <AboutUsWrapper>
                   <FirstWrapper id='about'>
-                    <div style={{display:'flex', flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'10px'}}>
+                    <FirstDiv >
                   <Wrap>
                         <Text1 data-aos='fade-right' data-aos-once='true'>
                             Hi, I am
@@ -135,7 +135,7 @@ const AboutUs = ({changeBtnIcon}) => {
                             Contact me
                         </Button>
                     </Wrap>
-                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img/></ImageWrapper></div>
+                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img/></ImageWrapper></FirstDiv>
                     <Bs to='experience' 
                         spy={true}
                         smooth={true}
@@ -452,15 +452,28 @@ export const Bs= styled(Link)`
     height:50px ;
     weight:auto;
     position:absolute ;
-    left: calc((1100px/2) - 15px) ;
+    left: calc(50% - 15px);
     bottom: 60px;
     cursor: pointer;
     color:white;
     z-index:2;
     @media screen and (max-width:600px){
         margin-bottom:20px ;
+        left: calc(50% - 25px);
     }
         @media screen and (max-height: 700px){
         display:none ;
+    }
+`
+
+const FirstDiv = styled.div`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    @media screen and (max-width:900px){
+        flex-direction: column;
+        gap:30px;
     }
 `
