@@ -16,21 +16,22 @@ const Side_bar = ({IsOpen, scrollNav, toggle, ChangeTheme, changeBtnIcon}) => {
         <SidebarCointainer IsOpen={IsOpen} scrollNav={scrollNav}>
             <Container>
 
-            <SidebarWrapper>
-                <SidebarMenu>
-                        <SidebarLink to='/' onClick={toggle}>Home</SidebarLink>
-    
+                <SidebarWrapper>
+                    <SidebarMenu>
+                            <SidebarLink to='/' onClick={toggle}>Home</SidebarLink>
+        
 
-                        <SidebarLink to='project' onClick={toggle}>Projects</SidebarLink>
+                            <SidebarLink to='project' onClick={toggle}>Projects</SidebarLink>
 
-                        <SidebarLink to='blog' onClick={toggle}>Blog</SidebarLink>
-    
+                            <SidebarLink to='blog' onClick={toggle}>Blog</SidebarLink>
+        
 
-                        <SidebarLinks  onClick={()=>{ChangeTheme();toggle();}} > Change Theme &nbsp; <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} /></SidebarLinks>
+                            <SidebarLinks  onClick={()=>{ChangeTheme();toggle();}} > Change Theme &nbsp; <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} /></SidebarLinks>
 
-    
-                </SidebarMenu>
-                </SidebarWrapper> </Container>
+        
+                    </SidebarMenu>
+                </SidebarWrapper>
+            </Container>
         </SidebarCointainer>
     )
 }

@@ -28,14 +28,15 @@ export const SidebarCointainer = styled.aside`
 
 export const SidebarWrapper= styled.div`
     color: #fff;
-    margin: 5px 0px 15px 0px;
+    margin: 5px 0px 25px 0px;
+    width: 100% ;
 `
 export const SidebarMenu= styled.div`
     display: grid;
-    grid-template-columns: 60%;
+    width: 100%;
     grid-template-rows: repeat(4, 30px);
     justify-content: center;
-    row-gap:20px ;
+    row-gap:10px ;
 `
 export const SidebarLink= styled(LinkScroll)`
     display: flex;

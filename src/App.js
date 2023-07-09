@@ -10,6 +10,8 @@ import Side_bar from './Components/Side_bar';
 import SideNav from './Components/SideNav';
 import Projects from './pages/projects';
 import Blog from './pages/blog/blog';
+import { blogData } from './pages/blog/blogData';
+import  Image  from './Images/Lovepik_com-400670960-geometric-lin.png'
 
 
 
@@ -72,15 +74,21 @@ const ImageToggle = () => {
  
   return (
     <div className="App" data-theme={theme} > 
-      <BackgroundImageWrapper/>
+      <BackgroundImageWrapper />
+      {/* <Img/> */}
       <BrowserRouter>      
       <NavBar IsOpen={IsOpen} toggle={toggle} scrollNav={scrollNav} changeBtnIcon={value} ChangeTheme={ChangeTheme} theme={theme}/>
       <Side_bar  IsOpen={IsOpen} toggle={toggle} scrollNav={scrollNav} ChangeTheme={ChangeTheme} changeBtnIcon={value} />
-      <SideNav/>
+      <SideNav ChangeTheme={ChangeTheme} changeBtnIcon={value} />
         <Routes>
           <Route path='/' element={<HomePage toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>} />
           <Route path='/project' element={<Projects imageOpen={imageOpen} Toggle={ImageToggle} />} />
-          <Route path='/blog' element={<Blog/>}/>
+          <Route path='/blog' element={<Blog />} />
+          {blogData.map((q) => {
+            return (
+              <Route path={`/${q.link}`} element={<Blog/>} />
+            )
+          })}
         </Routes>
       </BrowserRouter>
     </div>
@@ -102,5 +110,13 @@ export const BackgroundImageWrapper= styled.div`
     background: var(--background);
     transition:  all 0.2s ease-in;
 `
+const Img = styled.img`
+  src: (${Image});
+  object-fit: cover;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
+`
 

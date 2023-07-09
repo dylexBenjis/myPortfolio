@@ -36,15 +36,15 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
     <Nav scrollNav={scrollNav} IsOpen={IsOpen}>
         <Containerr>
             <NavBarWrapper>
-                <LogoWrapper to='' data-aos='fade-in' data-aos-delay='250'>
-                   <Logo1 src={dylex} scrollNav={scrollNav} />
+                <LogoWrapper to='' data-aos='fade-in' data-aos-delay='250' scrollNav={scrollNav} >
+                   dylexBenji
                 </LogoWrapper>
                 
                 <MobileIcon onClick={toggle} data-aos='fade-in' data-aos-delay='400' >
                     <Burger IsOpen={IsOpen} scrollNav={scrollNav} path={path} b={changeBtnIcon}/>
                 </MobileIcon>
 
-                <B data-aos='fade-in' data-aos-delay='400'>
+                {/* {<B data-aos='fade-in' data-aos-delay='400'>
                 <LinkWrapper >
                     <Button to='' className={path1===location.pathname ? 'active':''} >
                         Home
@@ -56,12 +56,7 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
                         blogs
                     </Button>
                 </LinkWrapper>
-                <ButtonWrapper>
-                    <A>
-                    <DarkModeComp  changeBtnIcon={changeBtnIcon} ChangeTheme={ChangeTheme} scrollNav={scrollNav} data-aos='fade-in'/>
-                    </A>
-                </ButtonWrapper>
-                </B>
+                </B>} */}
             </NavBarWrapper>
         </Containerr>
     </Nav>

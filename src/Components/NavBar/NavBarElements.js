@@ -10,7 +10,7 @@ export const Nav = styled.div`
     position: fixed;
     z-index: 10;
     top: 0px ;       
-    transition: ${({scrollNav})=>( scrollNav ? '0.3s all linear': ' ')};
+    transition: ${({scrollNav, IsOpen})=>( (scrollNav&&IsOpen) ? '0.5s background linear': '0.5s background ease-out')};
   
     @media screen and (max-width:1300px){
         height: 60px
@@ -43,11 +43,20 @@ export const NavBarWrapper=styled.div`
  
 export const LogoWrapper= styled(Link)` 
     height: 100%;
-    width: auto;
+    width: 100%;
     display: flex;
-    justify-content: left;
+    justify-content:center;
     align-items: center;
-
+    font-size:  ${({scrollNav})=>(scrollNav ? '30px' : '40px')};
+    font-family: Zen Dots;
+    font-style:  ${({scrollNav})=>(scrollNav ? 'italic' : 'none')};
+    text-decoration: none;
+    color: Orangered;
+    text-shadow:${({scrollNav})=>(scrollNav ? '0px 0px 2px blue' : '0px 0px 4px blue')} ;
+  
+    @media screen and (max-width:768px){
+    font-size:  ${({scrollNav})=>(scrollNav ? '20px' : '30px')};
+    }  
 `
 export const Logo1=styled.img`
     cursor: pointer;
@@ -61,7 +70,7 @@ export const Logo1=styled.img`
 `
 export const MobileIcon= styled.div`
 display: none;
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1300px){
     display: flex;
     justify-content:right ; 
 }
@@ -81,7 +90,7 @@ export const ButtonWrapper= styled.div`
     
 `
 export const ThemeIcon = styled.div`
-    font-size: 2rem ;
+    font-size: 3rem ;
     border-radius: 70px;
     align-content: center ;
     justify-content: center;
@@ -122,13 +131,4 @@ export const ResumeCon= styled.a`
      height: 2.5rem ;
      width: 6rem;
     }
-`
-
-export const A= styled.div`
-    display: flex; 
-    height: 100%;
-    width: 40px ; 
-    align-items: center ;
-    justify-content:center;
-
 `

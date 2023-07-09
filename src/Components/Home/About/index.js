@@ -122,13 +122,8 @@ const AboutUs = ({changeBtnIcon}) => {
                         </Text2>
 
                         <Text4 data-aos='fade-up' data-aos-delay='400' data-aos-once='true'>
-                            I specialize in building 
-                            (and occasionally designing) exceptional digital
-                            experiences. <br/><br/>I am highly self-motivated, always willing
-                            to improve and raise the bar. I try to keep myself up-to-date
-                            with technologies; and I <span style = {color}>love</span> coding with passion. <br/><br/>
-                            I develop web applications<span style={{color:'var(--text-primary-light)'}}>(front-end)</span>, mobile applications.<br/><br/>
-                            I will love to hear from you. Whether it's a project, job
+                          I am a passionate and skilled software developer who creates exceptional online experiences. With a strong foundation in coding languages, an eye for design and a commitment to delivering high-quality work, I strive to build visually appealing, user-friendly and functional applications.
+                            <br/><br/>I will love to hear from you. Whether it's a project, job
                             opportunity or just a chat<span style={{color:`var(--text-primary-light)`}}> (you can hit my social links at the right-side of the screen)</span>.<br/><br/> Feel free to contact me. 
                         </Text4>
                         <Button data-aos='fade-up' data-aos-delay='500' data-aos-once='true' href='mailto:benjichukwudile@gmail.com' target='_blank'>
@@ -283,7 +278,7 @@ const Wrapp= styled.div`
 
 `
 const Text1= styled.div`
-    font-size: 35px; font-family: Zen Dots, monospace ;
+    font-size: 35px; font-family:  monospace ;
     font-weight: var(--para-weight);
     color: green ;    cursor: pointer;
     margin-bottom: 12px ; padding: 0px 0px 0px 15px;
@@ -349,8 +344,7 @@ const ImageWrapper=styled.div`
     display:flex ;
     height: 200px ;
     width: 250px ;
-    border: 5px soLid gray;
-    border-radius: 10px ; z-index:2;
+    z-index:2;
     :hover{
             border: none ;
         }
@@ -362,11 +356,9 @@ const ImageWrapper=styled.div`
 `
 const Img = styled.div`
     display:flex ;
-    position: relative; 
     bottom: 25px ;background-image:url(${Imag});
-    background-size: cover ;
-    right: 25px ;       
-    border-radius: 10px ;
+    background-size: cover ; 
+    border-radius: 10px;
     height: 100% ;
     filter:grayscale(90%) ;
     width: 100% ;   
@@ -471,7 +463,7 @@ const FirstDiv = styled.div`
     flex-direction:row;
     align-items:center;
     justify-content:center;
-    gap:15px;
+    gap:40px;
     @media screen and (max-width:900px){
         flex-direction: column;
         gap:30px;

@@ -13,16 +13,17 @@ const Blog = () => {
         <Container>
             { blogData.map((q)=>{
                    return (
-                   <BlogBox key={q.year}>
-                   <Head style={{fontWeight:'normal'}}>{q.year}</Head>
-                    <ul style={{listStyleType:'square', marginTop:'5px', marginLeft:'20px', zIndex:'2'}}>
-                    {(q.posts).map((q)=>{ 
-                        return (       
-                             <Li key={q.date}> {q.date} - <Link to={q.link} style={{textDecoration:'none', color:'var(--blogLink)', cursor:'pointer'}}>{q.link}</Link></Li>
-                        )
-                    })} 
-                    </ul>                   
-                    </BlogBox>)
+                //    <BlogBox key={q}>
+                //    <Head style={{fontWeight:'normal'}}>{q}</Head>
+                //     <ul style={{listStyleType:'square', marginTop:'5px', marginLeft:'20px', zIndex:'2'}}>
+                //     {(q).map((q)=>{ 
+                //         return (       
+                             <Li key={q.link}>  <Link to={q.link} style={{textDecoration:'none', color:'var(--blogLink)', cursor:'pointer'}}>{q.link}</Link></Li>
+                    //     )
+                    // })} 
+                    // </ul>                   
+                       // </BlogBox>
+                   )
                 })
             }
         </Container>
