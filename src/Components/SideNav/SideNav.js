@@ -112,7 +112,7 @@ export const Home = styled(LinkS)`
     padding-left: 20px ;
     padding-right: 5px ;
     cursor: pointer;
-    transition: width 0.2s ease-out ;
+    transition: 0.2s all ease ;
     color: var(--text-primary) ;
     background-color: var(--navBarLineSolid);
 
@@ -138,7 +138,7 @@ export const Project = styled(LinkS)`
     position:fixed ;
     padding-left: 20px ;
     padding-right: 5px ;
-    cursor: pointer;transition: 0.2s all ease-in-out ;
+    cursor: pointer;transition: 0.2s all ease ;
     color: var(--text-primary) ;
     background-color: var(--navBarLineSolid);
 
@@ -151,7 +151,7 @@ export const Project = styled(LinkS)`
 `
 export const ProjectText = styled.div`
     opacity:${({project})=>(project?'1':'0')} ;
-    transition: ${({project})=>(project?'opacity 0.35s ease-in-out':'opacity 0.05s ease-in-out')} ;
+    transition: ${({project})=>(project?'opacity 0.4s ease-in-out':'opacity 0.05s ease-in-out')} ;
 `
 
 export const Blog = styled(LinkS)`
@@ -163,10 +163,10 @@ export const Blog = styled(LinkS)`
     justify-content:space-between ;
     position:fixed ;
     padding-left: 20px ;
-    padding-right: 5px ;
-    cursor: pointer;transition: 0.2s all ease-in-out ;
+    padding-right: 5px ;    background-color: var(--navBarLineSolid);
+    cursor: pointer;transition: 0.2s all ease ;
     color: var(--text-primary) ;
-    background-color: var(--navBarLineSolid);
+
 
     //for active classname
     &.active{
