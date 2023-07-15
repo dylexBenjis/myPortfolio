@@ -108,7 +108,7 @@ export const BackgroundImageWrapper= styled.div`
     height: 100vh;
     z-index: -1;
     background: var(--background);
-    transition:  all 0.2s ease-in;
+    transition:  all 0.2s linear;
 `
 const Img = styled.img`
   src: (${Image});

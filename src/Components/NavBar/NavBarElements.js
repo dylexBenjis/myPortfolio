@@ -10,7 +10,7 @@ export const Nav = styled.div`
     position: fixed;
     z-index: 10;
     top: 0px ;       
-    transition: ${({scrollNav, IsOpen})=>( (scrollNav&&IsOpen) ? '0.5s background linear': '0.5s background ease-out')};
+    transition: ${({scrollNav, IsOpen})=>( (scrollNav&&IsOpen) ? '0.2s background linear': '0.2s background linear')};
   
     @media screen and (max-width:1300px){
         height: 60px
