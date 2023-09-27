@@ -5,7 +5,7 @@ import {FaReact, FaGithub, FaJava } from 'react-icons/fa'
 import Imag from '../../../Images/head.jpg'
 import Aos from 'aos';
 import {SiAndroidstudio,} from 'react-icons/si'
-import Hero from '../Hero/Hero';
+import Hero, { ButtonScrollText } from '../Hero/Hero';
 import './desc.css';
 import ScrollDown from '../scrollDown';
 import { ButtonDiv, ButtonScroll } from '../Hero/Hero';
@@ -143,6 +143,9 @@ const AboutUs = ({changeBtnIcon}) => {
                                 ignoreCancelEvents={false}
                                 spyThrottle={500}>
                                 <ScrollDown />
+                                <ButtonScrollText>
+                                    To Experience
+                                </ButtonScrollText>
                           </ButtonScroll>
                       </ButtonDiv>
                     </FirstWrapper>

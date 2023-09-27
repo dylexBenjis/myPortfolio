@@ -64,7 +64,7 @@ const SideNav = ({ changeBtnIcon, ChangeTheme }) => {
 
     //logic for home icon
       const mouseEnterHomeIcon=()=>{
-        setClassName1('active');
+        setClassName1('hovered');
         setHome(true)
       }
       const mouseLeaveHomeIcon=()=>{
@@ -75,7 +75,7 @@ const SideNav = ({ changeBtnIcon, ChangeTheme }) => {
 
     //logic for project icon
       const mouseEnterProjectIcon=()=>{
-        setClassName2('active');
+        setClassName2('hovered');
         setProject(true)
       }
       const mouseLeaveProjectIcon=()=>{
@@ -86,7 +86,7 @@ const SideNav = ({ changeBtnIcon, ChangeTheme }) => {
 
     //logic for blog icon
       const mouseEnterBlogIcon=()=>{
-        setClassName3('active');
+        setClassName3('hovered');
         setBlog(true)
       }
       const mouseLeaveBlogIcon=()=>{

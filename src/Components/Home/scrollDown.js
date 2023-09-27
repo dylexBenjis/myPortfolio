@@ -10,9 +10,9 @@ const ScrollDown = () => {
 
     //for svg path 
     useEffect(()=>{    
-        setA1('M2.5 35 L7.5 40 L12.5 35')
-        setA2('M2.5 40 L7.5 45 L12.5 40')
-        setA3('M2.5 45 L7.5 50 L12.5 45')
+        setA1('M2.5 15 L7.5 20 L12.5 15')
+        setA2('M2.5 20 L7.5 25 L12.5 20')
+        setA3('M2.5 25 L7.5 30 L12.5 25')
     },[])
 
   return (
@@ -21,7 +21,7 @@ const ScrollDown = () => {
   //   <i> 
         <svg className='arrows'>
             <path className='a1' d={a1}></path>
-            <circle cx="7.5" cy="20" r="2" stroke="gray" stroke-width="3" fill="gray" />
+            <circle cx="7.5" cy="5" r="2" stroke="gray" stroke-width="3" fill="gray" />
             <path className='a2' d={a2}></path>
             <path className='a3' d={a3}></path>
 

@@ -76,11 +76,11 @@ const ImageToggle = () => {
       <BackgroundImageWrapper />
       {/* <Img/> */}
       <BrowserRouter>      
-      <NavBar IsOpen={IsOpen} toggle={toggle} scrollNav={scrollNav} changeBtnIcon={value} ChangeTheme={ChangeTheme} theme={theme}/>
+      <NavBar IsOpen={IsOpen} toggle={toggle} scrollNav={scrollNav} changeBtnIcon={value} theme={theme}/>
       <Side_bar  IsOpen={IsOpen} toggle={toggle} scrollNav={scrollNav} ChangeTheme={ChangeTheme} changeBtnIcon={value} />
       <SideNav ChangeTheme={ChangeTheme} changeBtnIcon={value} />
         <Routes>
-          <Route path='/' element={<HomePage toggle={value} scrollNav={scrollNav}  ChangeTheme={ChangeTheme} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>} />
+          <Route path='/' element={<HomePage toggle={value} scrollNav={scrollNav} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>} />
           <Route path='/project' element={<Projects imageOpen={imageOpen} Toggle={ImageToggle} />} />
           <Route path='/blog' element={<Blog />} />
           {blogData.map((q) => {

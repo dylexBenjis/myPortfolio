@@ -121,6 +121,13 @@ export const Home = styled(LinkS)`
         color: orangered ; 
         width: 120px ;
     }
+
+    //for hovered classname
+    &.hovered{
+        color: var(--text-primary) ; 
+        width: 120px ;
+    }
+
                 
 `
 export const HomeText = styled.div`
@@ -147,6 +154,12 @@ export const Project = styled(LinkS)`
         color: orangered ; 
         width: 120px ;
     }
+
+    //for hovered classname
+    &.hovered{
+        color: var(--text-primary) ; 
+        width: 120px ;
+    }
                 
 `
 export const ProjectText = styled.div`
@@ -171,6 +184,12 @@ export const Blog = styled(LinkS)`
     //for active classname
     &.active{
         color: orangered ; 
+        width: 120px ;
+    }
+
+    //for hovered classname
+    &.hovered{
+        color: var(--text-primary) ; 
         width: 120px ;
     }
                    

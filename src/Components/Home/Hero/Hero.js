@@ -75,8 +75,8 @@ const Hero = () => {
                         isDynamic={true}
                         ignoreCancelEvents={false}
                         spyThrottle={500}>
-                        <ScrollDown />
-                    </ButtonScroll> <ButtonScrollText>To About</ButtonScrollText>
+                        <ScrollDown /><ButtonScrollText>To About</ButtonScrollText>
+                    </ButtonScroll> 
                 </ButtonDiv>
             </div>
         </Container >
@@ -189,11 +189,10 @@ export const B= styled.div`
 `
 export const ButtonDiv= styled.div`
     display:flex  ;
-    height:65px ;
+    height:35px ;
     width: 100%;
     position: absolute ;
     bottom: 50px ;
-    gap:10px ;
     justify-content: center;
     z-index:2;
 
@@ -202,15 +201,16 @@ export const ButtonScrollText = styled.div`
     display:flex ;
     height: 100% ;
     align-items: center;
-    color: yellow ;
+    color: gray ;
+    width: 50px ;
     font-size: 12px ;
-    cursor:normal ;
 `
 
 export const ButtonScroll= styled(Link)`
     display:flex  ;
     height:auto ;
-    width: 15px;
+    width: auto;
+    gap: 10px ;
     z-index:2;
     cursor: pointer;
 
