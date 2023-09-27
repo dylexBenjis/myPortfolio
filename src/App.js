@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import styled from 'styled-components';
 import React, { useState , useEffect} from 'react';
 import HomePage from './pages/page';
-import LoadingLayout from './LoadingLayout';
 import NavBar from './Components/NavBar';
 import Side_bar from './Components/Side_bar';
 import SideNav from './Components/SideNav';
@@ -119,4 +118,3 @@ const Img = styled.img`
   left: 0;
 
 `
-

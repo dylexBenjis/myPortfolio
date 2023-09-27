@@ -56,27 +56,30 @@ const Hero = () => {
          </ImgBackground>
          {/* </>)} </Slide>)  })} */}
     
-    <Container>
-    <div style={{display:'flex', flexDirection:'column', height:'100vh', width:'100%',alignItems:'center',justifyContent:'center'}}>
-    <Bd>
-        <Ad>
-            <H1>I BUILD THINGS</H1>
-            {/* <H2>NOT ONLY for THE WEB</H2> */}
-            <B ><Resume/></B>
-        </Ad>
-    </Bd> 
-    <Bs to='about' 
-        spy={true}
-        smooth={true}
-        offset={0}
-        hashSpy={true}
-        delay={200}
-        isDynamic={true}
-        ignoreCancelEvents={false}
-        spyThrottle={500}><ScrollDown/></Bs>
-        </div>
-    </Container >
-
+        <Container>
+            <div style={{display:'flex', flexDirection:'column', height:'100vh', width:'100%',alignItems:'center',justifyContent:'center'}}>
+                <Bd>
+                    <Ad>
+                        <H1>I BUILD THINGS</H1>
+                        {/* <H2>NOT ONLY for THE WEB</H2> */}
+                        <B ><Resume/></B>
+                    </Ad>
+                </Bd> 
+                <ButtonDiv>
+                    <ButtonScroll to='about' 
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        hashSpy={true}
+                        delay={200}
+                        isDynamic={true}
+                        ignoreCancelEvents={false}
+                        spyThrottle={500}>
+                        <ScrollDown />
+                    </ButtonScroll> <ButtonScrollText>To About</ButtonScrollText>
+                </ButtonDiv>
+            </div>
+        </Container >
     </HeroCon>
   )
 }
@@ -184,15 +187,31 @@ export const B= styled.div`
     z-index:2;
 
 `
-export const Bs= styled(Link)`
+export const ButtonDiv= styled.div`
     display:flex  ;
-    height:50px ;
-    weight:100%;
-    position:absolute ;
-    left: calc(((100vw - 1100px)/2) + (1100px/2) - 25px) ;
-    bottom: 60px;
-    cursor: pointer;
-    color:white;
+    height:65px ;
+    width: 100%;
+    position: absolute ;
+    bottom: 50px ;
+    gap:10px ;
+    justify-content: center;
     z-index:2;
+
+`
+export const ButtonScrollText = styled.div`
+    display:flex ;
+    height: 100% ;
+    align-items: center;
+    color: yellow ;
+    font-size: 12px ;
+    cursor:normal ;
+`
+
+export const ButtonScroll= styled(Link)`
+    display:flex  ;
+    height:auto ;
+    width: 15px;
+    z-index:2;
+    cursor: pointer;
 
 `

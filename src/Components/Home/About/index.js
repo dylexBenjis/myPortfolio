@@ -8,6 +8,7 @@ import {SiAndroidstudio,} from 'react-icons/si'
 import Hero from '../Hero/Hero';
 import './desc.css';
 import ScrollDown from '../scrollDown';
+import { ButtonDiv, ButtonScroll } from '../Hero/Hero';
 import { Link } from 'react-scroll';
 
 // const Line = 'Welcome to my space';
@@ -131,15 +132,19 @@ const AboutUs = ({changeBtnIcon}) => {
                         </Button>
                     </Wrap>
                     <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img/></ImageWrapper></FirstDiv>
-                    <Bs to='experience' 
-                        spy={true}
-                        smooth={true}
-                        offset={0}
-                        hashSpy={true}
-                        delay={200}
-                        isDynamic={true}
-                        ignoreCancelEvents={false}
-                        spyThrottle={500}><ScrollDown/></Bs> 
+                      <ButtonDiv>
+                          <ButtonScroll to='experience' 
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                hashSpy={true}
+                                delay={200}
+                                isDynamic={true}
+                                ignoreCancelEvents={false}
+                                spyThrottle={500}>
+                                <ScrollDown />
+                          </ButtonScroll>
+                      </ButtonDiv>
                     </FirstWrapper>
                     <SecondWrapper id='experience'>
                         <Wrapp>
@@ -439,24 +444,7 @@ const JobWrapper =styled.div`
         gap: 0px;
     }
 `
-export const Bs= styled(Link)`
-    display:flex  ;
-    height:50px ;
-    weight:auto;
-    position:absolute ;
-    left: calc(50% - 15px);
-    bottom: 60px;
-    cursor: pointer;
-    color:white;
-    z-index:2;
-    @media screen and (max-width:600px){
-        margin-bottom:20px ;
-        left: calc(50% - 25px);
-    }
-        @media screen and (max-height: 700px){
-        display:none ;
-    }
-`
+
 
 const FirstDiv = styled.div`
     display:flex;

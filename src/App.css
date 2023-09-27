@@ -1,9 +1,17 @@
-
-*{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+.App{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
+    background: var(--background);
+    height: auto;
+    width: auto;
     -webkit-tap-highlight-color: transparent ;
 }
 :root {
