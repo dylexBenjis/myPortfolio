@@ -115,7 +115,7 @@ const AboutUs = ({changeBtnIcon}) => {
                   <FirstWrapper id='about'>
                     <FirstDiv >
                   <Wrap>
-                        <Text1 data-aos='fade-right' data-aos-once='true'>
+                        <Text1 data-aos='fade-up' data-aos-once='true'>
                             Hi, I am
                         </Text1>
                         <Text2 data-aos='fade-up'  data-aos-delay='200' data-aos-once='true'>
@@ -131,7 +131,7 @@ const AboutUs = ({changeBtnIcon}) => {
                             Contact me
                         </Button>
                     </Wrap>
-                    <ImageWrapper data-aos='fade-left' data-aos-once='true'><Img/></ImageWrapper></FirstDiv>
+                    <ImageWrapper data-aos='fade-up' data-aos-once='true'><Img/></ImageWrapper></FirstDiv>
                       <ButtonDiv>
                           <ButtonScroll to='experience' 
                                 spy={true}
@@ -307,7 +307,8 @@ const Text1= styled.div`
 const Text2= styled.div`
     font-size: 40px;
     font-weight: bolder;
-    color: var(--text-primary);     cursor: pointer;
+    color: var(--text-primary);     
+    cursor: pointer;
     margin-bottom: 12px ;
 
     /* ::after{
@@ -325,7 +326,8 @@ const Text3= styled.div`
     font-size: 30px;
     font-family: monospace;
     font-weight: bold;
-    color: var(--text-primary-light);     cursor: pointer;
+    color: var(--text-primary-light);     
+    cursor: pointer;
         margin-bottom: 12px ;
 
     /* ::after{
@@ -364,7 +366,8 @@ const ImageWrapper=styled.div`
 `
 const Img = styled.div`
     display:flex ;
-    bottom: 25px ;background-image:url(${Imag});
+    bottom: 25px ;
+    background-image:url(${Imag});
     background-size: cover ; 
     border-radius: 10px;
     height: 100% ;
