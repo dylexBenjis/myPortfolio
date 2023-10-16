@@ -3,14 +3,15 @@ import styled from "styled-components";
 
 export const Nav = styled.div`
     background: ${({scrollNav,IsOpen})=>(scrollNav||IsOpen ? 'var(--background)' : 'transparent')} ;
-    height: ${({scrollNav})=>(scrollNav ? '90px' : '120px')} ;
+    height: ${({scrollNav})=>(scrollNav ? '80px' : '100px')} ;
     width: 100%;
     display: flex;
     align-items: center;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 0px ;       
-    transition: ${({scrollNav, IsOpen})=>( (scrollNav&&IsOpen) ? '0.2s background linear': '')};//chkmates mobile view
+    transition: ${({ scrollNav, IsOpen }) => ((scrollNav || IsOpen) ? 'background 0.2s linear' : '')};//chkmates mobile view
+    transition: height 0.2s ease, background 0.2 linear ;
   
     @media screen and (max-width:1300px){
         height: 60px
@@ -34,39 +35,35 @@ export const Containerr= styled.div`
 export const NavBarWrapper=styled.div` 
     display: flex;
     align-items: center ;
-    align-content: center ;
     justify-content: space-between;
+    gap:5px;
     height: 100%;
     width: 100%;
     padding:16px 0px 24px 0px;
 `
  
-export const LogoWrapper= styled(Link)` 
+export const LogoWrapper= styled.div` 
     height: 100%;
     width: 100%;
     display: flex;
     justify-content:center;
     align-items: center;
-    font-size:  ${({scrollNav})=>(scrollNav ? '30px' : '40px')};
+`
+
+export const Logo=styled(Link)`
+    cursor: pointer;
+    transition: all 0.2s ease-in-out ;
+    font-size:  ${({ scrollNav }) => (scrollNav ? '30px' : '40px')};
     font-family: Zen Dots;
     font-style:  ${({scrollNav})=>(scrollNav ? 'italic' : 'none')};
     text-decoration: none;
-    color: Orangered;
     text-shadow:${({scrollNav})=>(scrollNav ? '0px 0px 2px blue' : '0px 0px 4px blue')} ;
-  
+    color: orangered;
+
     @media screen and (max-width:768px){
     font-size:  ${({scrollNav})=>(scrollNav ? '20px' : '30px')};
     }  
-`
-export const Logo1=styled.img`
-    cursor: pointer;
-    width: ${({scrollNav})=>(scrollNav? '150px' : '220px')};
-    height: ${({scrollNav})=>(scrollNav? '40px' : '58px')};
-    transition: 0.2s all ease-in-out ;   
-    @media screen and (max-width:1300px){
-    width: ${({scrollNav})=>(scrollNav? '80px' : '95px')};
-    height: ${({scrollNav})=>(scrollNav? '30px' : '38px')};
-    }
+
 `
 export const MobileIcon= styled.div`
 display: none;

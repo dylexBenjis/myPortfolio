@@ -11,6 +11,7 @@ import Projects from './pages/projects';
 import Blog from './pages/blog/blog';
 import { blogData } from './pages/blog/blogData';
 import  Image  from './Images/Lovepik_com-400670960-geometric-lin.png'
+import WebApp from './Components/Project/webApp';
 
 
 
@@ -82,6 +83,7 @@ const ImageToggle = () => {
         <Routes>
           <Route path='/' element={<HomePage toggle={value} scrollNav={scrollNav} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>} />
           <Route path='/project' element={<Projects imageOpen={imageOpen} Toggle={ImageToggle} />} />
+            <Route path='/project/software_projects' element={<WebApp />} />
           <Route path='/blog' element={<Blog />} />
           {blogData.map((q) => {
             return (

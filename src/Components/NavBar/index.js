@@ -36,8 +36,8 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
     <Nav scrollNav={scrollNav} IsOpen={IsOpen}>
         <Containerr>
             <NavBarWrapper>
-                <LogoWrapper to='' data-aos='fade-in' data-aos-delay='250' scrollNav={scrollNav} >
-                   dylexBenji
+                <LogoWrapper >
+                   <Logo to='' data-aos='fade-in' data-aos-delay='250' scrollNav={scrollNav}>dylexBenji</Logo>
                 </LogoWrapper>
                 
                 <MobileIcon onClick={toggle} data-aos='fade-in' data-aos-delay='400' >

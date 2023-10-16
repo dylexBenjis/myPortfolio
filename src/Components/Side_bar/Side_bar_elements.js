@@ -6,7 +6,7 @@ import {Link as LinkScroll} from 'react-router-dom'
 
 export const SidebarCointainer = styled.aside`
     position: fixed;
-    z-index: 9;
+    z-index: 99;
     width: 100%;
     height: auto;
     background: var(--background);
