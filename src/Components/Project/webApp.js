@@ -46,7 +46,7 @@ const setAnimateFalse=()=>{
 
   return (
 
-  < >
+  <SoftwareProjectDiv >
     <Container>
       <MyWorksWrapper>
               <WebAppCon data-aos='zoom-in'>
@@ -60,12 +60,16 @@ const setAnimateFalse=()=>{
           </MyWorksWrapper>
     </Container>
       {imageOpen ? <OnClickImage src={appSrc} imageOpen={imageOpen} Toggle={Toggle} animate={animate} setAnimateFalse={setAnimateFalse} />: null} 
-          </>
+  </SoftwareProjectDiv>
 
 )
 }
 
 export default WebApp;
+
+const SoftwareProjectDiv = styled.div`
+  margin-top: 100px;
+`
 
 const MyWorksWrapper= styled.div` 
     height: 100%;

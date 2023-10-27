@@ -39,6 +39,8 @@
     --jobNotHighlighted: rgba(83, 83, 83, 0.2);
     --IconBackground:  linear-gradient(180deg, var(--background)50%,transparent 100%);
     --blogLink: rgb(87, 103, 248);
+    --projectButtonBackground:rgba(58, 58, 58, 0.445);
+    --projectButtonBackgroundHovered: rgba(100, 100, 100, 0.733);
   }
   [data-theme='dark'] {
     --background: rgb(26, 26, 26);

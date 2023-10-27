@@ -55,7 +55,7 @@ export const Logo=styled(Link)`
     transition: all 0.2s ease-in-out ;
     font-size:  ${({ scrollNav }) => (scrollNav ? '30px' : '40px')};
     font-family: Zen Dots;
-    font-style:  ${({scrollNav})=>(scrollNav ? 'italic' : 'none')};
+    font-style:  ${({scrollNav})=>(scrollNav ? 'italic' : 'italic')};
     text-decoration: none;
     text-shadow:${({scrollNav})=>(scrollNav ? '0px 0px 2px blue' : '0px 0px 4px blue')} ;
     color: orangered;

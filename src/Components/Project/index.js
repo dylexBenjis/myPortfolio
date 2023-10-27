@@ -52,7 +52,7 @@ const MyWorks = ({Toggle, imageOpen}) => {
                 </TextWrapper> 
                 <ProjectButtonDiv>
                     
-                    <ProjectButton to='/project/software_projects' onMouseEnter={funcHovered1} onMouseLeave={funcNothovered1}>
+                    <ProjectButton to='/project/software_projects' className={software} onMouseEnter={funcHovered1} onMouseLeave={funcNothovered1}>
                         <ProjectButtonPicture src={softwareImage}/>
                         <ProjectButtonText className={software}>
                             software
@@ -62,7 +62,7 @@ const MyWorks = ({Toggle, imageOpen}) => {
                         </ProjectButtonArrow>
                     </ProjectButton>
                       
-                   <ProjectButton to='' onMouseEnter={funcHovered2} onMouseLeave={funcNothovered2}>
+                   <ProjectButton to='' className={hardware} onMouseEnter={funcHovered2} onMouseLeave={funcNothovered2}>
                         <ProjectButtonPicture src={hardwareImage}/>
                         <ProjectButtonText className={hardware}>
                             hardware
@@ -137,14 +137,21 @@ const ProjectButton = styled(Link)`
     display:grid;
     grid-template-columns: 40% 40% 20%;
     height: 100px;
-    background: rgba(150,150,150,0.3);
+    background: var(--projectButtonBackground);
     cursor: pointer;
     z-index: 10;
     text-decoration: none; 
+    clip-path: polygon(20px 0%, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0% 20px);
+
+    &.hovered{
+        background: var(--projectButtonBackgroundHovered)
+    }
         
     @media screen and (max-width:800px){
       height:80px;
     }
+
+    transition: background 0.2s ease;
     
 `
 const ProjectButtonPicture = styled.img`

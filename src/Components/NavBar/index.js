@@ -26,7 +26,7 @@ const NavBar = ({ IsOpen, scrollNav, toggle,changeBtnIcon, ChangeTheme}) => {
 
     const[path, setPath] = useState(false);
     useEffect(()=>{
-        if(location.pathname===path2){
+        if(location.pathname===path1){
             setPath(true)
         }
         else(setPath(false))
