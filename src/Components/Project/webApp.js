@@ -7,6 +7,7 @@ import {BiLinkExternal} from 'react-icons/bi'
 import OnClickImage from './onClickImage'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { Text, TextWrapper } from '.'
 
 
 
@@ -42,30 +43,35 @@ const setAnimateTrue=()=>{
 }
 const setAnimateFalse=()=>{
   setAnimate(false)
-}
+  }
+  console.log(animate)
 
   return (
 
-  <SoftwareProjectDiv >
+  <SoftwareProjectDiv SoftwareProjectDiv>
     <Container>
-      <MyWorksWrapper>
-              <WebAppCon data-aos='zoom-in'>
+        <MyWorksWrapper>
+                <TextWrapper data-aos='fade-right'>
+                    <Text>featured software projects</Text> 
+                </TextWrapper>          
+        <WebAppCon data-aos='zoom-in'>
           <WrapperGrid>
                     
           {apps.map((q) => {
           return (<Ddisplay key={q.id} {...q} imageOpen={imageOpen} Toggle={Toggle} setAnimateTrue={setAnimateTrue}/>)
           })}
           </WrapperGrid>        
-          </WebAppCon>
-          </MyWorksWrapper>
+        </WebAppCon>
+      </MyWorksWrapper>
     </Container>
-      {imageOpen ? <OnClickImage src={appSrc} imageOpen={imageOpen} Toggle={Toggle} animate={animate} setAnimateFalse={setAnimateFalse} />: null} 
+    {imageOpen ? <OnClickImage src={appSrc} imageOpen={imageOpen} Toggle={Toggle} animate={animate} setAnimateFalse={setAnimateFalse} />: null} 
   </SoftwareProjectDiv>
 
 )
 }
 
 export default WebApp;
+
 
 const SoftwareProjectDiv = styled.div`
   margin-top: 100px;
@@ -76,7 +82,6 @@ const MyWorksWrapper= styled.div`
     width: 100%; 
     display: flex;
     flex-direction: column;
-    
     margin-top: 20px ;
     @media screen and (max-width: 400px){
         margin-bottom: 50px ;
@@ -84,7 +89,9 @@ const MyWorksWrapper= styled.div`
 
 `
 const WebAppCon = styled.div`
-  display: flex ;  z-index:5 ;
+  display: flex ;  
+  z-index:5 ;
+  margin-top:15px;
   
 
 
@@ -129,7 +136,8 @@ const A = styled.img`
 display: flex ;
 position:relative ;
 left: 10px ;
-height: 60% ;background-color:rgba(150,150,150,0.3);
+height: 60% ;
+background-color:rgba(150,150,150,0.3);
 width:30% ;
 margin: 10px 0px ;
 object-fit: cover ;
@@ -142,6 +150,10 @@ transition: 0.5s all ease-in-out ;
         z-index:99 ;
         background-color: rgb(150,150,150);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      @media screen and (max-width:700px){
+        transform: none ;
+      }
     }
 
     @media screen and (max-width:700px){

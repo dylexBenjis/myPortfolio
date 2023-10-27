@@ -48,7 +48,7 @@ const MyWorks = ({Toggle, imageOpen}) => {
         <Container id='project'>
             <MyWorksWrapper>
                 <TextWrapper data-aos='fade-right'>
-                    <Text>featured projects</Text> 
+                    <Text>projects</Text> 
                 </TextWrapper> 
                 <ProjectButtonDiv>
                     
@@ -99,7 +99,7 @@ export const MyWorksWrapper= styled.div`
     } 
 
 `
-const TextWrapper= styled.div`
+export const TextWrapper= styled.div`
     font-size: 30px;
     font-weight: var(--para-weight);
     color: var(--text-primary);
@@ -113,7 +113,7 @@ const TextWrapper= styled.div`
 }
     
 `
-const Text= styled.div`
+export const Text= styled.div`
     border-left: 3px solid green ; padding: 0px 0px 0px 15px;
     text-decoration: none ; font-family: Zen Dots, monospace ;
     color: green;

@@ -82,8 +82,8 @@ const ImageToggle = () => {
       <SideNav ChangeTheme={ChangeTheme} changeBtnIcon={value} />
         <Routes>
           <Route path='/' element={<HomePage toggle={value} scrollNav={scrollNav} theme={theme} imageOpen={imageOpen} ImageToggle={ImageToggle}/>} />
-          <Route path='/project' element={<Projects imageOpen={imageOpen} Toggle={ImageToggle} />} />
-            <Route path='/project/software_projects' element={<WebApp />} />
+          <Route path='/project' element={<Projects  />} />
+          <Route path='/project/software_projects' element={<WebApp imageOpen={imageOpen} Toggle={ImageToggle}/>} />
           <Route path='/blog' element={<Blog />} />
           {blogData.map((q) => {
             return (
