@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import styled from 'styled-components'
 import { Container } from '../../GlobalLayout'
-import {  appOne, apps, appTwo } from './projects'
-import {FaGithub, FaExternalLinkAlt} from 'react-icons/fa'
+import { apps } from './projects'
+import {FaGithub} from 'react-icons/fa'
 import {BiLinkExternal} from 'react-icons/bi'
 import OnClickImage from './onClickImage'
 import Aos from 'aos';

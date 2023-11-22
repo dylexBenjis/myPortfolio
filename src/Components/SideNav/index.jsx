@@ -26,7 +26,8 @@ const SideNav = ({ changeBtnIcon, ChangeTheme }) => {
 
   const path1= '/';
   const path2 = '/project';
-  const path3 = '/blog'
+  const path3 = '/blog';
+  const path4 = '/project/software_projects'
   var location = useLocation('');
   // var history = useHistory();
 
@@ -48,7 +49,7 @@ const SideNav = ({ changeBtnIcon, ChangeTheme }) => {
       }
       
       //logic for project icon
-      if(path2===location.pathname){
+      if(path2===location.pathname || path4===location.pathname){
         setClassName2('active');
         setProject(true);
       }

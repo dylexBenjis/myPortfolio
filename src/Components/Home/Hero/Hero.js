@@ -93,6 +93,7 @@ const HeroCon= styled.div`
     justify-content:center ;
     position:relative;
     height:100vh;
+    height:100svh ;
     overflow: hidden; background-color: rgba(1,1,1,1);
     ::before{
         content: '';

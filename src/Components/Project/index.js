@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../GlobalLayout';
-import WebApp from './webApp';
 import {MdOutlineArrowForwardIos} from 'react-icons/md'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-import { projectButtonData } from './projectButtonData';
 import softwareImage from '../../Images/software.jpg'
 import hardwareImage from '../../Images/hardware.jpg'
 import { Link } from 'react-router-dom';
@@ -35,7 +33,7 @@ const MyWorks = ({Toggle, imageOpen}) => {
     }
 
     //hardware project button logic
-        const [hardware, setHardware] = useState('false')
+    const [hardware, setHardware] = useState('false')
     const funcHovered2 = () => {
         setHardware('hovered')
     };
