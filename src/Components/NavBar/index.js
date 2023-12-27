@@ -1,5 +1,4 @@
-import React , {useEffect, useState} from 'react'
-import dylex from '../../Images/dylexBenji.png'
+import React, { useEffect, useState } from 'react';
 import { Nav, NavBarWrapper, MobileIcon, ThemeIcon,
     Logo,Logo1, LogoWrapper,Icon, A,
     ButtonWrapper, Containerr } from './NavBarElements';

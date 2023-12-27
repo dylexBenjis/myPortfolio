@@ -52,7 +52,7 @@ const MyWorks = ({Toggle, imageOpen}) => {
                     
                     <ProjectButton to='/project/software_projects' className={software} onMouseEnter={funcHovered1} onMouseLeave={funcNothovered1}>
                         <ProjectButtonPicture src={softwareImage}/>
-                        <ProjectButtonText className={software}>
+                        <ProjectButtonText>
                             software
                         </ProjectButtonText>
                         <ProjectButtonArrow className={software}>
@@ -62,7 +62,7 @@ const MyWorks = ({Toggle, imageOpen}) => {
                       
                    <ProjectButton to='' className={hardware} onMouseEnter={funcHovered2} onMouseLeave={funcNothovered2}>
                         <ProjectButtonPicture src={hardwareImage}/>
-                        <ProjectButtonText className={hardware}>
+                        <ProjectButtonText>
                             hardware
                         </ProjectButtonText>
                         <ProjectButtonArrow className={hardware}>
@@ -167,12 +167,6 @@ const ProjectButtonText = styled.div`
     justify-content: center;
     font-size: 20px;
     color: var(--text-primary);
-
-    &.hovered{
-        transform:scale(1.1);
-    }
-    
-    transition: transform 0.2s ease ;
 `
 
 const ProjectButtonArrow = styled.div`

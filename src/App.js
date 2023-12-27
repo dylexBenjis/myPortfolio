@@ -10,7 +10,6 @@ import SideNav from './Components/SideNav';
 import Projects from './pages/projects';
 import Blog from './pages/blog/blog';
 import { blogData } from './pages/blog/blogData';
-import  Image  from './Images/Lovepik_com-400670960-geometric-lin.png'
 import WebApp from './Components/Project/webApp';
 
 

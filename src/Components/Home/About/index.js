@@ -94,7 +94,7 @@ const AboutUs = ({changeBtnIcon}) => {
     const [descDuration, setDescDuration] = useState(data[0].duration);
     const [descBody, setDescBody] = useState(data[0].description);
     const [descId, setDescId] = useState(1);
-    const [animate, setAnimate] = useState(false)
+    const [animate, setAnimate] = useState(false);
 
 
     // useEffect(()=>{
@@ -178,14 +178,14 @@ const AboutUs = ({changeBtnIcon}) => {
                         </Wrap>
                         </Wrapp>
                         <Wrapcom  data-aos='fade-up' data-aos-delay='1200' data-aos-once='true'>
-                        <Text1 > Companies</Text1>
+                        <Text1 > Experience</Text1>
                         <JobWrapper>
                             <Text4 >
                             {data.map((data)=>{
                             return (
                             <Ul key={data.id}>
                                 <ListOne active={(data.id===descId?'active':'')}  onClick={()=>{setDescRole(data.role);
-                                    setDescDuration(data.duration);setDescCompany(data.companyName);setDescCompanyLink(data.companyLink);setDescBody(data.description);setAnimate(!animate); setDescId(data.id)}} > {data.companyName} </ListOne>
+                                    setDescDuration(data.duration);setDescCompany(data.companyName);setDescCompanyLink(data.companyLink);setDescBody(data.description);setAnimate(true); onanimationend=()=>{setAnimate(false)}; setDescId(data.id)}} > {data.companyName} </ListOne>
                             </Ul>
                             )})}
                             </Text4>
@@ -415,15 +415,15 @@ const Desc = styled.div`
 `
 const ListOne = styled.div`    
     display:flex ;
-    height: 50px ;
-    width: 100%;
+    height: 60px ;
+    width: auto;
     padding:0px 30px 0px 10px;
     align-items:center ;
     z-index:2; cursor: pointer;
     border-left: 3px solid var(--jobNotHighlighted) ;
     transition: background-color 0.3s ease, border-left 1s ease ;
     :hover{
-        color: orangered
+        color: orange
     }
 
     ${props => props.active && css`
